@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aws on Sastibe&#39;s Data Science Blog</title>
-    <link>/www.example.org/categories/aws/</link>
+    <link>/amazing-pasteur-b94c07.netlify.com/categories/aws/</link>
     <description>Recent content in Aws on Sastibe&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 27 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/www.example.org/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/amazing-pasteur-b94c07.netlify.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setting up a Scalable RStudio Instance in AWS</title>
-      <link>/www.example.org/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</link>
+      <link>/amazing-pasteur-b94c07.netlify.com/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</link>
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/www.example.org/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</guid>
+      <guid>/amazing-pasteur-b94c07.netlify.com/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</guid>
       <description>Assume you want to start to write R code (a very good decision, in my opinion) and you want to be able to write and test code whereever you are. Wouldn’t it be awesome if one could set up an environment that can be used for R coding independent of any device? Where all you need is a decent browser, a working internet connection and you’re good to go?
 Obviously, that is the case.</description>
     </item>
