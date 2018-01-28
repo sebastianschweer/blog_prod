@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sastibe&#39;s Data Science Blog</title>
-    <link>/amazing-pasteur-b94c07.netlify.com/tags/</link>
+    <link>amazing-pasteur-b94c07.netlify.com/tags/</link>
     <description>Recent content in Tags on Sastibe&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/amazing-pasteur-b94c07.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="amazing-pasteur-b94c07.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Getting Started</title>
-      <link>/amazing-pasteur-b94c07.netlify.com/tags/getting-started/</link>
+      <link>amazing-pasteur-b94c07.netlify.com/tags/getting-started/</link>
       <pubDate>Sun, 28 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/amazing-pasteur-b94c07.netlify.com/tags/getting-started/</guid>
+      <guid>amazing-pasteur-b94c07.netlify.com/tags/getting-started/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Programming</title>
-      <link>/amazing-pasteur-b94c07.netlify.com/tags/programming/</link>
+      <link>amazing-pasteur-b94c07.netlify.com/tags/programming/</link>
       <pubDate>Sun, 28 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/amazing-pasteur-b94c07.netlify.com/tags/programming/</guid>
+      <guid>amazing-pasteur-b94c07.netlify.com/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rstudio Ami</title>
-      <link>/amazing-pasteur-b94c07.netlify.com/tags/rstudio-ami/</link>
+      <link>amazing-pasteur-b94c07.netlify.com/tags/rstudio-ami/</link>
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/amazing-pasteur-b94c07.netlify.com/tags/rstudio-ami/</guid>
+      <guid>amazing-pasteur-b94c07.netlify.com/tags/rstudio-ami/</guid>
       <description></description>
     </item>
     

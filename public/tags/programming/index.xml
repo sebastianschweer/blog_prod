@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on Sastibe&#39;s Data Science Blog</title>
-    <link>/amazing-pasteur-b94c07.netlify.com/tags/programming/</link>
+    <link>amazing-pasteur-b94c07.netlify.com/tags/programming/</link>
     <description>Recent content in Programming on Sastibe&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/amazing-pasteur-b94c07.netlify.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="amazing-pasteur-b94c07.netlify.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My Motivations for Starting a Blog</title>
-      <link>/amazing-pasteur-b94c07.netlify.com/2018/01/my-motivations-for-starting-a-blog/</link>
+      <link>amazing-pasteur-b94c07.netlify.com/2018/01/my-motivations-for-starting-a-blog/</link>
       <pubDate>Sun, 28 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/amazing-pasteur-b94c07.netlify.com/2018/01/my-motivations-for-starting-a-blog/</guid>
+      <guid>amazing-pasteur-b94c07.netlify.com/2018/01/my-motivations-for-starting-a-blog/</guid>
       <description>Hello world!
 I am a Data Scientist. This field is notoriously difficult to describe, but I like this definition. My job requires me to spend a lot of time each day writing code in varying languages, mostly R but also Python and SAS. This inevitably leads me to spend a lot of time thinking about both code as well as the process of programming itself. Recently, I stumbled upon1 a incredibly concise diagram:</description>
     </item>

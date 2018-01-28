@@ -3,70 +3,70 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/2018/01/my-motivations-for-starting-a-blog/</loc>
+    <loc>amazing-pasteur-b94c07.netlify.com/2018/01/my-motivations-for-starting-a-blog/</loc>
     <lastmod>2018-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</loc>
+    <loc>amazing-pasteur-b94c07.netlify.com/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</loc>
     <lastmod>2018-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/archives/</loc>
+    <loc>amazing-pasteur-b94c07.netlify.com/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/categories/aws/</loc>
-    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/categories/</loc>
+    <loc>amazing-pasteur-b94c07.netlify.com/categories/aws/</loc>
     <lastmod>2018-01-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/tags/getting-started/</loc>
-    <lastmod>2018-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/post/</loc>
-    <lastmod>2018-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/tags/programming/</loc>
-    <lastmod>2018-01-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/categories/r/</loc>
+    <loc>amazing-pasteur-b94c07.netlify.com/categories/</loc>
     <lastmod>2018-01-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/tags/rstudio-ami/</loc>
-    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/</loc>
+    <loc>amazing-pasteur-b94c07.netlify.com/tags/getting-started/</loc>
     <lastmod>2018-01-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/amazing-pasteur-b94c07.netlify.com/tags/</loc>
+    <loc>amazing-pasteur-b94c07.netlify.com/post/</loc>
+    <lastmod>2018-01-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>amazing-pasteur-b94c07.netlify.com/tags/programming/</loc>
+    <lastmod>2018-01-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>amazing-pasteur-b94c07.netlify.com/categories/r/</loc>
+    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>amazing-pasteur-b94c07.netlify.com/tags/rstudio-ami/</loc>
+    <lastmod>2018-01-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>amazing-pasteur-b94c07.netlify.com/</loc>
+    <lastmod>2018-01-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>amazing-pasteur-b94c07.netlify.com/tags/</loc>
     <lastmod>2018-01-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
