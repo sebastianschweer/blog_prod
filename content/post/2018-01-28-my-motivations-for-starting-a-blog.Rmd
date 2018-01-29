@@ -10,15 +10,19 @@ slug: my-motivations-for-starting-a-blog
 
 Hello world!
 
-I am a Data Scientist. This field is notoriously difficult to describe, but I like [this definition](https://twitter.com/hadleywickham/status/914140589565841410). My job requires me to spend a lot of time each day writing code in varying languages, mostly `R` but also Python and SAS. This inevitably leads me to spend a lot of time thinking about both code as well as the process of programming itself. Recently, I stumbled upon[^1] a incredibly concise diagram:
+My name is Sebastian Schweer, and I am a Data Scientist. This job description is increasingly popular, but it is notoriously difficult to describe precisely, what that entails. Let me show you one of my favourite definitions:
+
+![Source.](https://twitter.com/hadleywickham/status/914140589565841410)
+
+My job requires me to spend a lot of time each day writing code in varying languages, mostly `R` but also Python and SAS. This inevitably leads me to spend a lot of time thinking about both code as well as the process of programming itself. The major question is, as always, "How do you ensure, that your product is of the best quality?". Recently, I stumbled upon[^1] a incredibly concise diagram:
 
   ![The importance of collabration](https://res.cloudinary.com/dlprdrxib/image/upload/a_270/v1517091390/skizzeblog_nsrt9u.jpg)
 
-This guiding principle I have since internalized, and I find its reflections in many daily situations. More precisely, I identified these 3 consequences of writing code with the intent of publicizing:
+I believe this is an astute observations, and I find its reflections in many daily situations including (but not limited to) producing code or data analyses. More precisely, I identified these 3 consequences of writing code with the intent of publicizing:
 
 - **Tested**: Nobody wants to publish content that only works once or only works on a certain local machine. Thus, any project up for publication automatically gets tested and tried much more meticuously.
-- **Modular**: It is much easier to explain and distribute several single clear ideas than one larger, ephemeral one. Hence, publication leads to more modular code, creating a more flexible and adaptive code base.
-- **Documented**: It doesn't suffice if the author understands what the function with a wonderful name such as `fn_011_v3` does, that should be apparent from the name or at least from the documentation. The onus of understanding the code is transferred from the mind of the author to the body of the code.
+- **Modular**: It is much easier to explain and distribute several single clear ideas than one larger, vague idea. Hence, publication leads to more modular code, creating a more flexible and adaptive code base.
+- **Documented**: It doesn't suffice if you as the author understand what the function with non-descriptive names such as `fn_011_v3` does, that should be apparent from the name or at least from the documentation. *The onus of understanding the code is transferred from the mind of the author to the body of the code.*
 
 All of these characteristics increase the maturity and quality of the code. Since I am obviously interested in producing high quality work, I started this blog in order to have a public outlet for all my private little programming projects.
 
