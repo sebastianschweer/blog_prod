@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Aws on Sastibe&#39;s Data Science Blog</title>
-    <link>/categories/aws/</link>
-    <description>Recent content in Aws on Sastibe&#39;s Data Science Blog</description>
+    <title>Caret on Sastibe&#39;s Data Science Blog</title>
+    <link>/categories/caret/</link>
+    <description>Recent content in Caret on Sastibe&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/caret/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>/2018/03/benchmarking-aws-instances/</guid>
       <description>In a previous post I have shown you how to setup an AWS instance running the newest RStudio, R, Python, Julia and so forth, where the configuration of the instance can be freely chosen. However, there is quite a lot of possibilities of instance configurations out there: There are different instance classes (General Purpose, Compute Optimized, RAM Optimized, … ) and different instance sizes within these classes. For General Purpose, or t2, there are, e.</description>
-    </item>
-    
-    <item>
-      <title>Setting up a Scalable RStudio Instance in AWS</title>
-      <link>/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</link>
-      <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</guid>
-      <description>Assume you want to start to write R code (a very good decision, in my opinion) and you want to be able to write and test code whereever you are. Wouldn’t it be awesome if one could set up an environment that can be used for R coding independent of any device? Where all you need is a decent browser, a working internet connection and you’re good to go?
-Obviously, that is the case.</description>
     </item>
     
   </channel>
