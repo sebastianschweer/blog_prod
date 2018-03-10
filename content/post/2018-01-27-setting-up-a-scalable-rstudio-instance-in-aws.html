@@ -54,7 +54,11 @@ slug: setting-up-a-scalable-rstudio-instance-in-aws
 </div>
 <div id="step-2a-find-the-current-rstudio-ami." class="section level3">
 <h3>Step 2a: Find the current RStudio AMI.</h3>
-<p>The first task is to choose an Amazon Machine Image, or AMI, which is essentially an operating system container. More to the point, in an AMI a Linux distribution can be bundled with addtional software packages tailored to any type of need: web development, accounting (I’m guessing here, but … sure) and, most importantly, using RStudio. <a href="http://www.louisaslett.com/RStudio_AMI/">On Louis Anslett’s homepage</a> you can find a wonderful storage of RStudio AMIs. We use the newest version for the correct geographical zone, in my case Frankfurt: <img src="https://res.cloudinary.com/dlprdrxib/image/upload/v1516304602/screenshot_louisaslett_eyug44.png" alt="One AMI for each region. Neat" /></p>
+<p>The first task is to choose an Amazon Machine Image, or AMI, which is essentially an operating system container. More to the point, in an AMI a Linux distribution can be bundled with addtional software packages tailored to any type of need: web development, accounting (I’m guessing here, but … sure) and, most importantly, using RStudio. <a href="http://www.louisaslett.com/RStudio_AMI/">On Louis Anslett’s homepage</a> you can find a wonderful storage of RStudio AMIs. We use the newest version for the correct geographical zone, in my case Frankfurt:</p>
+<div class="figure">
+<img src="https://res.cloudinary.com/dlprdrxib/image/upload/v1516304602/screenshot_louisaslett_eyug44.png" alt="One AMI for each region. Neat" />
+<p class="caption">One AMI for each region. Neat</p>
+</div>
 <p>As you can see, thanks to Louis Anslett’s work, the AMI includes not only the newest version of RStudio but also of <code>R</code> itself as well as a handful of helpful additional software packages. For instance, Git comes pre-installed, which we will use later on; also <code>Julia</code>is installed for those looking to try out the possible future of data science languages. But I’m deviating… Let’s note the AMI-ID (in our case “ami-a80db3c7”), put this in the start-up options and let’s continue.</p>
 </div>
 <div id="step-2b-configure-the-security-groups-for-your-rstudio-instance" class="section level3">
@@ -143,6 +147,6 @@ chmod -R 777 /home/rstudio/sastibe</code></pre>
 <hr />
 <ol>
 <li id="fn1"><p>For a given value of usually. I personally try to test out lots of resources just because I can, yet even so, my total expenses for AWS result in 0.37€ (January 2018).<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>A rough estimate. Maybe only gazillions.<a href="#fnref2">↩</a></p></li>
+<li id="fn2"><p>A rough estimate. Maybe only bajillions.<a href="#fnref2">↩</a></p></li>
 </ol>
 </div>
