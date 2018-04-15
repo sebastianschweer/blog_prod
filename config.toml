@@ -85,9 +85,16 @@ canonifyurls = true
 [[menu.links]]
   weight = 2
   identifier = "stackoverflow"
-  name = "Stack Overflow"
+  name = "StackOverflow"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
   url = "https://stackoverflow.com/users/9320663/sastibe"
+  
+[[menu.links]]
+  weight = 4
+  identifier = "blogroll"
+  name = "Blogroll"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
+  url = "http://www.sastibe.de/2018/04/blogroll/"
 [params]
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
