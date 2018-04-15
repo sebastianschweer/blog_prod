@@ -6,10 +6,19 @@
     <description>Recent content in R on Sastibe&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Don&#39;t Worry: Google Only Checks Your Location Every 10 Minutes</title>
+      <link>/2018/04/don-t-worry-google-location/</link>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/04/don-t-worry-google-location/</guid>
+      <description>I have a personal Google account, complete with gmail, gdrive and everything else. I first opened it up as a sort of spam email for all kinds of logins, but started to it use more and more due to its convenience. I was always slightly worried about the magnitude of data collected by Google on me, yet I never found a way to pinpoint exactly the extent of my slight worrying.</description>
+    </item>
     
     <item>
       <title>Benchmarking AWS Instances with MNIST classification</title>
