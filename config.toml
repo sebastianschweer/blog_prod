@@ -46,7 +46,8 @@ canonifyurls = true
 
 [permalinks]
   post = "/:year/:month/:slug/"
-
+  page = ":slug/"
+  
 [taxonomies]
   tag = "tags"
   category = "categories"
@@ -216,5 +217,5 @@ canonifyurls = true
   #   url = "/#about"
 
   # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
-  # [params.footer]
-  #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
+  [params.footer]
+     copyright = "Sebastian Schweer. <a href=\"/impressum/\">Impressum/Datenschutz</a>"
