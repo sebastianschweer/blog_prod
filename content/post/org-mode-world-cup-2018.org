@@ -1,0 +1,34 @@
+---
+title: "It's here: Org Agenda for the World Cup 2018"
+date: '2018-06-05'
+thumbnailImagePosition: top
+thumbnailImage: http://res.cloudinary.com/dlprdrxib/image/upload/v1528226008/Org-Mode-WorldCup_fh4zkm.png
+metaAlignment: center
+categories:
+  - emacs
+  - org-mode
+tags:
+  - Football
+  - World Cup
+
+draft: false
+---
+
+
+As <a href="/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/">I recently pointed out</a>, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn't it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?
+
+<div class="figure">
+<img src="http://res.cloudinary.com/dlprdrxib/image/upload/v1528226008/Org-Mode-WorldCup_fh4zkm.png" alt="Only 90 kids will remember" />
+<p class="caption">Just so...</p>
+</div>
+
+A short Google research lead to these two GitHub repositories for the [[https://github.com/djcb/org-euro2012/][Euro 2012]] and the [[https://github.com/ruediger/org-world-cup2014][World Cup 2014]]. As I couldn't find anything similar for the World Cup 2018, I decided to create it myself.
+
+[[https://github.com/sebastianschweer/org-world-cup-2018][Here is the result]]
+
+The content of the schedule is as accurate as I could manage: I read the contents of the [[https://fixturedownload.com/download/fifa-world-cup-2018-RussianStandardTime.csv][raw data]] into the desired org format via regex (in Emacs, obviously) and manually checked the results against the entries on the [[https://en.wikipedia.org/wiki/2018_FIFA_World_Cup][wiki page]]. Writing the regex  was actually ... rather fun? A bit weird since it wasn't pretty, let me show you the first few symbols:
+#+BEGIN_SRC 
+replace-regexp <RET>
+|\s-+\([0-9]\{1,2\}\) |\([^|]+....
+#+END_SRC
+Anyways, it worked, and the result is anyone's to enjoy. For the record, let me state clearly that *I Do Not Intend To Update The Scores In The Repository* in any timely fashion. If I get to it, I will, but let's see. 
