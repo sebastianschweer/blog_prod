@@ -3,116 +3,182 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2018/04/blogroll/</loc>
+    <loc>http://www.sastibe.de/2018/06/its-here-org-agenda-for-the-world-cup-2018/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/</loc>
+    <lastmod>2018-05-11T23:13:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/blogroll/</loc>
     <lastmod>2018-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/04/don-t-worry-google-location/</loc>
+    <loc>http://www.sastibe.de/2018/04/don-t-worry-google-location/</loc>
     <lastmod>2018-04-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/03/benchmarking-aws-instances/</loc>
+    <loc>http://www.sastibe.de/2018/03/benchmarking-aws-instances/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/01/my-motivations-for-starting-a-blog/</loc>
+    <loc>http://www.sastibe.de/2018/01/my-motivations-for-starting-a-blog/</loc>
     <lastmod>2018-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</loc>
+    <loc>http://www.sastibe.de/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</loc>
     <lastmod>2018-01-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/archives/</loc>
+    <loc>http://www.sastibe.de/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/aws/</loc>
+    <loc>http://www.sastibe.de/categories/aws/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/benchmarking/</loc>
+    <loc>http://www.sastibe.de/tags/benchmarking/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/caret/</loc>
+    <loc>http://www.sastibe.de/categories/caret/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>http://www.sastibe.de/categories/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/getting-started/</loc>
+    <loc>http://www.sastibe.de/categories/emacs/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/tags/emacs-org-mode/</loc>
+    <lastmod>2018-05-11T23:13:13+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/tags/financial-data/</loc>
+    <lastmod>2018-05-11T23:13:13+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/tags/football/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/categories/gdpr/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/tags/getting-started/</loc>
     <lastmod>2018-01-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/ggplot/</loc>
+    <loc>http://www.sastibe.de/categories/ggplot/</loc>
     <lastmod>2018-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/machine-learning/</loc>
+    <loc>http://www.sastibe.de/impressum/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/tags/machine-learning/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/open-data/</loc>
+    <loc>http://www.sastibe.de/tags/open-data/</loc>
     <lastmod>2018-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>http://www.sastibe.de/categories/org-mode/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/post/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/tags/privacy-notice/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/tags/programming/</loc>
     <lastmod>2018-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/programming/</loc>
+    <loc>http://www.sastibe.de/categories/r/</loc>
     <lastmod>2018-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2018-04-15T00:00:00+00:00</lastmod>
+    <loc>http://www.sastibe.de/tags/rest-apis/</loc>
+    <lastmod>2018-05-11T23:13:13+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/rstudio-ami/</loc>
+    <loc>http://www.sastibe.de/tags/rstudio-ami/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2018-04-15T00:00:00+00:00</lastmod>
+    <loc>http://www.sastibe.de/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>http://www.sastibe.de/tags/</loc>
     <lastmod>2018-03-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.sastibe.de/tags/world-cup/</loc>
+    <lastmod>2018-06-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

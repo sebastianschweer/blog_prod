@@ -2,48 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Sastibe&#39;s Data Science Blog</title>
-    <link>/categories/</link>
+    <link>http://www.sastibe.de/categories/</link>
     <description>Recent content in Categories on Sastibe&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://www.sastibe.de/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Aws</title>
-      <link>/categories/aws/</link>
+      <link>http://www.sastibe.de/categories/aws/</link>
       <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/aws/</guid>
+      <guid>http://www.sastibe.de/categories/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Caret</title>
-      <link>/categories/caret/</link>
+      <link>http://www.sastibe.de/categories/caret/</link>
       <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/caret/</guid>
+      <guid>http://www.sastibe.de/categories/caret/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs</title>
+      <link>http://www.sastibe.de/categories/emacs/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/categories/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gdpr</title>
+      <link>http://www.sastibe.de/categories/gdpr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/categories/gdpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ggplot</title>
-      <link>/categories/ggplot/</link>
+      <link>http://www.sastibe.de/categories/ggplot/</link>
       <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ggplot/</guid>
+      <guid>http://www.sastibe.de/categories/ggplot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Org Mode</title>
+      <link>http://www.sastibe.de/categories/org-mode/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/categories/org-mode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
+      <link>http://www.sastibe.de/categories/r/</link>
       <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r/</guid>
+      <guid>http://www.sastibe.de/categories/r/</guid>
       <description></description>
     </item>
     

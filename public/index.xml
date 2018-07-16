@@ -2,63 +2,1363 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sastibe&#39;s Data Science Blog</title>
-    <link>/</link>
+    <link>http://www.sastibe.de/</link>
     <description>Recent content on Sastibe&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://www.sastibe.de/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>It&#39;s here: Org Agenda for the World Cup 2018</title>
+      <link>http://www.sastibe.de/2018/06/its-here-org-agenda-for-the-world-cup-2018/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/2018/06/its-here-org-agenda-for-the-world-cup-2018/</guid>
+      <description>&lt;p&gt;As &lt;a href=&#34;http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/&#34;&gt;I recently pointed out&lt;/a&gt;, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn&#39;t it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1528226008/Org-Mode-WorldCup_fh4zkm.png&#34; alt=&#34;Only 90 kids will remember&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Just so...&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;A short Google research lead to these two GitHub repositories for the &lt;a href=&#34;https://github.com/djcb/org-euro2012/&#34; title=&#34;Euro 2012&#34;&gt;Euro 2012&lt;/a&gt; and the &lt;a href=&#34;https://github.com/ruediger/org-world-cup2014&#34; title=&#34;World Cup 2014&#34;&gt;World Cup 2014&lt;/a&gt;. As I couldn&#39;t find anything similar for the World Cup 2018, I decided to create it myself.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/sebastianschweer/org-world-cup-2018&#34; title=&#34;Here is the result&#34;&gt;Here is the result&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The content of the schedule is as accurate as I could manage: I read the contents of the &lt;a href=&#34;https://fixturedownload.com/download/fifa-world-cup-2018-RussianStandardTime.csv&#34; title=&#34;raw data&#34;&gt;raw data&lt;/a&gt; into the desired org format via regex (in Emacs, obviously) and manually checked the results against the entries on the &lt;a href=&#34;https://en.wikipedia.org/wiki/2018_FIFA_World_Cup&#34; title=&#34;wiki page&#34;&gt;wiki page&lt;/a&gt;. Writing the regex  was actually ... rather fun? A bit weird since it wasn&#39;t pretty, let me show you the first few symbols:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;replace-regexp &amp;lt;RET&amp;gt;
+|\s-+\([0-9]\{1,2\}\) |\([^|]+....
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Anyways, it worked, and the result is anyone&#39;s to enjoy. For the record, let me state clearly that &lt;strong&gt;I Do Not Intend To Update The Scores In The Repository&lt;/strong&gt; in any timely fashion. If I get to it, I will, but let&#39;s see.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Use Emacs Org Mode and REST APIs for an up-to-date Stock Portfolio</title>
+      <link>http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/</link>
+      <pubDate>Fri, 11 May 2018 23:13:13 +0200</pubDate>
+      
+      <guid>http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/</guid>
+      <description>&lt;p&gt;A couple of weeks ago, I started to work with &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34; title=&#34;Emacs&#34;&gt;Emacs&lt;/a&gt;, and I grow fonder of it every day. During a very short time period, it has become my go-to editor for nearly everything I do on my computer, including (but not limited to)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;planning my Todos (in &lt;a href=&#34;https://orgmode.org/&#34; title=&#34;org-mode&#34;&gt;org-mode&lt;/a&gt;, to be precise),&lt;/li&gt;
+&lt;li&gt;setting up my agenda (org-mode again),&lt;/li&gt;
+&lt;li&gt;taking memos during meetings&lt;/li&gt;
+&lt;li&gt;writing my (longer) e-mails&lt;/li&gt;
+&lt;li&gt;play around with new stuff&lt;/li&gt;
+&lt;li&gt;write blog posts (this is the first of these...)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It is difficult to pin down exactly why Emacs is taking over so much. My main influences for starting with EMACS were blogposts, &lt;a href=&#34;https://blog.fugue.co/2015-11-11-guide-to-emacs.html&#34; title=&#34;the first&#34;&gt;the first&lt;/a&gt; describing a general EMACS setup, &lt;a href=&#34;https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html&#34; title=&#34;the second&#34;&gt;the second&lt;/a&gt; detailing how to implement GTD, i.e. &lt;a href=&#34;https://en.wikipedia.org/wiki/Getting_Things_Done&#34; title=&#34;Getting Things Done&#34;&gt;Getting Things Done&lt;/a&gt; in Emacs org-mode.&lt;/p&gt;
+
+&lt;p&gt;In this post, I will demonsrate the strengths of using Emacs in a very specific use case: Getting up-to-date financial data to use in a spread-sheet including all your financial data. Applications like these are usually provided by online banks themselves, so that I don&#39;t show you anything particularly &lt;strong&gt;new&lt;/strong&gt; or &lt;strong&gt;shiny&lt;/strong&gt;. However, the ability to customize every step of the way brings with a number of advantages.&lt;/p&gt;
+
+&lt;h2 id=&#34;finding-a-rest-api-for-stock-quotes&#34;&gt;Finding a REST API for Stock Quotes&lt;/h2&gt;
+
+&lt;p&gt;First, we need to get up-to-date financial data from a REST API. I decided to use Alpha Vantage, a site I first stumbled upon after reading &lt;a href=&#34;http://www.financial-hacker.com/bye-yahoo-and-thank-you-for-the-fish/&#34; title=&#34;this blog post.&#34;&gt;this blog post.&lt;/a&gt; The other APIs listed on that page had various issues, either being deprecated in the near future (google, yahoo, stooq) or not having a number of symbols (IEX). The API of Alphavantage is rather easy to understand, even though the naming convention is terrible. Try for instance &lt;a href=&#34;https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&amp;amp;symbol=MSFT&amp;amp;interval=1min&amp;amp;apikey=demo&#34; title=&#34;this link&#34;&gt;this link&lt;/a&gt; using the demo API key, yielding the following result for the Microsoft stock:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;Meta Data&amp;quot;: {
+        &amp;quot;1. Information&amp;quot;: &amp;quot;Intraday (1min) prices and volumes&amp;quot;,
+        &amp;quot;2. Symbol&amp;quot;: &amp;quot;MSFT&amp;quot;,
+        &amp;quot;3. Last Refreshed&amp;quot;: &amp;quot;2018-05-11 16:00:00&amp;quot;,
+        &amp;quot;4. Interval&amp;quot;: &amp;quot;1min&amp;quot;,
+        &amp;quot;5. Output Size&amp;quot;: &amp;quot;Compact&amp;quot;,
+        &amp;quot;6. Time Zone&amp;quot;: &amp;quot;US/Eastern&amp;quot;
+    },
+    &amp;quot;Time Series (1min)&amp;quot;: {
+        &amp;quot;2018-05-11 16:00:00&amp;quot;: {
+            &amp;quot;1. open&amp;quot;: &amp;quot;97.5900&amp;quot;,
+            &amp;quot;2. high&amp;quot;: &amp;quot;97.7300&amp;quot;,
+            &amp;quot;3. low&amp;quot;: &amp;quot;97.5750&amp;quot;,
+            &amp;quot;4. close&amp;quot;: &amp;quot;97.7000&amp;quot;,
+            &amp;quot;5. volume&amp;quot;: &amp;quot;3776187&amp;quot;
+        },
+        &amp;quot;2018-05-11 15:59:00&amp;quot;: {
+            &amp;quot;1. open&amp;quot;: &amp;quot;97.4800&amp;quot;,
+            &amp;quot;2. high&amp;quot;: &amp;quot;97.5900&amp;quot;,
+            &amp;quot;3. low&amp;quot;: &amp;quot;97.4700&amp;quot;,
+            &amp;quot;4. close&amp;quot;: &amp;quot;97.5900&amp;quot;,
+            &amp;quot;5. volume&amp;quot;: &amp;quot;257615&amp;quot;
+        },...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;reading-api-requests-into-emacs-variables&#34;&gt;Reading API Requests into Emacs Variables&lt;/h2&gt;
+
+&lt;p&gt;Having located the data out in the internet was a good first step, but now we need to figure out a way how to use this information. Luckily, most of the work needed for this can be found in various places on the net, for instance in &lt;a href=&#34;https://vxlabs.com/2017/06/03/querying-restful-webservices-into-emacs-orgmode-tables/&#34; title=&#34;this blog post&#34;&gt;this blog post&lt;/a&gt;. I decided to follow their general setup, using the following packages:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;org&lt;/li&gt;
+&lt;li&gt;org-babel&lt;/li&gt;
+&lt;li&gt;request&lt;/li&gt;
+&lt;li&gt;json&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The API used in their scenario gave different results with a much cleaner nomenclature. For the Alphavantage API, I had to become a little creative with the eLisp code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(require &#39;request)
+(require &#39;json)
+(require &#39;cl)
+
+(request
+ &amp;quot;https://www.alphavantage.co/query&amp;quot;
+ :params `((&amp;quot;function&amp;quot; . &amp;quot;TIME_SERIES_INTRADAY&amp;quot;)
+           (&amp;quot;symbol&amp;quot; . &amp;quot;SC0J&amp;quot;)
+           (&amp;quot;interval&amp;quot; . &amp;quot;1min&amp;quot;)
+           (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;))
+ :parser &#39;json-read
+ :success (function*
+           (lambda (&amp;amp;key data &amp;amp;allow-other-keys)
+             (setq open_sc0j (string-to-number (cdr (elt (elt (elt data 1) 1) 1)))))))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The variable &lt;code&gt;open_sc0j&lt;/code&gt; is evaluated as follows: From the received json, take the second entry of the second element of the second element. Not very nice, but it works...&lt;/p&gt;
+
+&lt;p&gt;I encountered a second difficulty in my portfolio: I have both European stocks (in EUR) and American stocks (traded in USD). In order to keep my balances comparable, I added yet another variable &lt;code&gt;rate_usd_eur&lt;/code&gt;, which receives up-to-date exchange rates from USD to EUR from the appropriate query. All in all, my requests to Alphavantage look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(request
+ &amp;quot;https://www.alphavantage.co/query&amp;quot;
+ :params `((&amp;quot;function&amp;quot; . &amp;quot;TIME_SERIES_INTRADAY&amp;quot;)
+           (&amp;quot;symbol&amp;quot; . &amp;quot;SC0J&amp;quot;)
+           (&amp;quot;interval&amp;quot; . &amp;quot;1min&amp;quot;)
+           (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;))
+ :parser &#39;json-read
+ :success (function*
+           (lambda (&amp;amp;key data &amp;amp;allow-other-keys)
+             (setq open_sc0j (string-to-number (cdr (elt (elt (elt data 1) 1) 1)))))))
+
+
+(request
+ &amp;quot;https://www.alphavantage.co/query&amp;quot;
+ :params `((&amp;quot;function&amp;quot; . &amp;quot;CURRENCY_EXCHANGE_RATE&amp;quot;)
+           (&amp;quot;from_currency&amp;quot; . &amp;quot;USD&amp;quot;)
+           (&amp;quot;to_currency&amp;quot; . &amp;quot;EUR&amp;quot;)
+           (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;))
+ :parser &#39;json-read
+ :success (function*
+           (lambda (&amp;amp;key data &amp;amp;allow-other-keys)
+             (setq rate_usd_eur (string-to-number (cdr (elt (elt data 0) 5)))))))
+
+(request
+ &amp;quot;https://www.alphavantage.co/query&amp;quot;
+ :params `((&amp;quot;function&amp;quot; . &amp;quot;TIME_SERIES_INTRADAY&amp;quot;)
+           (&amp;quot;symbol&amp;quot; . &amp;quot;PG&amp;quot;)
+           (&amp;quot;interval&amp;quot; . &amp;quot;1min&amp;quot;)
+           (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;))
+ :parser &#39;json-read
+ :success (function*
+           (lambda (&amp;amp;key data &amp;amp;allow-other-keys)
+             (org-table-iterate-buffer-tables)
+             (setq open_prg (* rate_usd_eur (string-to-number (cdr (elt (elt (elt data 1) 1) 1))))))))
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Putting this code inside an org-mode file, bracketing it by code blocks &lt;code&gt;#+BEGIN_SRC emacs-lisp :results none&lt;/code&gt; and &lt;code&gt;#+END_SRC&lt;/code&gt;, and hitting &#34;C-c C-c&#34; inside it leads to the evaluation of the code block and thus the filling of the variables &lt;code&gt;open_sc0j&lt;/code&gt;, &lt;code&gt;rate_usd_eur&lt;/code&gt; and &lt;code&gt;open_prg&lt;/code&gt;. Since we included the wonderful little function &lt;code&gt;org-table-iterate-buffer-tables&lt;/code&gt;, the evaluation also repeats until all the columns in the table below are calculated correctly. This neat little trick I also copied from &lt;a href=&#34;https://vxlabs.com/2017/06/03/querying-restful-webservices-into-emacs-orgmode-tables/&#34; title=&#34;here.&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;setting-up-a-custom-stock-portfolio-org-table&#34;&gt;Setting up a Custom Stock Portfolio Org Table&lt;/h2&gt;
+
+&lt;p&gt;After these steps, we now set up an org-table to give us a customizable overview of how our stocks are doing. That means setting up an org-table with columns for historic data, such as the date of the buy. Additionally, we use the &lt;code&gt;#+TBLFM&lt;/code&gt; function to calculate appropriate performance indicators. An example for such functions:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;| Stock         | Symbol | Amt. |    Buy | Date Bought     |  Fees | Dividends | Close |   Gain | Gain Perc | Gain per Day |
+|---------------+--------+------+--------+-----------------+-------+-----------+-------+--------+-----------+--------------|
+| MSCI ETF      | SC0J   |   10 |  47.11 | [2018-04-16 Mo] | 12.35 |         0 |       |        |           |              |
+| ProcterGamble | PG     |    5 | 65.014 | [2015-10-01 Do] | 10.61 |     72.03 |       |        |           |              |
+#+TBLFM: $9=(-$4 + $8)*$3 - $6 + $7;%0.3f::$10=100*$9/($4*$3)::$11=$9/(now() - $5)::@2$8=&#39;(format &amp;quot;%f&amp;quot; open_sc0j)::@3$7=17.78 + 17.70 + 17.94 + 18.61::@3$8=&#39;(format &amp;quot;%f&amp;quot; open_prg)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This code leads to the following result:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Stock&lt;/th&gt;
+&lt;th&gt;Symbol&lt;/th&gt;
+&lt;th&gt;Amt.&lt;/th&gt;
+&lt;th&gt;Buy&lt;/th&gt;
+&lt;th&gt;Date Bought&lt;/th&gt;
+&lt;th&gt;Fees&lt;/th&gt;
+&lt;th&gt;Dividends&lt;/th&gt;
+&lt;th&gt;Close&lt;/th&gt;
+&lt;th&gt;Gain&lt;/th&gt;
+&lt;th&gt;Gain Perc&lt;/th&gt;
+&lt;th&gt;Gain per Day&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MSCI ETF&lt;/td&gt;
+&lt;td&gt;SC0J&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;47.11&lt;/td&gt;
+&lt;td&gt;[2018-04-16 Mo]&lt;/td&gt;
+&lt;td&gt;12.35&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;49.290000&lt;/td&gt;
+&lt;td&gt;9.450&lt;/td&gt;
+&lt;td&gt;2.0059435&lt;/td&gt;
+&lt;td&gt;0.35552367&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ProcterGamble&lt;/td&gt;
+&lt;td&gt;PG&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;65.014&lt;/td&gt;
+&lt;td&gt;[2015-10-01 Do]&lt;/td&gt;
+&lt;td&gt;10.61&lt;/td&gt;
+&lt;td&gt;72.03&lt;/td&gt;
+&lt;td&gt;61.342605&lt;/td&gt;
+&lt;td&gt;43.063&lt;/td&gt;
+&lt;td&gt;13.247301&lt;/td&gt;
+&lt;td&gt;0.045111962&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In this example, &lt;code&gt;Gain&lt;/code&gt; is first calculated by multiplying &lt;code&gt;-$4 + $8&lt;/code&gt;, i.e. the difference between Buy and (today&#39;s) Close by the amount of stocks bought. Additionally, any dividends are added and any fees are subtracted, yielding a &#34;net gain&#34; for the stock. In column &lt;code&gt;Gain per Day&lt;/code&gt;, this number is broken down per day since I bought the stock, highlighting my most efficient assets.&lt;/p&gt;
+
+&lt;p&gt;There is no limit to what types of functions one can use, and no limit on the sophistication of analysis. And all of this within a very light-weight, easy-to-use interface, without any unnecessary over-head. It is not only convenient, but also educational: while writing this article, I learned a lot about REST APIs and financial data.&lt;/p&gt;
+
+&lt;p&gt;Let me conclude this article by picking up a picture from &lt;a href=&#34;https://blog.fugue.co/2015-11-11-guide-to-emacs.html&#34; title=&#34;one of the blog posts that got me into Emacs in the first place&#34;&gt;one of the blog posts that got me into Emacs in the first place&lt;/a&gt;: Emacs is like a classical steel frame road bike, reliant, robust, nothing fancy but easy to repair. It is the ideal tool to explore the wilderness of the internet. And I can only invite everybody else to come along for the ride.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Blogroll</title>
-      <link>/2018/04/blogroll/</link>
+      <link>http://www.sastibe.de/blogroll/</link>
       <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/04/blogroll/</guid>
-      <description>Whenever I do find the time, I like to check out these blogs:
- Wirres.net Linus Neumann Fefes Blog R Blogger  </description>
+      <guid>http://www.sastibe.de/blogroll/</guid>
+      <description>&lt;p&gt;Whenever I do find the time, I like to check out these blogs:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://wirres.net/&#34;&gt;Wirres.net&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://linus-neumann.de/&#34;&gt;Linus Neumann&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.fefe.de/&#34;&gt;Fefes Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/&#34;&gt;R Blogger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>Don&#39;t Worry: Google Only Checks Your Location Every 10 Minutes</title>
-      <link>/2018/04/don-t-worry-google-location/</link>
+      <link>http://www.sastibe.de/2018/04/don-t-worry-google-location/</link>
       <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/04/don-t-worry-google-location/</guid>
-      <description>I have a personal Google account, complete with gmail, gdrive and everything else. I first opened it up as a sort of spam email for all kinds of logins, but started to it use more and more due to its convenience. I was always slightly worried about the magnitude of data collected by Google on me, yet I never found a way to pinpoint exactly the extent of my slight worrying.</description>
+      <guid>http://www.sastibe.de/2018/04/don-t-worry-google-location/</guid>
+      <description>&lt;p&gt;I have a personal Google account, complete with gmail, gdrive and everything else. I first opened it up as a sort of spam email for all kinds of logins, but started to it use more and more due to its convenience. I was always slightly worried about the magnitude of data collected by Google on me, yet I never found a way to pinpoint exactly the extent of my slight worrying.&lt;/p&gt;
+&lt;p&gt;Recently, I discovered &lt;a href=&#34;https://en.wikipedia.org/wiki/Google_Takeout&#34;&gt;Google Takeout&lt;/a&gt;. Everybody with a Google Account can simply click &lt;a href=&#34;https://takeout.google.com/settings/takeout&#34;&gt;here&lt;/a&gt;, follow the instructions and Google Takeout will send all the data it (supposedly) has in a nice little zip folder. Within this zip-folder is a file called “locationhistory.json” (or “standortverlauf.json” for all you German users out there), with entries such as this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;{
+    &amp;quot;timestampMs&amp;quot; : &amp;quot;1523378268382&amp;quot;,
+    &amp;quot;latitudeE7&amp;quot; : 494290669,
+    &amp;quot;longitudeE7&amp;quot; : 86872541,
+    &amp;quot;accuracy&amp;quot; : 34
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Each of these entries encodes a location measurement taken by Google, with GPS coordinates (latitude/longitude) and a timestamp, which can be converted to a “normal date” by dividing the number by 1000 and using, e.g., &lt;a href=&#34;https://currentmillis.com/&#34;&gt;this handy site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The “location history” file is rather large and unwieldy (about 18 MB in my case). There is a very simple and free tool that &lt;a href=&#34;https://locationhistoryvisualizer.com/heatmap/&#34;&gt;visualizes your location history data in an interactive heatmap&lt;/a&gt;. That is the tool I used to create the intro picture to this entry. The heatmap allows you to gauge the precision with which Google matches your movements. For instance, my skiing trip in March last year to &lt;a href=&#34;https://www.serfaus-fiss-ladis.at/de&#34;&gt;Serfaus-Fiss-Ladis&lt;/a&gt; shows up like this:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1523785896/google_heatmap_fiss_hcnim9.png&#34; alt=&#34;Don’t worry, I also down some slopes during the vacation…&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Don’t worry, I also down some slopes during the vacation…&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;There are some mistakes in this map, i.e., places that I have surely never visited. I was never in “Gasthaus zum weißen Lamm”, I know that for a fact. However, the detail is quite astonishing, leading me to the next question: How often does Google measure and store my location data? My “locationhistory.json” contains 59293 observation over the course of 465 days, so that, on average, there are more than 5 measurements &lt;em&gt;per hour&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I decided to look a little closer at the distributions of the timestamps, using some wonderful ggplot magic (the R code can be found &lt;a href=&#34;https://github.com/sebastianschweer/blog_dev/blob/master/content/UTILS/google_location.R&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1523785917/Hourly_overview_google_location_data_th9l6z.png&#34; alt=&#34;Such a colorful mountain range.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Such a colorful mountain range.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The lines in the plot show the average number of location measurements taken by Google each hour, separated by weekdays. The dashed line indicates the aveerage over all weekdays. The plot highlights several information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Between noon and 8 pm, Google takes on average more than one location measurement every 10 minutes&lt;/li&gt;
+&lt;li&gt;In the nighttime, the average number of measurements is only once every 20 minutes&lt;/li&gt;
+&lt;li&gt;Monday and Tuesday mornings are closely watched with many measurements, especially Tuesday mornings&lt;/li&gt;
+&lt;li&gt;Afternoons and evenings are always of interest, but especially on Fridday and Saturday.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The fact that Monday and Tuesday morning are such exceptions could be explained by my specific calendar in 2017: I worked as a consultant and usually left home on Tuesday morning to travel troughout Germany. I am not entirely sure why this should lead to more measurements, as this activity was rarely accompanied by Google services (I travel by Deutsche Bahn). However, my travel time back home, usually late on Thursday evening, can also be seen quite nicely in the plot.&lt;/p&gt;
+&lt;p&gt;In total, I am a bit shocked by the sheer magnitude of measurements Google has on me, even (and especially) at times at which I am positively certain that I have never used Google Location Services, (see, e.g., 4 am). I am glad that services like Google Maps exist and that they are so extremely convenient, but the drawback should also be made abundantly clear to anyone who uses these services: many machine-readable aspects of your life are available to a for-profit company.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Benchmarking AWS Instances with MNIST classification</title>
-      <link>/2018/03/benchmarking-aws-instances/</link>
+      <link>http://www.sastibe.de/2018/03/benchmarking-aws-instances/</link>
       <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/03/benchmarking-aws-instances/</guid>
-      <description>In a previous post I have shown you how to setup an AWS instance running the newest RStudio, R, Python, Julia and so forth, where the configuration of the instance can be freely chosen. However, there is quite a lot of possibilities of instance configurations out there: There are different instance classes (General Purpose, Compute Optimized, RAM Optimized, … ) and different instance sizes within these classes. For General Purpose, or t2, there are, e.</description>
+      <guid>http://www.sastibe.de/2018/03/benchmarking-aws-instances/</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://www.sastibe.de/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/&#34;&gt;a previous post&lt;/a&gt; I have shown you how to setup an AWS instance running the newest RStudio, R, Python, Julia and so forth, where the configuration of the instance can be freely chosen. However, there is quite a lot of possibilities of instance configurations out there: There are different instance classes (General Purpose, Compute Optimized, RAM Optimized, … ) and different instance sizes within these classes. For General Purpose, or t2, there are, e.g. t2.nano, t2.micro, t2.small, t2.medium, t2.large, t2.xlarge and t2.2xlarge&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;These instances differ in two dimensions: price and performance. Obviously, these dimensions are highly correlated, since higher price means (or should mean, at least) higher performance. Now, price is easily measured, yet performance is a bit trickier: For example, it is not entirely straightforward to assess the impact of higher RAM, CPU or even GPU directly across many different configurations. But we’re doing data science, right? So why not create a programmatic test in order to gauge the performance empirically? Well, let‘s do it!&lt;/p&gt;
+&lt;div id=&#34;the-test&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Test&lt;/h1&gt;
+&lt;p&gt;For this benchmark test I chose a classical machine learning task: the classification of the &lt;a href=&#34;https://en.wikipedia.org/wiki/MNIST_database&#34;&gt;MNIST&lt;/a&gt; dataset of handwritten digits, to be categorized as 0-9. This data set is very commonly used as an example set for machine learning algorithms.&lt;/p&gt;
+&lt;p&gt;For this benchmark test, I borrowed a nice skript by Kory Becker written &lt;a href=&#34;https://gist.github.com/primaryobjects/b0c8333834debbc15be4&#34;&gt;here&lt;/a&gt;, which trains a Support Vector Machine (SVM) on the problem, using only the first 1000 observations of the dataset, each with 768 attributes. I altered the code ever so slightly to that each run of the script returns the following measurements:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Elapsed Time: The time elapsed since starting the script (excluding the time to install the libraries and download of the data),&lt;/li&gt;
+&lt;li&gt;Accuracy of model, i.e. the percentage of predictions that classified the digits correctly.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Additionally, I included the following information:&lt;/p&gt;
+&lt;ol start=&#34;3&#34; style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;RAM in Gigabytes,&lt;/li&gt;
+&lt;li&gt;Number of CPUs in use, and finally&lt;/li&gt;
+&lt;li&gt;Price in Dollars per Hour.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;the-candidates&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Candidates&lt;/h2&gt;
+&lt;p&gt;AWS provides a large number of different configurations, and I will not discuss all of these in this post. Rather, let me focus on four different specifications of computing resource demands and chose a distinctive representative:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;General Purpose: t2, m4&lt;/li&gt;
+&lt;li&gt;Compute Optimized: c4&lt;/li&gt;
+&lt;li&gt;Memory Optimized: r4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For each of these classes, I had planned to test the sizes small, medium, large, xlarge and 2xlarge. The sizes micro, small and medium are actually only available for t2 (oh, no!), so that I ended up only testing 14 configurations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Results&lt;/h2&gt;
+&lt;p&gt;I started with the candidate &lt;code&gt;t2.micro&lt;/code&gt;, which is free of charge. Unfortunately, the script never succesfully ran the training of the model, presumably because the dimension of merely 1 GB of RAM is not sufficient. Still, a “not possible” result is still a useful result for choosing the right infrastructure.&lt;/p&gt;
+&lt;p&gt;Let’s have a first look at the results, first in plain numbers:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;instance_class&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;instance_size&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;ram&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;vcpus&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;ecu&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;price_per_hour&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;elapsed_time&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;accuracy&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;t2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;micro&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0134&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;NA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;t2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;small&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0268&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;68.624&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.917&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;t2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;large&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1072&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;65.335&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.918&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;t2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;xlarge&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;16.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2144&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;55.611&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.918&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;t2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2xlarge&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;32.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.4288&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;56.284&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.919&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;t2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;medium&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0536&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;63.961&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.919&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;m4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;large&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1200&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;82.823&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.933&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;m4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;xlarge&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;15.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;13.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2400&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;80.749&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.928&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;m4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2xlarge&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;32.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;26.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.4800&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;65.728&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.912&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;m4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4xlarge&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;64.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;16.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;53.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.9600&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;64.573&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.927&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;m4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;16xlarge&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;256.00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;64.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;188.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.8400&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;93.310&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.915&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;r4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;large&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;15.25&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;7.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1600&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;80.749&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.928&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;r4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;xlarge&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;30.50&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;13.5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3200&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;68.372&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.920&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;c4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;large&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.75&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1140&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;121.004&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.915&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;At a quick glance, the accuracy of the models looks quite uniform. This is hardly surprising, as the algorithm itselg is unchanged by hardware limitation, and the apparent fluctuations can be explained by the stochastic nature of the train-test-data set sampling in the script.&lt;/p&gt;
+&lt;p&gt;A core assumption is that &lt;strong&gt;more computing power yields faster results&lt;/strong&gt;. A second core assumption is that &lt;strong&gt;the higher the computing power, the higher the cost&lt;/strong&gt;. Combining these assumptions leads us to assume that &lt;strong&gt;higher cost leads to a lower time elapsed&lt;/strong&gt;. A quick visualization of the data demonstrates that the results support this notion: &lt;img src=&#34;http://www.sastibe.de/post/2018-03-10-benchmarking-aws-instances_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The measurement of the instance “m4.16xlarge” doesn’t quite fit into the pattern, and I am frankly unsure of the reasons. The measurement was taken twice, so that circumstantial errors leading to this measurement can be rejected.&lt;/p&gt;
+&lt;p&gt;Let us look a little more precisely at the data, in order to establish the most influential factors determining the speed of the analysis. We use the wonderful &lt;code&gt;ggpairs&lt;/code&gt; visualization of the &lt;code&gt;GGally&lt;/code&gt; package and omit the observation of the instance “m4.16xlarge” in the analysis:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.sastibe.de/post/2018-03-10-benchmarking-aws-instances_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This plot contains a number of results at once. First off, and unsurprisingly, the price per hour correlates vey strongly with the number of virtual CPUs and the size of the RAM, indicating that “the higher the computing power, the higher the cost” was a correct core assumption.&lt;/p&gt;
+&lt;p&gt;Second, the correlation between &lt;em&gt;Elapsed Eime&lt;/em&gt; and the numeric indicators of performance &lt;em&gt;RAM&lt;/em&gt;, &lt;em&gt;vCPUs&lt;/em&gt; and &lt;em&gt;Price per Hour&lt;/em&gt; is clearly negative across the board, but the highest correlation is clearly attained by the dimension RAM. This provides yet another indication that the notion &lt;strong&gt;Performance of R hinges on RAM&lt;/strong&gt; is true.&lt;/p&gt;
+&lt;p&gt;One last question to consider: which instance type is optimal for &lt;code&gt;R&lt;/code&gt; purposes? Optimality will be defined by &lt;strong&gt;provide the quickest results for the least money&lt;/strong&gt;. Compare the fits of a standard linear model:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;instance_class&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;(Intercept)&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;price_per_hour&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;m4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;83.66913&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-22.66862&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;r4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;93.12600&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-77.35625&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;t2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;66.86029&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-29.47335&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;This shows that the entry price is cheapest for instances of the class “t2”, as the y-intercept is the lowest in this case. However, in cases of higher Price per Hour, i.e. higher necessary computing power, “r4” is the better choice: The time decreases quickest with the increase in power. Both lines meet at a price per hour of roughly 55 Cents per hour, corresponding to an instance r4.2xlarge with 61 GB RAM.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;takeaway-messages&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Takeaway Messages&lt;/h1&gt;
+&lt;p&gt;To conclude this article, let me summarize the key findings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The most important hardware feature for the increasing computing speed of “R” analysis is RAM&lt;/li&gt;
+&lt;li&gt;For analysis with a small to medium scope of performance (RAM less than 60 GB), the instance class “t2” is the best choice in AWS.&lt;/li&gt;
+&lt;li&gt;For larger scale projects, the instance class “r4”, optimzed for RAM usage, is the optimal choice.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- t2.medium: --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  90   0   0   0   0   0   0   1   0   1 --&gt;
+&lt;!--          1   0 114   3   3   0   0   0   0   2   0 --&gt;
+&lt;!--          2   0   0  91   1   2   1   0   0   0   0 --&gt;
+&lt;!--          3   0   1   3  77   0   6   0   0   1   2 --&gt;
+&lt;!--          4   0   0   1   0 104   0   1   7   1   4 --&gt;
+&lt;!--          5   1   0   2   7   0  78   2   0   1   3 --&gt;
+&lt;!--          6   2   0   1   0   1   0 104   0   0   0 --&gt;
+&lt;!--          7   0   0   3   1   0   0   0  93   0   5 --&gt;
+&lt;!--          8   1   1   1   1   0   0   0   0  77   0 --&gt;
+&lt;!--          9   0   0   0   2   2   1   0   1   1  91 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.919 --&gt;
+&lt;!--                  95% CI : (0.9003, 0.9352) --&gt;
+&lt;!--     No Information Rate : 0.116 --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16 --&gt;
+&lt;!--                   Kappa : 0.9099 --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 --&gt;
+&lt;!-- Sensitivity            0.9574   0.9828   0.8667   0.8370   0.9541   0.9070 --&gt;
+&lt;!-- Specificity            0.9978   0.9910   0.9955   0.9857   0.9843   0.9825 --&gt;
+&lt;!-- Pos Pred Value         0.9783   0.9344   0.9579   0.8556   0.8814   0.8298 --&gt;
+&lt;!-- Neg Pred Value         0.9956   0.9977   0.9845   0.9835   0.9943   0.9912 --&gt;
+&lt;!-- Prevalence             0.0940   0.1160   0.1050   0.0920   0.1090   0.0860 --&gt;
+&lt;!-- Detection Rate         0.0900   0.1140   0.0910   0.0770   0.1040   0.0780 --&gt;
+&lt;!-- Detection Prevalence   0.0920   0.1220   0.0950   0.0900   0.1180   0.0940 --&gt;
+&lt;!-- Balanced Accuracy      0.9776   0.9869   0.9311   0.9113   0.9692   0.9447 --&gt;
+&lt;!--                      Class: 6 Class: 7 Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.9720   0.9118   0.9277   0.8585 --&gt;
+&lt;!-- Specificity            0.9955   0.9900   0.9956   0.9922 --&gt;
+&lt;!-- Pos Pred Value         0.9630   0.9118   0.9506   0.9286 --&gt;
+&lt;!-- Neg Pred Value         0.9966   0.9900   0.9935   0.9834 --&gt;
+&lt;!-- Prevalence             0.1070   0.1020   0.0830   0.1060 --&gt;
+&lt;!-- Detection Rate         0.1040   0.0930   0.0770   0.0910 --&gt;
+&lt;!-- Detection Prevalence   0.1080   0.1020   0.0810   0.0980 --&gt;
+&lt;!-- Balanced Accuracy      0.9837   0.9509   0.9617   0.9253 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.066024 mins --&gt;
+&lt;!-- m4.16xlarge --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  93   0   0   1   1   0   0   0   0   1 --&gt;
+&lt;!--          1   0 100   4   0   1   0   2   5   4   0 --&gt;
+&lt;!--          2   1   0  78   3   2   1   4   1   2   0 --&gt;
+&lt;!--          3   0   1   0 100   0   3   0   0   0   1 --&gt;
+&lt;!--          4   0   0   0   0 100   1   1   6   0   3 --&gt;
+&lt;!--          5   0   1   1   2   0  79   1   0   1   0 --&gt;
+&lt;!--          6   0   0   0   0   1   2  98   0   2   0 --&gt;
+&lt;!--          7   0   0   2   1   0   0   0  96   0   4 --&gt;
+&lt;!--          8   0   3   2   1   0   0   0   0  80   0 --&gt;
+&lt;!--          9   0   0   1   1   4   1   0   3   2  91 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.915 --&gt;
+&lt;!--                  95% CI : (0.896, 0.9315) --&gt;
+&lt;!--     No Information Rate : 0.111 --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16 --&gt;
+&lt;!--                   Kappa : 0.9055 --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9894   0.9524   0.8864   0.9174   0.9174   0.9080   0.9245   0.8649 --&gt;
+&lt;!-- Specificity            0.9967   0.9821   0.9846   0.9944   0.9877   0.9934   0.9944   0.9921 --&gt;
+&lt;!-- Pos Pred Value         0.9687   0.8621   0.8478   0.9524   0.9009   0.9294   0.9515   0.9320 --&gt;
+&lt;!-- Neg Pred Value         0.9989   0.9943   0.9890   0.9899   0.9899   0.9913   0.9911   0.9833 --&gt;
+&lt;!-- Prevalence             0.0940   0.1050   0.0880   0.1090   0.1090   0.0870   0.1060   0.1110 --&gt;
+&lt;!-- Detection Rate         0.0930   0.1000   0.0780   0.1000   0.1000   0.0790   0.0980   0.0960 --&gt;
+&lt;!-- Detection Prevalence   0.0960   0.1160   0.0920   0.1050   0.1110   0.0850   0.1030   0.1030 --&gt;
+&lt;!-- Balanced Accuracy      0.9930   0.9673   0.9355   0.9559   0.9525   0.9507   0.9595   0.9285 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.8791   0.9100 --&gt;
+&lt;!-- Specificity            0.9934   0.9867 --&gt;
+&lt;!-- Pos Pred Value         0.9302   0.8835 --&gt;
+&lt;!-- Neg Pred Value         0.9880   0.9900 --&gt;
+&lt;!-- Prevalence             0.0910   0.1000 --&gt;
+&lt;!-- Detection Rate         0.0800   0.0910 --&gt;
+&lt;!-- Detection Prevalence   0.0860   0.1030 --&gt;
+&lt;!-- Balanced Accuracy      0.9363   0.9483 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.555173 mins --&gt;
+&lt;!-- t2.2xlarge --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0 103   0   0   1   0   0   0   0   0   2 --&gt;
+&lt;!--          1   0 101   0   2   0   1   3   1   2   0 --&gt;
+&lt;!--          2   1   1 100   2   2   0   1   1   1   1 --&gt;
+&lt;!--          3   0   0   1  77   0   2   0   0   3   2 --&gt;
+&lt;!--          4   0   0   0   0 101   1   1   2   1   8 --&gt;
+&lt;!--          5   0   0   2   8   0  78   2   0   1   0 --&gt;
+&lt;!--          6   1   0   1   1   1   3 100   0   1   0 --&gt;
+&lt;!--          7   1   1   5   0   0   1   0  95   0   3 --&gt;
+&lt;!--          8   0   0   1   0   0   0   0   0  81   0 --&gt;
+&lt;!--          9   0   0   0   0   3   1   0   1   0  83 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.919            --&gt;
+&lt;!--                  95% CI : (0.9003, 0.9352) --&gt;
+&lt;!--     No Information Rate : 0.11             --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9099           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9717   0.9806   0.9091   0.8462   0.9439   0.8966   0.9346   0.9500 --&gt;
+&lt;!-- Specificity            0.9966   0.9900   0.9888   0.9912   0.9854   0.9858   0.9910   0.9878 --&gt;
+&lt;!-- Pos Pred Value         0.9717   0.9182   0.9091   0.9059   0.8860   0.8571   0.9259   0.8962 --&gt;
+&lt;!-- Neg Pred Value         0.9966   0.9978   0.9888   0.9847   0.9932   0.9901   0.9922   0.9944 --&gt;
+&lt;!-- Prevalence             0.1060   0.1030   0.1100   0.0910   0.1070   0.0870   0.1070   0.1000 --&gt;
+&lt;!-- Detection Rate         0.1030   0.1010   0.1000   0.0770   0.1010   0.0780   0.1000   0.0950 --&gt;
+&lt;!-- Detection Prevalence   0.1060   0.1100   0.1100   0.0850   0.1140   0.0910   0.1080   0.1060 --&gt;
+&lt;!-- Balanced Accuracy      0.9842   0.9853   0.9489   0.9187   0.9647   0.9412   0.9628   0.9689 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.9000   0.8384 --&gt;
+&lt;!-- Specificity            0.9989   0.9945 --&gt;
+&lt;!-- Pos Pred Value         0.9878   0.9432 --&gt;
+&lt;!-- Neg Pred Value         0.9902   0.9825 --&gt;
+&lt;!-- Prevalence             0.0900   0.0990 --&gt;
+&lt;!-- Detection Rate         0.0810   0.0830 --&gt;
+&lt;!-- Detection Prevalence   0.0820   0.0880 --&gt;
+&lt;!-- Balanced Accuracy      0.9495   0.9164 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 56.28423 secs --&gt;
+&lt;!-- t2.small --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  88   0   1   0   0   0   0   1   0   1 --&gt;
+&lt;!--          1   0 110   4   1   1   0   4   3   2   0 --&gt;
+&lt;!--          2   0   2  89   1   2   2   1   0   0   0 --&gt;
+&lt;!--          3   1   1   0  85   0   2   0   0   2   0 --&gt;
+&lt;!--          4   0   0   7   0 110   2   1   2   0   2 --&gt;
+&lt;!--          5   1   1   1   0   0  72   3   0   7   0 --&gt;
+&lt;!--          6   0   0   1   0   1   2  89   0   2   0 --&gt;
+&lt;!--          7   0   0   0   2   0   0   0 111   0   3 --&gt;
+&lt;!--          8   0   0   1   0   0   0   0   0  74   0 --&gt;
+&lt;!--          9   0   0   0   3   3   1   0   0   5  89 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.917            --&gt;
+&lt;!--                  95% CI : (0.8981, 0.9334) --&gt;
+&lt;!--     No Information Rate : 0.117            --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9076           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 --&gt;
+&lt;!-- Sensitivity            0.9778   0.9649   0.8558   0.9239   0.9402   0.8889 --&gt;
+&lt;!-- Specificity            0.9967   0.9831   0.9911   0.9934   0.9841   0.9859 --&gt;
+&lt;!-- Pos Pred Value         0.9670   0.8800   0.9175   0.9341   0.8871   0.8471 --&gt;
+&lt;!-- Neg Pred Value         0.9978   0.9954   0.9834   0.9923   0.9920   0.9902 --&gt;
+&lt;!-- Prevalence             0.0900   0.1140   0.1040   0.0920   0.1170   0.0810 --&gt;
+&lt;!-- Detection Rate         0.0880   0.1100   0.0890   0.0850   0.1100   0.0720 --&gt;
+&lt;!-- Detection Prevalence   0.0910   0.1250   0.0970   0.0910   0.1240   0.0850 --&gt;
+&lt;!-- Balanced Accuracy      0.9872   0.9740   0.9234   0.9587   0.9622   0.9374 --&gt;
+&lt;!--                      Class: 6 Class: 7 Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.9082   0.9487   0.8043   0.9368 --&gt;
+&lt;!-- Specificity            0.9933   0.9943   0.9989   0.9867 --&gt;
+&lt;!-- Pos Pred Value         0.9368   0.9569   0.9867   0.8812 --&gt;
+&lt;!-- Neg Pred Value         0.9901   0.9932   0.9805   0.9933 --&gt;
+&lt;!-- Prevalence             0.0980   0.1170   0.0920   0.0950 --&gt;
+&lt;!-- Detection Rate         0.0890   0.1110   0.0740   0.0890 --&gt;
+&lt;!-- Detection Prevalence   0.0950   0.1160   0.0750   0.1010 --&gt;
+&lt;!-- Balanced Accuracy      0.9508   0.9715   0.9016   0.9618 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.143735 mins --&gt;
+&lt;!-- t2.large --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  83   0   0   1   0   1   0   1   0   1 --&gt;
+&lt;!--          1   0 115   0   0   0   1   1   5   3   0 --&gt;
+&lt;!--          2   0   0  87   3   0   1   1   2   3   0 --&gt;
+&lt;!--          3   0   1   0  87   0   3   0   0   1   2 --&gt;
+&lt;!--          4   0   0   3   0  91   0   1   2   0   2 --&gt;
+&lt;!--          5   1   1   0   6   0  86   2   0   2   0 --&gt;
+&lt;!--          6   0   0   1   0   4   2  96   0   1   0 --&gt;
+&lt;!--          7   0   0   0   1   0   0   0 110   0   3 --&gt;
+&lt;!--          8   0   0   1   0   0   1   0   0  74   0 --&gt;
+&lt;!--          9   0   0   0   1   6   2   0   5   3  89 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.918            --&gt;
+&lt;!--                  95% CI : (0.8992, 0.9343) --&gt;
+&lt;!--     No Information Rate : 0.125            --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9088           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9881   0.9829   0.9457   0.8788   0.9010   0.8866   0.9505   0.8800 --&gt;
+&lt;!-- Specificity            0.9956   0.9887   0.9890   0.9922   0.9911   0.9867   0.9911   0.9954 --&gt;
+&lt;!-- Pos Pred Value         0.9540   0.9200   0.8969   0.9255   0.9192   0.8776   0.9231   0.9649 --&gt;
+&lt;!-- Neg Pred Value         0.9989   0.9977   0.9945   0.9868   0.9889   0.9878   0.9944   0.9831 --&gt;
+&lt;!-- Prevalence             0.0840   0.1170   0.0920   0.0990   0.1010   0.0970   0.1010   0.1250 --&gt;
+&lt;!-- Detection Rate         0.0830   0.1150   0.0870   0.0870   0.0910   0.0860   0.0960   0.1100 --&gt;
+&lt;!-- Detection Prevalence   0.0870   0.1250   0.0970   0.0940   0.0990   0.0980   0.1040   0.1140 --&gt;
+&lt;!-- Balanced Accuracy      0.9919   0.9858   0.9673   0.9355   0.9460   0.9367   0.9708   0.9377 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.8506   0.9175 --&gt;
+&lt;!-- Specificity            0.9978   0.9812 --&gt;
+&lt;!-- Pos Pred Value         0.9737   0.8396 --&gt;
+&lt;!-- Neg Pred Value         0.9859   0.9911 --&gt;
+&lt;!-- Prevalence             0.0870   0.0970 --&gt;
+&lt;!-- Detection Rate         0.0740   0.0890 --&gt;
+&lt;!-- Detection Prevalence   0.0760   0.1060 --&gt;
+&lt;!-- Balanced Accuracy      0.9242   0.9493 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.088912 mins --&gt;
+&lt;!-- t2.xlarge --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  98   0   0   0   0   0   0   1   0   1 --&gt;
+&lt;!--          1   0  99   3   2   0   0   3   4   2   0 --&gt;
+&lt;!--          2   1   0  91   3   3   1   1   0   0   0 --&gt;
+&lt;!--          3   0   0   0  86   0   4   0   0   1   1 --&gt;
+&lt;!--          4   0   0   2   0 103   1   1   4   0   6 --&gt;
+&lt;!--          5   3   0   0   4   0  84   2   0   1   1 --&gt;
+&lt;!--          6   2   0   0   0   1   1  80   0   3   0 --&gt;
+&lt;!--          7   0   1   0   0   0   0   0  98   0   1 --&gt;
+&lt;!--          8   0   0   2   0   0   0   0   0  74   0 --&gt;
+&lt;!--          9   0   0   1   1   1   4   0   4   4 105 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.918            --&gt;
+&lt;!--                  95% CI : (0.8992, 0.9343) --&gt;
+&lt;!--     No Information Rate : 0.115            --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9088           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9423   0.9900   0.9192   0.8958   0.9537   0.8842   0.9195   0.8829 --&gt;
+&lt;!-- Specificity            0.9978   0.9844   0.9900   0.9934   0.9843   0.9878   0.9923   0.9978 --&gt;
+&lt;!-- Pos Pred Value         0.9800   0.8761   0.9100   0.9348   0.8803   0.8842   0.9195   0.9800 --&gt;
+&lt;!-- Neg Pred Value         0.9933   0.9989   0.9911   0.9890   0.9943   0.9878   0.9923   0.9856 --&gt;
+&lt;!-- Prevalence             0.1040   0.1000   0.0990   0.0960   0.1080   0.0950   0.0870   0.1110 --&gt;
+&lt;!-- Detection Rate         0.0980   0.0990   0.0910   0.0860   0.1030   0.0840   0.0800   0.0980 --&gt;
+&lt;!-- Detection Prevalence   0.1000   0.1130   0.1000   0.0920   0.1170   0.0950   0.0870   0.1000 --&gt;
+&lt;!-- Balanced Accuracy      0.9700   0.9872   0.9546   0.9446   0.9690   0.9360   0.9559   0.9403 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.8706   0.9130 --&gt;
+&lt;!-- Specificity            0.9978   0.9831 --&gt;
+&lt;!-- Pos Pred Value         0.9737   0.8750 --&gt;
+&lt;!-- Neg Pred Value         0.9881   0.9886 --&gt;
+&lt;!-- Prevalence             0.0850   0.1150 --&gt;
+&lt;!-- Detection Rate         0.0740   0.1050 --&gt;
+&lt;!-- Detection Prevalence   0.0760   0.1200 --&gt;
+&lt;!-- Balanced Accuracy      0.9342   0.9480 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 55.61071 secs --&gt;
+&lt;!-- m4.large --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0 102   0   0   1   0   0   1   1   0   0 --&gt;
+&lt;!--          1   0 119   1   0   2   0   1   2   2   0 --&gt;
+&lt;!--          2   1   1  86   1   2   2   0   0   2   0 --&gt;
+&lt;!--          3   1   0   1  70   0   1   0   0   2   0 --&gt;
+&lt;!--          4   0   0   3   0  97   1   0   6   1   2 --&gt;
+&lt;!--          5   0   1   2   3   0  81   3   0   3   0 --&gt;
+&lt;!--          6   2   0   3   1   0   2  95   0   1   0 --&gt;
+&lt;!--          7   0   1   4   2   1   0   0 101   0   1 --&gt;
+&lt;!--          8   0   2   2   2   0   0   1   0  67   0 --&gt;
+&lt;!--          9   0   0   0   1   4   0   0   1   1 100 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.918            --&gt;
+&lt;!--                  95% CI : (0.8992, 0.9343) --&gt;
+&lt;!--     No Information Rate : 0.124            --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9087           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9623   0.9597   0.8431   0.8642   0.9151   0.9310   0.9406   0.9099 --&gt;
+&lt;!-- Specificity            0.9966   0.9909   0.9900   0.9946   0.9855   0.9869   0.9900   0.9899 --&gt;
+&lt;!-- Pos Pred Value         0.9714   0.9370   0.9053   0.9333   0.8818   0.8710   0.9135   0.9182 --&gt;
+&lt;!-- Neg Pred Value         0.9955   0.9943   0.9823   0.9881   0.9899   0.9934   0.9933   0.9888 --&gt;
+&lt;!-- Prevalence             0.1060   0.1240   0.1020   0.0810   0.1060   0.0870   0.1010   0.1110 --&gt;
+&lt;!-- Detection Rate         0.1020   0.1190   0.0860   0.0700   0.0970   0.0810   0.0950   0.1010 --&gt;
+&lt;!-- Detection Prevalence   0.1050   0.1270   0.0950   0.0750   0.1100   0.0930   0.1040   0.1100 --&gt;
+&lt;!-- Balanced Accuracy      0.9795   0.9753   0.9166   0.9294   0.9503   0.9589   0.9653   0.9499 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.8481   0.9709 --&gt;
+&lt;!-- Specificity            0.9924   0.9922 --&gt;
+&lt;!-- Pos Pred Value         0.9054   0.9346 --&gt;
+&lt;!-- Neg Pred Value         0.9870   0.9966 --&gt;
+&lt;!-- Prevalence             0.0790   0.1030 --&gt;
+&lt;!-- Detection Rate         0.0670   0.1000 --&gt;
+&lt;!-- Detection Prevalence   0.0740   0.1070 --&gt;
+&lt;!-- Balanced Accuracy      0.9203   0.9815 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.38039 mins --&gt;
+&lt;!-- m4.xlarge --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  89   0   1   1   0   0   0   1   0   2 --&gt;
+&lt;!--          1   0 111   1   0   1   0   1   0   1   0 --&gt;
+&lt;!--          2   1   1  97   0   3   0   1   1   2   1 --&gt;
+&lt;!--          3   1   1   0  87   0   3   0   0   4   1 --&gt;
+&lt;!--          4   0   0   1   0 112   0   0   1   0   2 --&gt;
+&lt;!--          5   0   3   0   3   0  81   1   0   0   1 --&gt;
+&lt;!--          6   0   0   2   0   3   3  84   0   0   0 --&gt;
+&lt;!--          7   0   0   2   0   2   0   0 107   0   5 --&gt;
+&lt;!--          8   0   1   1   0   0   0   0   0  87   0 --&gt;
+&lt;!--          9   0   0   0   1   3   1   0   0   2  78 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.933            --&gt;
+&lt;!--                  95% CI : (0.9157, 0.9477) --&gt;
+&lt;!--     No Information Rate : 0.124            --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9254           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9780   0.9487   0.9238   0.9457   0.9032   0.9205   0.9655   0.9727 --&gt;
+&lt;!-- Specificity            0.9945   0.9955   0.9888   0.9890   0.9954   0.9912   0.9912   0.9899 --&gt;
+&lt;!-- Pos Pred Value         0.9468   0.9652   0.9065   0.8969   0.9655   0.9101   0.9130   0.9224 --&gt;
+&lt;!-- Neg Pred Value         0.9978   0.9932   0.9910   0.9945   0.9864   0.9923   0.9967   0.9966 --&gt;
+&lt;!-- Prevalence             0.0910   0.1170   0.1050   0.0920   0.1240   0.0880   0.0870   0.1100 --&gt;
+&lt;!-- Detection Rate         0.0890   0.1110   0.0970   0.0870   0.1120   0.0810   0.0840   0.1070 --&gt;
+&lt;!-- Detection Prevalence   0.0940   0.1150   0.1070   0.0970   0.1160   0.0890   0.0920   0.1160 --&gt;
+&lt;!-- Balanced Accuracy      0.9863   0.9721   0.9563   0.9673   0.9493   0.9558   0.9784   0.9813 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.9062   0.8667 --&gt;
+&lt;!-- Specificity            0.9978   0.9923 --&gt;
+&lt;!-- Pos Pred Value         0.9775   0.9176 --&gt;
+&lt;!-- Neg Pred Value         0.9901   0.9869 --&gt;
+&lt;!-- Prevalence             0.0960   0.0900 --&gt;
+&lt;!-- Detection Rate         0.0870   0.0780 --&gt;
+&lt;!-- Detection Prevalence   0.0890   0.0850 --&gt;
+&lt;!-- Balanced Accuracy      0.9520   0.9295 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.142918 mins --&gt;
+&lt;!-- r4.large --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  90   0   0   1   1   0   0   0   0   1 --&gt;
+&lt;!--          1   0 112   1   4   1   0   1   3   1   0 --&gt;
+&lt;!--          2   1   0  83   1   1   1   1   0   3   1 --&gt;
+&lt;!--          3   1   0   1  85   0   0   0   0   0   2 --&gt;
+&lt;!--          4   0   0   2   0  99   0   1   4   0   3 --&gt;
+&lt;!--          5   0   1   1   8   0  91   2   0   2   0 --&gt;
+&lt;!--          6   0   0   0   1   0   2 104   0   2   0 --&gt;
+&lt;!--          7   0   0   0   1   0   0   0  95   0   6 --&gt;
+&lt;!--          8   0   0   1   0   0   0   0   0  75   0 --&gt;
+&lt;!--          9   0   0   0   1   3   1   0   2   1  94 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.928            --&gt;
+&lt;!--                  95% CI : (0.9102, 0.9432) --&gt;
+&lt;!--     No Information Rate : 0.113            --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9199           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9783   0.9912   0.9326   0.8333   0.9429   0.9579   0.9541   0.9135 --&gt;
+&lt;!-- Specificity            0.9967   0.9876   0.9901   0.9955   0.9888   0.9845   0.9944   0.9922 --&gt;
+&lt;!-- Pos Pred Value         0.9677   0.9106   0.9022   0.9551   0.9083   0.8667   0.9541   0.9314 --&gt;
+&lt;!-- Neg Pred Value         0.9978   0.9989   0.9934   0.9813   0.9933   0.9955   0.9944   0.9900 --&gt;
+&lt;!-- Prevalence             0.0920   0.1130   0.0890   0.1020   0.1050   0.0950   0.1090   0.1040 --&gt;
+&lt;!-- Detection Rate         0.0900   0.1120   0.0830   0.0850   0.0990   0.0910   0.1040   0.0950 --&gt;
+&lt;!-- Detection Prevalence   0.0930   0.1230   0.0920   0.0890   0.1090   0.1050   0.1090   0.1020 --&gt;
+&lt;!-- Balanced Accuracy      0.9875   0.9894   0.9614   0.9144   0.9658   0.9712   0.9743   0.9528 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.8929   0.8785 --&gt;
+&lt;!-- Specificity            0.9989   0.9910 --&gt;
+&lt;!-- Pos Pred Value         0.9868   0.9216 --&gt;
+&lt;!-- Neg Pred Value         0.9903   0.9855 --&gt;
+&lt;!-- Prevalence             0.0840   0.1070 --&gt;
+&lt;!-- Detection Rate         0.0750   0.0940 --&gt;
+&lt;!-- Detection Prevalence   0.0760   0.1020 --&gt;
+&lt;!-- Balanced Accuracy      0.9459   0.9348 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.345818 mins --&gt;
+&lt;!-- r4.xlarge --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  93   0   0   1   0   0   0   1   0   1 --&gt;
+&lt;!--          1   0 106   1   1   0   0   1   2   1   0 --&gt;
+&lt;!--          2   0   1  89   2   0   1   0   1   2   0 --&gt;
+&lt;!--          3   0   0   2  84   0   2   0   0   1   3 --&gt;
+&lt;!--          4   0   0   0   0 102   2   2   4   0   1 --&gt;
+&lt;!--          5   0   1   1   2   0  96   1   0   2   0 --&gt;
+&lt;!--          6   1   0   1   0   0   2  88   0   4   0 --&gt;
+&lt;!--          7   0   0   2   1   0   0   0  98   1   5 --&gt;
+&lt;!--          8   0   2   6   1   0   0   0   0  75   0 --&gt;
+&lt;!--          9   0   0   0   2   7   1   0   3   1  89 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.92             --&gt;
+&lt;!--                  95% CI : (0.9014, 0.9361) --&gt;
+&lt;!--     No Information Rate : 0.11             --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9111           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9894   0.9636   0.8725   0.8936   0.9358   0.9231   0.9565   0.8991 --&gt;
+&lt;!-- Specificity            0.9967   0.9933   0.9922   0.9912   0.9899   0.9922   0.9912   0.9899 --&gt;
+&lt;!-- Pos Pred Value         0.9687   0.9464   0.9271   0.9130   0.9189   0.9320   0.9167   0.9159 --&gt;
+&lt;!-- Neg Pred Value         0.9989   0.9955   0.9856   0.9890   0.9921   0.9911   0.9956   0.9877 --&gt;
+&lt;!-- Prevalence             0.0940   0.1100   0.1020   0.0940   0.1090   0.1040   0.0920   0.1090 --&gt;
+&lt;!-- Detection Rate         0.0930   0.1060   0.0890   0.0840   0.1020   0.0960   0.0880   0.0980 --&gt;
+&lt;!-- Detection Prevalence   0.0960   0.1120   0.0960   0.0920   0.1110   0.1030   0.0960   0.1070 --&gt;
+&lt;!-- Balanced Accuracy      0.9930   0.9784   0.9324   0.9424   0.9628   0.9576   0.9739   0.9445 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.8621   0.8990 --&gt;
+&lt;!-- Specificity            0.9901   0.9845 --&gt;
+&lt;!-- Pos Pred Value         0.8929   0.8641 --&gt;
+&lt;!-- Neg Pred Value         0.9869   0.9889 --&gt;
+&lt;!-- Prevalence             0.0870   0.0990 --&gt;
+&lt;!-- Detection Rate         0.0750   0.0890 --&gt;
+&lt;!-- Detection Prevalence   0.0840   0.1030 --&gt;
+&lt;!-- Balanced Accuracy      0.9261   0.9417 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.139538 mins --&gt;
+&lt;!-- code from kory becker: https://gist.github.com/primaryobjects/b0c8333834debbc15be4 --&gt;
+&lt;!-- c4.large --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  96   0   0   0   1   0   0   3   0   1 --&gt;
+&lt;!--          1   1 102   2   1   2   0   1   1   2   0 --&gt;
+&lt;!--          2   1   0  94   1   2   2   0   2   0   0 --&gt;
+&lt;!--          3   0   0   2  85   0   2   0   0   1   0 --&gt;
+&lt;!--          4   0   0   3   0 103   3   0   2   0   5 --&gt;
+&lt;!--          5   2   1   0   5   0  83   0   0   4   3 --&gt;
+&lt;!--          6   1   0   1   1   2   2 102   0   1   0 --&gt;
+&lt;!--          7   0   0   4   1   0   0   0  94   0   1 --&gt;
+&lt;!--          8   0   0   2   0   0   0   0   0  68   1 --&gt;
+&lt;!--          9   0   0   0   4   3   2   0   1   2  88 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.915           --&gt;
+&lt;!--                  95% CI : (0.896, 0.9315) --&gt;
+&lt;!--     No Information Rate : 0.113           --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16       --&gt;
+&lt;!--                   Kappa : 0.9055          --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA              --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9505   0.9903   0.8704   0.8673   0.9115   0.8830   0.9903   0.9126 --&gt;
+&lt;!-- Specificity            0.9944   0.9889   0.9910   0.9945   0.9853   0.9834   0.9911   0.9933 --&gt;
+&lt;!-- Pos Pred Value         0.9505   0.9107   0.9216   0.9444   0.8879   0.8469   0.9273   0.9400 --&gt;
+&lt;!-- Neg Pred Value         0.9944   0.9989   0.9844   0.9857   0.9887   0.9878   0.9989   0.9900 --&gt;
+&lt;!-- Prevalence             0.1010   0.1030   0.1080   0.0980   0.1130   0.0940   0.1030   0.1030 --&gt;
+&lt;!-- Detection Rate         0.0960   0.1020   0.0940   0.0850   0.1030   0.0830   0.1020   0.0940 --&gt;
+&lt;!-- Detection Prevalence   0.1010   0.1120   0.1020   0.0900   0.1160   0.0980   0.1100   0.1000 --&gt;
+&lt;!-- Balanced Accuracy      0.9725   0.9896   0.9307   0.9309   0.9484   0.9332   0.9907   0.9530 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.8718   0.8889 --&gt;
+&lt;!-- Specificity            0.9967   0.9867 --&gt;
+&lt;!-- Pos Pred Value         0.9577   0.8800 --&gt;
+&lt;!-- Neg Pred Value         0.9892   0.9878 --&gt;
+&lt;!-- Prevalence             0.0780   0.0990 --&gt;
+&lt;!-- Detection Rate         0.0680   0.0880 --&gt;
+&lt;!-- Detection Prevalence   0.0710   0.1000 --&gt;
+&lt;!-- Balanced Accuracy      0.9343   0.9378 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 2.016729 mins --&gt;
+&lt;!-- m4.2xlarge --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0 102   0   1   0   0   0   1   0   0   2 --&gt;
+&lt;!--          1   0 104   5   3   1   1   2   1   3   0 --&gt;
+&lt;!--          2   0   0  92   6   2   1   2   2   2   0 --&gt;
+&lt;!--          3   0   0   0  87   0   0   0   0   1   2 --&gt;
+&lt;!--          4   0   0   0   0 105   1   3   2   0   3 --&gt;
+&lt;!--          5   2   0   1   8   0  75   1   0   1   1 --&gt;
+&lt;!--          6   0   0   0   1   2   1  96   0   1   0 --&gt;
+&lt;!--          7   0   0   0   0   1   0   0  93   0   4 --&gt;
+&lt;!--          8   0   0   1   2   0   0   0   0  81   0 --&gt;
+&lt;!--          9   0   0   0   0   5   3   0   3   3  77 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.912            --&gt;
+&lt;!--                  95% CI : (0.8927, 0.9288) --&gt;
+&lt;!--     No Information Rate : 0.116            --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9021           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9808   1.0000   0.9200   0.8131   0.9052   0.9146   0.9143   0.9208 --&gt;
+&lt;!-- Specificity            0.9955   0.9821   0.9833   0.9966   0.9898   0.9847   0.9944   0.9944 --&gt;
+&lt;!-- Pos Pred Value         0.9623   0.8667   0.8598   0.9667   0.9211   0.8427   0.9505   0.9490 --&gt;
+&lt;!-- Neg Pred Value         0.9978   1.0000   0.9910   0.9780   0.9876   0.9923   0.9900   0.9911 --&gt;
+&lt;!-- Prevalence             0.1040   0.1040   0.1000   0.1070   0.1160   0.0820   0.1050   0.1010 --&gt;
+&lt;!-- Detection Rate         0.1020   0.1040   0.0920   0.0870   0.1050   0.0750   0.0960   0.0930 --&gt;
+&lt;!-- Detection Prevalence   0.1060   0.1200   0.1070   0.0900   0.1140   0.0890   0.1010   0.0980 --&gt;
+&lt;!-- Balanced Accuracy      0.9882   0.9911   0.9517   0.9049   0.9475   0.9497   0.9543   0.9576 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.8804   0.8652 --&gt;
+&lt;!-- Specificity            0.9967   0.9846 --&gt;
+&lt;!-- Pos Pred Value         0.9643   0.8462 --&gt;
+&lt;!-- Neg Pred Value         0.9880   0.9868 --&gt;
+&lt;!-- Prevalence             0.0920   0.0890 --&gt;
+&lt;!-- Detection Rate         0.0810   0.0770 --&gt;
+&lt;!-- Detection Prevalence   0.0840   0.0910 --&gt;
+&lt;!-- Balanced Accuracy      0.9386   0.9249 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.095459 mins --&gt;
+&lt;!-- m4.4xlarge --&gt;
+&lt;!-- Confusion Matrix and Statistics --&gt;
+&lt;!--           Reference --&gt;
+&lt;!-- Prediction   0   1   2   3   4   5   6   7   8   9 --&gt;
+&lt;!--          0  87   0   0   0   0   0   1   0   0   1 --&gt;
+&lt;!--          1   0 106   3   0   1   0   2   1   1   0 --&gt;
+&lt;!--          2   2   0  92   4   1   0   1   1   1   0 --&gt;
+&lt;!--          3   1   0   0  93   0   2   0   0   0   0 --&gt;
+&lt;!--          4   0   0   0   0 104   1   0   4   0   3 --&gt;
+&lt;!--          5   0   1   1   6   0  97   1   0   3   1 --&gt;
+&lt;!--          6   0   0   0   0   3   4  94   0   2   0 --&gt;
+&lt;!--          7   0   1   1   0   0   0   0  99   0   3 --&gt;
+&lt;!--          8   1   0   1   2   0   0   0   0  73   0 --&gt;
+&lt;!--          9   0   0   0   2   2   1   0   2   4  82 --&gt;
+&lt;!-- Overall Statistics --&gt;
+&lt;!--                Accuracy : 0.927            --&gt;
+&lt;!--                  95% CI : (0.9091, 0.9423) --&gt;
+&lt;!--     No Information Rate : 0.111            --&gt;
+&lt;!--     P-Value [Acc &gt; NIR] : &lt; 2.2e-16        --&gt;
+&lt;!--                   Kappa : 0.9188           --&gt;
+&lt;!--  Mcnemar&#39;s Test P-Value : NA               --&gt;
+&lt;!-- Statistics by Class: --&gt;
+&lt;!--                      Class: 0 Class: 1 Class: 2 Class: 3 Class: 4 Class: 5 Class: 6 Class: 7 --&gt;
+&lt;!-- Sensitivity            0.9560   0.9815   0.9388   0.8692   0.9369   0.9238   0.9495   0.9252 --&gt;
+&lt;!-- Specificity            0.9978   0.9910   0.9889   0.9966   0.9910   0.9855   0.9900   0.9944 --&gt;
+&lt;!-- Pos Pred Value         0.9775   0.9298   0.9020   0.9687   0.9286   0.8818   0.9126   0.9519 --&gt;
+&lt;!-- Neg Pred Value         0.9956   0.9977   0.9933   0.9845   0.9921   0.9910   0.9944   0.9911 --&gt;
+&lt;!-- Prevalence             0.0910   0.1080   0.0980   0.1070   0.1110   0.1050   0.0990   0.1070 --&gt;
+&lt;!-- Detection Rate         0.0870   0.1060   0.0920   0.0930   0.1040   0.0970   0.0940   0.0990 --&gt;
+&lt;!-- Detection Prevalence   0.0890   0.1140   0.1020   0.0960   0.1120   0.1100   0.1030   0.1040 --&gt;
+&lt;!-- Balanced Accuracy      0.9769   0.9863   0.9638   0.9329   0.9640   0.9546   0.9698   0.9598 --&gt;
+&lt;!--                      Class: 8 Class: 9 --&gt;
+&lt;!-- Sensitivity            0.8690   0.9111 --&gt;
+&lt;!-- Specificity            0.9956   0.9879 --&gt;
+&lt;!-- Pos Pred Value         0.9481   0.8817 --&gt;
+&lt;!-- Neg Pred Value         0.9881   0.9912 --&gt;
+&lt;!-- Prevalence             0.0840   0.0900 --&gt;
+&lt;!-- Detection Rate         0.0730   0.0820 --&gt;
+&lt;!-- Detection Prevalence   0.0770   0.0930 --&gt;
+&lt;!-- Balanced Accuracy      0.9323   0.9495 --&gt;
+&lt;!-- &gt; duration &lt;- Sys.time() - start --&gt;
+&lt;!-- &gt; duration --&gt;
+&lt;!-- Time difference of 1.076214 mins --&gt;
+&lt;!-- m4.16xlarge --&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;…why is it ‚nano‘, ‚micro‘ but then ‚large‘ ‚extra large‘? Be consistent, dangit!&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>My Motivations for Starting a Blog</title>
-      <link>/2018/01/my-motivations-for-starting-a-blog/</link>
+      <link>http://www.sastibe.de/2018/01/my-motivations-for-starting-a-blog/</link>
       <pubDate>Sun, 28 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/01/my-motivations-for-starting-a-blog/</guid>
-      <description>Hello world!
-My name is Sebastian Schweer, and I am a Data Scientist. This job description is increasingly popular, but it is notoriously difficult to describe precisely, what that entails. Let me show you one of my favourite definitions:
-Source.
- My job requires me to spend a lot of time each day writing code in varying languages, mostly R but also Python and SAS. This inevitably leads me to spend a lot of time thinking about both code as well as the process of programming itself.</description>
+      <guid>http://www.sastibe.de/2018/01/my-motivations-for-starting-a-blog/</guid>
+      <description>&lt;p&gt;Hello world!&lt;/p&gt;
+&lt;p&gt;My name is Sebastian Schweer, and I am a Data Scientist. This job description is increasingly popular, but it is notoriously difficult to describe precisely, what that entails. Let me show you one of my favourite definitions:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://twitter.com/hadleywickham/status/914140589565841410&#34; alt=&#34;Source.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Source.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;My job requires me to spend a lot of time each day writing code in varying languages, mostly &lt;code&gt;R&lt;/code&gt; but also Python and SAS. This inevitably leads me to spend a lot of time thinking about both code as well as the process of programming itself. The major question is, as always, “How do you ensure, that your product is of the best quality?”. Recently, I stumbled upon&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; a incredibly concise diagram:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/a_270/v1517091390/skizzeblog_nsrt9u.jpg&#34; alt=&#34;The importance of collaboration&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The importance of collaboration&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I believe this is an astute observations, and I find its reflections in many daily situations including (but not limited to) producing code or data analyses. More precisely, I identified these 3 consequences of writing code with the intent of publicizing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tested&lt;/strong&gt;: Nobody wants to publish content that only works once or only works on a certain local machine. Thus, any project up for publication automatically gets tested and tried much more meticuously.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modular&lt;/strong&gt;: It is much easier to explain and distribute several single clear ideas than one larger, vague idea. Hence, publication leads to more modular code, creating a more flexible and adaptive code base.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Documented&lt;/strong&gt;: It doesn’t suffice if you as the author understand what the function with non-descriptive names such as &lt;code&gt;fn_011_v3&lt;/code&gt; does, that should be apparent from the name or at least from the documentation. &lt;em&gt;The onus of understanding the code is transferred from the mind of the author to the body of the code.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All of these characteristics increase the maturity and quality of the code. Since I am obviously interested in producing high quality work, I started this blog in order to have a public outlet for all my private little programming projects.&lt;/p&gt;
+&lt;p&gt;The scope of these projects will vary wildly, I am sure, since the inspiration are heterogeneous. For instance, the first three posts have three different “sponsors”:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I wrote &lt;a href=&#34;http://www.sastibe.de/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/&#34;&gt;Setting up an RStudio instance on AWS&lt;/a&gt; with the audience of my father in mind, since he showed such an interest in my explanations of the topic over the Christmas break,&lt;/li&gt;
+&lt;li&gt;I wrote (or rather ‘will write’) the post &lt;a href=&#34;&#34;&gt;A benchmark for dplyr vs. dbplyr&lt;/a&gt; for my sister-in-law, since she asked me about the topic and I didn’t know anything abaout it at the time,&lt;/li&gt;
+&lt;li&gt;and for the present article, or rather statement, I had &lt;a href=&#34;https://twitter.com/christofhorn&#34;&gt;my former employer&lt;/a&gt; in mind, a great fan of simple but concise diagrams depicting deep thoughts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I appreciate any remarks or comments on anything that I write, and I wish you lots of entertainment perusing my site.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;I can’t find the original source anymore, I have spent a long time going through my Twitter feed. If anyone recognizes the slide and especially the author, I would be incredibly thankful for the information and would gladly update the source information here.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
       <title>Setting up a Scalable RStudio Instance in AWS</title>
-      <link>/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</link>
+      <link>http://www.sastibe.de/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</link>
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</guid>
-      <description>Assume you want to start to write R code (a very good decision, in my opinion) and you want to be able to write and test code whereever you are. Wouldn’t it be awesome if one could set up an environment that can be used for R coding independent of any device? Where all you need is a decent browser, a working internet connection and you’re good to go?
-Obviously, that is the case.</description>
+      <guid>http://www.sastibe.de/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</guid>
+      <description>&lt;p&gt;Assume you want to start to write &lt;code&gt;R&lt;/code&gt; code (a very good decision, in my opinion) and you want to be able to write and test code whereever you are. Wouldn’t it be awesome if one could set up an environment that can be used for &lt;code&gt;R&lt;/code&gt; coding independent of any device? Where all you need is a decent browser, a working internet connection and you’re good to go?&lt;/p&gt;
+&lt;p&gt;Obviously, that is the case. In this post, I will show you the steps for setting up such an environment on Amazon Web Services (AWS). The main advantages of using such a set-up:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Runs on any infrastructure: All you need is a working internet connection, a decent browser and an AWS account, which is usually&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; free.&lt;/li&gt;
+&lt;li&gt;Runs everywhere: The AWS machine will be set up to automatically clone your GitHub repository (don’t worry if this doesn’t mean anything to you, this point is optional), so that you don’t even have to have your codes on the device.&lt;/li&gt;
+&lt;li&gt;Scalable: The AWS machine running your code can be chosen to suit any of your needs, in any session. Just playing around with a new package? Use the smallest size, doesn’t cost a dime. Trying to re-create state-of-the-art machine learning performance with a fancy DNN-classifier? Go all in with 500 GB of RAM; it’ll cost ya, but it’s fun.&lt;/li&gt;
+&lt;li&gt;Up-to-Date: Since the envirionment is freshly installed each time, your &lt;code&gt;R&lt;/code&gt; version as well as the package versions in use are automatically up-to-date. In the latter case, that would also be easy to maintain on a local machine, the former, however, is a nice benefit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Convinced? Awesome, let’s get started!&lt;/p&gt;
+&lt;div id=&#34;overview-of-main-steps&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Overview of main steps&lt;/h1&gt;
+&lt;p&gt;First a short overview of the main steps covered in this blog post:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Get an AWS account (duh!),&lt;/li&gt;
+&lt;li&gt;Configure your RStudio AMI,
+&lt;ol style=&#34;list-style-type: lower-roman&#34;&gt;
+&lt;li&gt;Find the right RStudio AMI,&lt;/li&gt;
+&lt;li&gt;Configure Security Groups,&lt;/li&gt;
+&lt;li&gt;Automatically Change your RStudio Password,&lt;/li&gt;
+&lt;li&gt;Incorporate a clone of your GitHub repo,&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Start your First RStudio instance (and bask in its glory),&lt;/li&gt;
+&lt;li&gt;Create a personal AMI for future convenience,&lt;/li&gt;
+&lt;li&gt;Shut down the Instance and all Resources.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Preconditions for this tutorial should be basically none, at least in terms of coding and/or understanding &lt;code&gt;R&lt;/code&gt; itself. The main task will lie in clicking the right buttons.&lt;/p&gt;
+&lt;div id=&#34;step-1-get-an-aws-account.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 1: Get an AWS account.&lt;/h2&gt;
+&lt;p&gt;Well, it isn’t really my place to tell you how to get an AWS account if Amazon itself did &lt;a href=&#34;https://aws.amazon.com/resources/create-account/&#34;&gt;such a great job explaining it&lt;/a&gt;. Just use the link to set up your account, and I further suggest to follow &lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/&#34;&gt;this set of instructions&lt;/a&gt;, building your very first instance. Take your time going through these instructions, I’ll wait…&lt;/p&gt;
+&lt;p&gt;Ready? Alright, sweet. Then we continue with&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-configure-your-rstudio-ami.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 2: Configure your RStudio AMI.&lt;/h2&gt;
+&lt;p&gt;In this step, I collected several steps, not all of which are necessary. Steps 2a and 2b are crucial, Step 2c is recommended. Step 2d can be skipped on the first set-up. The implementation of this step can always be re-assessed whenever it becomes necessary.&lt;/p&gt;
+&lt;p&gt;Let’s begin by starting an instance in the AWS Dashboard. Just open “Instances” on the side menu of your EC2 Dashboard and click on “Launch Instance”:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1517086196/screenshot_launch_instance_ltpbba.png&#34; alt=&#34;Here we go!&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Here we go!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2a-find-the-current-rstudio-ami.&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 2a: Find the current RStudio AMI.&lt;/h3&gt;
+&lt;p&gt;The first task is to choose an Amazon Machine Image, or AMI, which is essentially an operating system container. More to the point, in an AMI a Linux distribution can be bundled with addtional software packages tailored to any type of need: web development, accounting (I’m guessing here, but … sure) and, most importantly, using RStudio. &lt;a href=&#34;http://www.louisaslett.com/RStudio_AMI/&#34;&gt;On Louis Anslett’s homepage&lt;/a&gt; you can find a wonderful storage of RStudio AMIs. We use the newest version for the correct geographical zone, in my case Frankfurt:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1516304602/screenshot_louisaslett_eyug44.png&#34; alt=&#34;One AMI for each region. Neat&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;One AMI for each region. Neat&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;As you can see, thanks to Louis Anslett’s work, the AMI includes not only the newest version of RStudio but also of &lt;code&gt;R&lt;/code&gt; itself as well as a handful of helpful additional software packages. For instance, Git comes pre-installed, which we will use later on; also &lt;code&gt;Julia&lt;/code&gt;is installed for those looking to try out the possible future of data science languages. But I’m deviating… Let’s note the AMI-ID (in our case “ami-a80db3c7”), put this in the start-up options and let’s continue.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2b-configure-the-security-groups-for-your-rstudio-instance&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 2b: Configure the security groups for your RStudio instance&lt;/h3&gt;
+&lt;p&gt;In AWS, &lt;a href=&#34;https://docs.aws.amazon.com/en_en/AWSEC2/latest/UserGuide/using-network-security.html&#34;&gt;security groups&lt;/a&gt; control the access to the machine over the internet (if you don‘t care about how exactly this works and only want to follow the instructions, just skip the next sentences). More precisely, they define which kind of protocols may use which ports on your machine from a given IP range. For example, you can set the access rights for a ssh protocol to be able to connect to your machine on port 22 only from your personal IP address at home.&lt;/p&gt;
+&lt;p&gt;In our case, we actually only need access via http protocol, since the RStudio instance will allow log-in via browser interface. Therefore, our security group can be kept quite simple:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1515794260/screenshot_security_group_xy0wkr.png&#34; alt=&#34;The bottom option allows the whole world to see the instance. Golly.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The bottom option allows the whole world to see the instance. Golly.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The IP range can be limited to your own personal IP to ensure the safety of your instance. This precaution could be necessary since only the login page of RStudio stands between the internet and your instance (spooky, huh?). However, since the personal IP usually changes each day (roughly speaking), this becomes a personal question of “privacy vs. convenience”. In my case, as you can see, convenience won.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step2c&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;2c. Automatically Change your RStudio Password&lt;/h3&gt;
+&lt;p&gt;In the documentation of the RStudio AMI we can find the following passage: “It is highly recommended you change the password immediately and an easy means of doing this is explained upon login in the script that is loaded there”. Alright, fine, but I’d rather to that programmatically, i.e. automatically. The weirdly named “User data” option provides just the framework: All commands placed here get executed at the beginning of the start-up. You can find this setting in the menu “Configure Instance Details” under “Advanced Details”.&lt;/p&gt;
+&lt;p&gt;In order to change the password of the user “RStudio” on start-up, we paste the following code:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#!/bin/bash
+echo &amp;quot;rstudio:guest&amp;quot; | chpasswd&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;where you should replace the password “guest” with whatever you deem appropriate. We are almost done with the set-up now, there only remains&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2d-optional-automatically-clone-a-github-repo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 2d (optional): Automatically Clone a GitHub repo&lt;/h3&gt;
+&lt;p&gt;I write all my private code projects on my GitHub account (here: &lt;a href=&#34;https://github.com/sebastianschweer&#34; class=&#34;uri&#34;&gt;https://github.com/sebastianschweer&lt;/a&gt;. What a shameless self-plug!) and I also would like my code to be available for me each time I start up my RStudio instance. Fortunately, this is easily configured with “User data” again, by just adding the command&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;git clone https://github.com/sebastianschweer/sastibe.git /home/rstudio/sastibe
+chmod -R 777 /home/rstudio/sastibe&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;to the “User data” of &lt;a href=&#34;#setp2c&#34;&gt;Step 2c&lt;/a&gt;. Now, when I start up the new RStudio instance, the repository &lt;code&gt;sastibe&lt;/code&gt; gets cloned into the folder &lt;code&gt;/home/rstudio/sastibe&lt;/code&gt;, which is automatically loaded in RStudio. The line with &lt;code&gt;chmod&lt;/code&gt; ensures that any user (not just root, who is executing this command at startup) has the rights to alter content in that folder. This permission allows me to change code and pushing my changes to the repository and all that, which is just super convenient.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-start-your-first-rstudio-instance-and-bask-in-its-glory&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 3: Start your First RStudio instance (and bask in its glory),&lt;/h2&gt;
+&lt;p&gt;The last and most exciting click is this one:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1516310280/screenshot_finish_launch_jdqvec.png&#34; alt=&#34;Hooray, all the hard work pays off!&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Hooray, all the hard work pays off!&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;We have now started the instance. This means that a virtual machine, configured according to our specifitcations is being run on one of Amazon’s bajillion&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; cloud computing servers. In the menu “Instances” we now see an active instance running. After we are done, we will use this menu to shut it down again (so that it doesn#t cost us), but not now: we are eager to test it out! Accessing the instance is quite easy in our case: Just copy the “IPv4 Public IP” adress and paste it in your browser:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1517085751/screenshot_publicip_sjmc6c.png&#34; alt=&#34;Green lights indicate the instance runs harmoniously.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Green lights indicate the instance runs harmoniously.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Hopefully, you haven’t forgotten your password (check &lt;a href=&#34;#step2c&#34;&gt;Step 2c&lt;/a&gt; if you did), your username is “rstudio”. After succesful login, you’ll be greeted by this screen:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1517085281/screenshot_rstudio_running_ss7eqo.png&#34; alt=&#34;The login to a world of wonder.&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;The login to a world of wonder.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Et voilà: Your very own scalable RStudio instance, accessible world-wide and ready to use at all times. In other words: Congratulations, you now have a state-of-the-art Data Science Machine at your command. Use it wisely. If you want to see what kind of wonders you can do with this setup, check out the &lt;a href=&#34;http://127.0.0.1:4321/2018/01/benchmarking-aws-instances/&#34;&gt;upcoming blog post&lt;/a&gt;. Otherwise, let me just point you towards another &lt;a href=&#34;https://www.kaggle.com/rtatman/getting-started-in-r-first-steps&#34;&gt;wonderful introduction&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-4-create-a-personal-ami-for-future-convenience&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Step 4: Create a personal AMI for future convenience&lt;/h2&gt;
+&lt;p&gt;Now, Step 3 consisted of 4 different steps, and it would be ratehr inconvenient to have to repeat these steps each time you need a new RStudio instance, right? Luckily, AWS has got you covered: You can create an “image” of any AWS instance: simply put, this saves your current configuration for later use. The creation of such an image is straightforward: Just go to “Instances” in your AWS Dashboard, right-click on the machine you want to base the image on and select “Create Image”:&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1517086580/screenshot_createAMI_vx0esq.png&#34; alt=&#34;Locate Create Image in the menu of Instance Settings&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Locate “Create Image” in the menu of “Instance Settings”&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;After this step, you will find the created image in the menu AMIs, ready to reuse. Before you go do crazy and wonderful Data Science in your wonderful new Environment, though, it is essential that you let me tell you about&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-last-step-after-each-aws-usage-shutting-down&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Last Step (After Each AWS Usage): Shutting Down&lt;/h2&gt;
+&lt;p&gt;An AWS instance doesn’t shut down by itself, or go into hibernation or anything like that. It just keeps running unless otherwise specified, eventually costing lots of money (even the free tier services have their prices after some limit). So, let me show you how to shut down your brand new machine. It’s quite simple, just right-click on the running instance and set the “Instance State” to “Terminate”.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1516310583/screenshot_terminateinstance_el4vj8.png&#34; alt=&#34;Show no mercy, terminate!&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Show no mercy, terminate!&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Since our instance also automatically loaded an EBS volume (like a hard disk to save data), we need to shut that down too. Choose the entry EBS volumes in the sidepane and &lt;em&gt;Detach&lt;/em&gt; all volumes that are active. If your overview in the pane “Dashboard” looks similar to this :&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1516310279/screenshot_clean_dashboard_cqhspn.png&#34; alt=&#34;5 volumes: make sure that they are not in-use, since storage may also cost after some initial period&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;“5 volumes”: make sure that they are not in-use, since storage may also cost after some initial period&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;There are no hidden services running racking up costs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;After configuring your AWS environment as decried above, your new ‚Data Science Workflow‘ can look like this:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Log in to AWS,&lt;/li&gt;
+&lt;li&gt;Choose your personal RStudio AMI,&lt;/li&gt;
+&lt;li&gt;Choose the Necessary Specifications of the Machine,&lt;/li&gt;
+&lt;li&gt;Log in to the Machine in the Browser,&lt;/li&gt;
+&lt;li&gt;Do Awesome Data Science,&lt;/li&gt;
+&lt;li&gt;Shut Down Machine and all Resources.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Have fun, and remember: Primere non nocere!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;For a given value of usually. I personally try to test out lots of resources just because I can, yet even so, my total expenses for AWS result in 0.37€ (January 2018).&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;A rough estimate. Maybe only bajillions.&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Impressum/Datenschutzerklärung</title>
+      <link>http://www.sastibe.de/impressum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/impressum/</guid>
+      <description>&lt;h2&gt;Impressum&lt;/h2&gt;
+
+V.i.S.d.P: Sebastian Schweer&lt;br&gt;
+Adresse: Amselgasse 5, 69121 Heidelberg&lt;br&gt;
+E-Mail: sastibear@gmx.de&lt;br&gt;
+&lt;br&gt;
+
+&lt;h2&gt;Erklärung&lt;/h2&gt;
+Dies ist mein privater Blog, in dem ich persönliche Meinungen vertrete und private Inhalte meines Interesses darstelle. Alle auf diesen Seiten enthaltenen Daten und Inhalte entstammen, sofern nicht anderweitig gekennzeichnet, aus meiner Hand. Kein Inhalt entstand aus meiner beruflichen Tätigkeit oder bezieht sich inhaltlich darauf.
+&lt;br&gt;
+
+
+&lt;h2&gt;Datenschutzerklärung&lt;/h2&gt;&lt;h3 id=&#34;dsg-general-intro&#34;&gt;&lt;/h3&gt;&lt;p&gt;Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten (nachfolgend kurz „Daten“) innerhalb unseres Onlineangebotes und der mit ihm verbundenen Webseiten, Funktionen und Inhalte sowie externen Onlinepräsenzen, wie z.B. unser Social Media Profile auf (nachfolgend gemeinsam bezeichnet als „Onlineangebot“). Im Hinblick auf die verwendeten Begrifflichkeiten, wie z.B. „Verarbeitung“ oder „Verantwortlicher“ verweisen wir auf die Definitionen im Art. 4 der Datenschutzgrundverordnung (DSGVO).&lt;br&gt;
+&lt;br&gt;
+&lt;/p&gt;&lt;h3 id=&#34;dsg-general-controller&#34;&gt;Verantwortlicher&lt;/h3&gt;&lt;p&gt;&lt;span class=&#34;tsmcontroller&#34;&gt;Sebastian Schweer, Kontaktdaten siehe Impressum.&lt;br&gt;
+&lt;/span&gt;&lt;/p&gt;&lt;h3 id=&#34;dsg-general-datatype&#34;&gt;Arten der verarbeiteten Daten:&lt;/h3&gt;&lt;p&gt;-	Bestandsdaten (z.B., Namen, Adressen).&lt;br&gt;
+-	Kontaktdaten (z.B., E-Mail, Telefonnummern).&lt;br&gt;
+-	Inhaltsdaten (z.B., Texteingaben, Fotografien, Videos).&lt;br&gt;
+-	Nutzungsdaten (z.B., besuchte Webseiten, Interesse an Inhalten, Zugriffszeiten).&lt;br&gt;
+-	Meta-/Kommunikationsdaten (z.B., Geräte-Informationen, IP-Adressen).&lt;br&gt;
+&lt;/p&gt;&lt;h3 id=&#34;dsg-general-datasubjects&#34;&gt;Kategorien betroffener Personen&lt;/h3&gt;&lt;p&gt;Besucher und Nutzer des Onlineangebotes (Nachfolgend bezeichnen wir die betroffenen Personen zusammenfassend auch als „Nutzer“).&lt;br&gt;
+&lt;/p&gt;&lt;h3 id=&#34;dsg-general-purpose&#34;&gt;Zweck der Verarbeitung&lt;/h3&gt;&lt;p&gt;-	Zurverfügungstellung des Onlineangebotes, seiner Funktionen und  Inhalte.&lt;br&gt;
+-	Beantwortung von Kontaktanfragen und Kommunikation mit Nutzern.&lt;br&gt;
+-	Sicherheitsmaßnahmen.&lt;br&gt;
+-	Reichweitenmessung/Marketing&lt;br&gt;
+&lt;span class=&#34;tsmcom&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;h3 id=&#34;dsg-general-terms&#34;&gt;Verwendete Begrifflichkeiten &lt;/h3&gt;&lt;p&gt;„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (im Folgenden „betroffene Person“) beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten, zu einer Online-Kennung (z.B. Cookie) oder zu einem oder mehreren besonderen Merkmalen identifiziert werden kann, die Ausdruck der physischen, physiologischen, genetischen, psychischen, wirtschaftlichen, kulturellen oder sozialen Identität dieser natürlichen Person sind.&lt;br&gt;
+&lt;br&gt;
+„Verarbeitung“ ist jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführte Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten. Der Begriff reicht weit und umfasst praktisch jeden Umgang mit Daten.&lt;br&gt;
+&lt;br&gt;
+„Pseudonymisierung“ die Verarbeitung personenbezogener Daten in einer Weise, dass die personenbezogenen Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen betroffenen Person zugeordnet werden können, sofern diese zusätzlichen Informationen gesondert aufbewahrt werden und technischen und organisatorischen Maßnahmen unterliegen, die gewährleisten, dass die personenbezogenen Daten nicht einer identifizierten oder identifizierbaren natürlichen Person zugewiesen werden.&lt;br&gt;
+&lt;br&gt;
+„Profiling“ jede Art der automatisierten Verarbeitung personenbezogener Daten, die darin besteht, dass diese personenbezogenen Daten verwendet werden, um bestimmte persönliche Aspekte, die sich auf eine natürliche Person beziehen, zu bewerten, insbesondere um Aspekte bezüglich Arbeitsleistung, wirtschaftliche Lage, Gesundheit, persönliche Vorlieben, Interessen, Zuverlässigkeit, Verhalten, Aufenthaltsort oder Ortswechsel dieser natürlichen Person zu analysieren oder vorherzusagen.&lt;br&gt;
+&lt;br&gt;
+Als „Verantwortlicher“ wird die natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet, bezeichnet.&lt;br&gt;
+&lt;br&gt;
+„Auftragsverarbeiter“ eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet.&lt;br&gt;
+&lt;/p&gt;&lt;h3 id=&#34;dsg-general-legalbasis&#34;&gt;Maßgebliche Rechtsgrundlagen&lt;/h3&gt;&lt;p&gt;Nach Maßgabe des Art. 13 DSGVO teilen wir Ihnen die Rechtsgrundlagen unserer Datenverarbeitungen mit. Sofern die Rechtsgrundlage in der Datenschutzerklärung nicht genannt wird, gilt Folgendes: Die Rechtsgrundlage für die Einholung von Einwilligungen ist Art. 6 Abs. 1 lit. a und Art. 7 DSGVO, die Rechtsgrundlage für die Verarbeitung zur Erfüllung unserer Leistungen und Durchführung vertraglicher Maßnahmen sowie Beantwortung von Anfragen ist Art. 6 Abs. 1 lit. b DSGVO, die Rechtsgrundlage für die Verarbeitung zur Erfüllung unserer rechtlichen Verpflichtungen ist Art. 6 Abs. 1 lit. c DSGVO, und die Rechtsgrundlage für die Verarbeitung zur Wahrung unserer berechtigten Interessen ist Art. 6 Abs. 1 lit. f DSGVO. Für den Fall, dass lebenswichtige Interessen der betroffenen Person oder einer anderen natürlichen Person eine Verarbeitung personenbezogener Daten erforderlich machen, dient Art. 6 Abs. 1 lit. d DSGVO als Rechtsgrundlage.&lt;/p&gt;&lt;h3 id=&#34;dsg-general-securitymeasures&#34;&gt;Sicherheitsmaßnahmen&lt;/h3&gt;&lt;p&gt;Wir treffen nach Maßgabe des Art. 32 DSGVO unter Berücksichtigung des Stands der Technik, der Implementierungskosten und der Art, des Umfangs, der Umstände und der Zwecke der Verarbeitung sowie der unterschiedlichen Eintrittswahrscheinlichkeit und Schwere des Risikos für die Rechte und Freiheiten natürlicher Personen, geeignete technische und organisatorische Maßnahmen, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten.&lt;br&gt;
+&lt;br&gt;
+Zu den Maßnahmen gehören insbesondere die Sicherung der Vertraulichkeit, Integrität und Verfügbarkeit von Daten durch Kontrolle des physischen Zugangs zu den Daten, als auch des sie betreffenden Zugriffs, der Eingabe, Weitergabe, der Sicherung der Verfügbarkeit und ihrer Trennung. Des Weiteren haben wir Verfahren eingerichtet, die eine Wahrnehmung von Betroffenenrechten, Löschung von Daten und Reaktion auf Gefährdung der Daten gewährleisten. Ferner berücksichtigen wir den Schutz personenbezogener Daten bereits bei der Entwicklung, bzw. Auswahl von Hardware, Software sowie Verfahren, entsprechend dem Prinzip des Datenschutzes durch Technikgestaltung und durch datenschutzfreundliche Voreinstellungen (Art. 25 DSGVO).&lt;br&gt;
+&lt;/p&gt;&lt;h3 id=&#34;dsg-general-coprocessing&#34;&gt;Zusammenarbeit mit Auftragsverarbeitern und Dritten&lt;/h3&gt;&lt;p&gt;Sofern wir im Rahmen unserer Verarbeitung Daten gegenüber anderen Personen und Unternehmen (Auftragsverarbeitern oder Dritten) offenbaren, sie an diese übermitteln oder ihnen sonst Zugriff auf die Daten gewähren, erfolgt dies nur auf Grundlage einer gesetzlichen Erlaubnis (z.B. wenn eine Übermittlung der Daten an Dritte, wie an Zahlungsdienstleister, gem. Art. 6 Abs. 1 lit. b DSGVO zur Vertragserfüllung erforderlich ist), Sie eingewilligt haben, eine rechtliche Verpflichtung dies vorsieht oder auf Grundlage unserer berechtigten Interessen (z.B. beim Einsatz von Beauftragten, Webhostern, etc.). &lt;br&gt;
+&lt;br&gt;
+Sofern wir Dritte mit der Verarbeitung von Daten auf Grundlage eines sog. „Auftragsverarbeitungsvertrages“ beauftragen, geschieht dies auf Grundlage des Art. 28 DSGVO.&lt;/p&gt;&lt;h3 id=&#34;dsg-general-thirdparty&#34;&gt;Übermittlungen in Drittländer&lt;/h3&gt;&lt;p&gt;Sofern wir Daten in einem Drittland (d.h. außerhalb der Europäischen Union (EU) oder des Europäischen Wirtschaftsraums (EWR)) verarbeiten oder dies im Rahmen der Inanspruchnahme von Diensten Dritter oder Offenlegung, bzw. Übermittlung von Daten an Dritte geschieht, erfolgt dies nur, wenn es zur Erfüllung unserer (vor)vertraglichen Pflichten, auf Grundlage Ihrer Einwilligung, aufgrund einer rechtlichen Verpflichtung oder auf Grundlage unserer berechtigten Interessen geschieht. Vorbehaltlich gesetzlicher oder vertraglicher Erlaubnisse, verarbeiten oder lassen wir die Daten in einem Drittland nur beim Vorliegen der besonderen Voraussetzungen der Art. 44 ff. DSGVO verarbeiten. D.h. die Verarbeitung erfolgt z.B. auf Grundlage besonderer Garantien, wie der offiziell anerkannten Feststellung eines der EU entsprechenden Datenschutzniveaus (z.B. für die USA durch das „Privacy Shield“) oder Beachtung offiziell anerkannter spezieller vertraglicher Verpflichtungen (so genannte „Standardvertragsklauseln“).&lt;/p&gt;&lt;h3 id=&#34;dsg-general-rightssubject&#34;&gt;Rechte der betroffenen Personen&lt;/h3&gt;&lt;p&gt;Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende Daten verarbeitet werden und auf Auskunft über diese Daten sowie auf weitere Informationen und Kopie der Daten entsprechend Art. 15 DSGVO.&lt;br&gt;
+&lt;br&gt;
+Sie haben entsprechend. Art. 16 DSGVO das Recht, die Vervollständigung der Sie betreffenden Daten oder die Berichtigung der Sie betreffenden unrichtigen Daten zu verlangen.&lt;br&gt;
+&lt;br&gt;
+Sie haben nach Maßgabe des Art. 17 DSGVO das Recht zu verlangen, dass betreffende Daten unverzüglich gelöscht werden, bzw. alternativ nach Maßgabe des Art. 18 DSGVO eine Einschränkung der Verarbeitung der Daten zu verlangen.&lt;br&gt;
+&lt;br&gt;
+Sie haben das Recht zu verlangen, dass die Sie betreffenden Daten, die Sie uns bereitgestellt haben nach Maßgabe des Art. 20 DSGVO zu erhalten und deren Übermittlung an andere Verantwortliche zu fordern. &lt;br&gt;
+&lt;br&gt;
+Sie haben ferner gem. Art. 77 DSGVO das Recht, eine Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen.&lt;/p&gt;&lt;h3 id=&#34;dsg-general-revokeconsent&#34;&gt;Widerrufsrecht&lt;/h3&gt;&lt;p&gt;Sie haben das Recht, erteilte Einwilligungen gem. Art. 7 Abs. 3 DSGVO mit Wirkung für die Zukunft zu widerrufen&lt;/p&gt;&lt;h3 id=&#34;dsg-general-object&#34;&gt;Widerspruchsrecht&lt;/h3&gt;&lt;p&gt;Sie können der künftigen Verarbeitung der Sie betreffenden Daten nach Maßgabe des Art. 21 DSGVO jederzeit widersprechen. Der Widerspruch kann insbesondere gegen die Verarbeitung für Zwecke der Direktwerbung erfolgen.&lt;/p&gt;&lt;h3 id=&#34;dsg-general-cookies&#34;&gt;Cookies und Widerspruchsrecht bei Direktwerbung&lt;/h3&gt;&lt;p&gt;Als „Cookies“ werden kleine Dateien bezeichnet, die auf Rechnern der Nutzer gespeichert werden. Innerhalb der Cookies können unterschiedliche Angaben gespeichert werden. Ein Cookie dient primär dazu, die Angaben zu einem Nutzer (bzw. dem Gerät auf dem das Cookie gespeichert ist) während oder auch nach seinem Besuch innerhalb eines Onlineangebotes zu speichern. Als temporäre Cookies, bzw. „Session-Cookies“ oder „transiente Cookies“, werden Cookies bezeichnet, die gelöscht werden, nachdem ein Nutzer ein Onlineangebot verlässt und seinen Browser schließt. In einem solchen Cookie kann z.B. der Inhalt eines Warenkorbs in einem Onlineshop oder ein Login-Status gespeichert werden. Als „permanent“ oder „persistent“ werden Cookies bezeichnet, die auch nach dem Schließen des Browsers gespeichert bleiben. So kann z.B. der Login-Status gespeichert werden, wenn die Nutzer diese nach mehreren Tagen aufsuchen. Ebenso können in einem solchen Cookie die Interessen der Nutzer gespeichert werden, die für Reichweitenmessung oder Marketingzwecke verwendet werden. Als „Third-Party-Cookie“ werden Cookies bezeichnet, die von anderen Anbietern als dem Verantwortlichen, der das Onlineangebot betreibt, angeboten werden (andernfalls, wenn es nur dessen Cookies sind spricht man von „First-Party Cookies“).&lt;br&gt;
+&lt;br&gt;
+Wir können temporäre und permanente Cookies einsetzen und klären hierüber im Rahmen unserer Datenschutzerklärung auf.&lt;br&gt;
+&lt;br&gt;
+Falls die Nutzer nicht möchten, dass Cookies auf ihrem Rechner gespeichert werden, werden sie gebeten die entsprechende Option in den Systemeinstellungen ihres Browsers zu deaktivieren. Gespeicherte Cookies können in den Systemeinstellungen des Browsers gelöscht werden. Der Ausschluss von Cookies kann zu Funktionseinschränkungen dieses Onlineangebotes führen.&lt;br&gt;
+&lt;br&gt;
+Ein genereller Widerspruch gegen den Einsatz der zu Zwecken des Onlinemarketing eingesetzten Cookies kann bei einer Vielzahl der Dienste, vor allem im Fall des Trackings, über die US-amerikanische Seite &lt;a href=&#34;http://www.aboutads.info/choices/&#34;&gt;http://www.aboutads.info/choices/&lt;/a&gt; oder die EU-Seite &lt;a href=&#34;http://www.youronlinechoices.com/&#34;&gt;http://www.youronlinechoices.com/&lt;/a&gt; erklärt werden. Des Weiteren kann die Speicherung von Cookies mittels deren Abschaltung in den Einstellungen des Browsers erreicht werden. Bitte beachten Sie, dass dann gegebenenfalls nicht alle Funktionen dieses Onlineangebotes genutzt werden können.&lt;/p&gt;&lt;h3 id=&#34;dsg-general-erasure&#34;&gt;Löschung von Daten&lt;/h3&gt;&lt;p&gt;Die von uns verarbeiteten Daten werden nach Maßgabe der Art. 17 und 18 DSGVO gelöscht oder in ihrer Verarbeitung eingeschränkt. Sofern nicht im Rahmen dieser Datenschutzerklärung ausdrücklich angegeben, werden die bei uns gespeicherten Daten gelöscht, sobald sie für ihre Zweckbestimmung nicht mehr erforderlich sind und der Löschung keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Sofern die Daten nicht gelöscht werden, weil sie für andere und gesetzlich zulässige Zwecke erforderlich sind, wird deren Verarbeitung eingeschränkt. D.h. die Daten werden gesperrt und nicht für andere Zwecke verarbeitet. Das gilt z.B. für Daten, die aus handels- oder steuerrechtlichen Gründen aufbewahrt werden müssen.&lt;br&gt;
+&lt;br&gt;
+Nach gesetzlichen Vorgaben in Deutschland, erfolgt die Aufbewahrung insbesondere für 10 Jahre gemäß §§ 147 Abs. 1 AO, 257 Abs. 1 Nr. 1 und 4, Abs. 4 HGB (Bücher, Aufzeichnungen, Lageberichte, Buchungsbelege, Handelsbücher, für Besteuerung relevanter Unterlagen, etc.) und 6 Jahre gemäß § 257 Abs. 1 Nr. 2 und 3, Abs. 4 HGB (Handelsbriefe). &lt;br&gt;
+&lt;br&gt;
+Nach gesetzlichen Vorgaben in Österreich erfolgt die Aufbewahrung insbesondere für 7 J gemäß § 132 Abs. 1 BAO (Buchhaltungsunterlagen, Belege/Rechnungen, Konten, Belege, Geschäftspapiere, Aufstellung der Einnahmen und Ausgaben, etc.), für 22 Jahre im Zusammenhang mit Grundstücken und für 10 Jahre bei Unterlagen im Zusammenhang mit elektronisch erbrachten Leistungen, Telekommunikations-, Rundfunk- und Fernsehleistungen, die an Nichtunternehmer in EU-Mitgliedstaaten erbracht werden und für die der Mini-One-Stop-Shop (MOSS) in Anspruch genommen wird.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;h3 id=&#34;dsg-ga-googleanalytics&#34;&gt;Google Analytics&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;span class=&#34;ts-muster-content&#34;&gt;Wir setzen auf Grundlage unserer berechtigten Interessen (d.h. Interesse an der Analyse, Optimierung und wirtschaftlichem Betrieb unseres Onlineangebotes im Sinne des Art. 6 Abs. 1 lit. f. DSGVO) Google Analytics, einen Webanalysedienst der Google LLC („Google“) ein. Google verwendet Cookies. Die durch das Cookie erzeugten Informationen über Benutzung des Onlineangebotes durch die Nutzer werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.&lt;br&gt;
+&lt;br&gt;
+Google ist unter dem Privacy-Shield-Abkommen zertifiziert und bietet hierdurch eine Garantie, das europäische Datenschutzrecht einzuhalten (&lt;a target=&#34;_blank&#34; href=&#34;https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&amp;amp;status=Active&#34;&gt;https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&amp;amp;status=Active&lt;/a&gt;).&lt;br&gt;
+&lt;br&gt;
+Google wird diese Informationen in unserem Auftrag benutzen, um die Nutzung unseres Onlineangebotes durch die Nutzer auszuwerten, um Reports über die Aktivitäten innerhalb dieses Onlineangebotes zusammenzustellen und um weitere, mit der Nutzung dieses Onlineangebotes und der Internetnutzung verbundene Dienstleistungen, uns gegenüber zu erbringen. Dabei können aus den verarbeiteten Daten pseudonyme Nutzungsprofile der Nutzer erstellt werden.&lt;br&gt;
+&lt;br&gt;
+Wir setzen Google Analytics nur mit aktivierter IP-Anonymisierung ein. Das bedeutet, die IP-Adresse der Nutzer wird von Google innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt.&lt;br&gt;
+&lt;br&gt;
+Die von dem Browser des Nutzers übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Die Nutzer können die Speicherung der Cookies durch eine entsprechende Einstellung ihrer Browser-Software verhindern; die Nutzer können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf ihre Nutzung des Onlineangebotes bezogenen Daten an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter folgendem Link verfügbare Browser-Plugin herunterladen und installieren:&amp;nbsp;&lt;a target=&#34;_blank&#34; href=&#34;http://tools.google.com/dlpage/gaoptout?hl=de&#34;&gt;http://tools.google.com/dlpage/gaoptout?hl=de&lt;/a&gt;.&lt;br&gt;
+&lt;br&gt;
+Weitere Informationen zur Datennutzung durch Google, Einstellungs- und Widerspruchsmöglichkeiten, erfahren Sie in der Datenschutzerklärung von Google (&lt;a target=&#34;_blank&#34; href=&#34;https://policies.google.com/technologies/ads&#34;&gt;https://policies.google.com/technologies/ads&lt;/a&gt;) sowie in den Einstellungen für die Darstellung von Werbeeinblendungen durch Google &lt;a target=&#34;_blank&#34; href=&#34;https://adssettings.google.com/authenticated&#34;&gt;(https://adssettings.google.com/authenticated&lt;/a&gt;).&lt;br&gt;
+&lt;br&gt;
+Die personenbezogenen Daten der Nutzer werden nach 14 Monaten gelöscht oder anonymisiert.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;h3 id=&#34;dsg-ga-universal&#34;&gt;Google Universal Analytics&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;span class=&#34;ts-muster-content&#34;&gt;Wir setzen Google Analytics in der Ausgestaltung als „&lt;a target=&#34;_blank&#34; href=&#34;https://support.google.com/analytics/answer/2790010?hl=de&amp;amp;ref_topic=6010376&#34;&gt;Universal-Analytics&lt;/a&gt;“ ein. „Universal Analytics“ bezeichnet ein Verfahren von Google Analytics, bei dem die Nutzeranalyse auf Grundlage einer pseudonymen Nutzer-ID erfolgt und damit ein pseudonymes Profil des Nutzers mit Informationen aus der Nutzung verschiedener Geräten erstellt wird (sog. „Cross-Device-Tracking“).&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;h3 id=&#34;dsg-socialmedia&#34;&gt;Onlinepräsenzen in sozialen Medien&lt;/h3&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;span class=&#34;ts-muster-content&#34;&gt;Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke und Plattformen, um mit den dort aktiven Kunden, Interessenten und Nutzern kommunizieren und sie dort über unsere Leistungen informieren zu können. Beim Aufruf der jeweiligen Netzwerke und Plattformen gelten die Geschäftsbedingungen und die Datenverarbeitungsrichtlinien deren jeweiligen Betreiber. &lt;br&gt;
+&lt;br&gt;
+Soweit nicht anders im Rahmen unserer Datenschutzerklärung angegeben, verarbeiten wir die Daten der Nutzer sofern diese mit uns innerhalb der sozialen Netzwerke und Plattformen kommunizieren, z.B. Beiträge auf unseren Onlinepräsenzen verfassen oder uns Nachrichten zusenden.&lt;/span&gt;&lt;/p&gt;&lt;a href=&#34;https://datenschutz-generator.de&#34; class=&#34;dsg1-5&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;Erstellt mit Datenschutz-Generator.de von RA Dr. Thomas Schwenke&lt;/a&gt;
+</description>
     </item>
     
   </channel>

@@ -2,66 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sastibe&#39;s Data Science Blog</title>
-    <link>/tags/</link>
+    <link>http://www.sastibe.de/tags/</link>
     <description>Recent content in Tags on Sastibe&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://www.sastibe.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Benchmarking</title>
-      <link>/tags/benchmarking/</link>
+      <link>http://www.sastibe.de/tags/benchmarking/</link>
       <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/benchmarking/</guid>
+      <guid>http://www.sastibe.de/tags/benchmarking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Emacs Org Mode</title>
+      <link>http://www.sastibe.de/tags/emacs-org-mode/</link>
+      <pubDate>Fri, 11 May 2018 23:13:13 +0200</pubDate>
+      
+      <guid>http://www.sastibe.de/tags/emacs-org-mode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Financial Data</title>
+      <link>http://www.sastibe.de/tags/financial-data/</link>
+      <pubDate>Fri, 11 May 2018 23:13:13 +0200</pubDate>
+      
+      <guid>http://www.sastibe.de/tags/financial-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Football</title>
+      <link>http://www.sastibe.de/tags/football/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/tags/football/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Getting Started</title>
-      <link>/tags/getting-started/</link>
+      <link>http://www.sastibe.de/tags/getting-started/</link>
       <pubDate>Sun, 28 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/getting-started/</guid>
+      <guid>http://www.sastibe.de/tags/getting-started/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Machine Learning</title>
-      <link>/tags/machine-learning/</link>
+      <link>http://www.sastibe.de/tags/machine-learning/</link>
       <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/machine-learning/</guid>
+      <guid>http://www.sastibe.de/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Open Data</title>
-      <link>/tags/open-data/</link>
+      <link>http://www.sastibe.de/tags/open-data/</link>
       <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/open-data/</guid>
+      <guid>http://www.sastibe.de/tags/open-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Privacy Notice</title>
+      <link>http://www.sastibe.de/tags/privacy-notice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/tags/privacy-notice/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Programming</title>
-      <link>/tags/programming/</link>
+      <link>http://www.sastibe.de/tags/programming/</link>
       <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/programming/</guid>
+      <guid>http://www.sastibe.de/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rest Apis</title>
+      <link>http://www.sastibe.de/tags/rest-apis/</link>
+      <pubDate>Fri, 11 May 2018 23:13:13 +0200</pubDate>
+      
+      <guid>http://www.sastibe.de/tags/rest-apis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rstudio Ami</title>
-      <link>/tags/rstudio-ami/</link>
+      <link>http://www.sastibe.de/tags/rstudio-ami/</link>
       <pubDate>Sat, 10 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/rstudio-ami/</guid>
+      <guid>http://www.sastibe.de/tags/rstudio-ami/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>World Cup</title>
+      <link>http://www.sastibe.de/tags/world-cup/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/tags/world-cup/</guid>
       <description></description>
     </item>
     

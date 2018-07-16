@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Football on Sastibe&#39;s Data Science Blog</title>
+    <link>http://www.sastibe.de/tags/football/</link>
+    <description>Recent content in Football on Sastibe&#39;s Data Science Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="http://www.sastibe.de/tags/football/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>It&#39;s here: Org Agenda for the World Cup 2018</title>
+      <link>http://www.sastibe.de/2018/06/its-here-org-agenda-for-the-world-cup-2018/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/2018/06/its-here-org-agenda-for-the-world-cup-2018/</guid>
+      <description>&lt;p&gt;As &lt;a href=&#34;http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/&#34;&gt;I recently pointed out&lt;/a&gt;, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn&#39;t it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1528226008/Org-Mode-WorldCup_fh4zkm.png&#34; alt=&#34;Only 90 kids will remember&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Just so...&lt;/p&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;A short Google research lead to these two GitHub repositories for the &lt;a href=&#34;https://github.com/djcb/org-euro2012/&#34; title=&#34;Euro 2012&#34;&gt;Euro 2012&lt;/a&gt; and the &lt;a href=&#34;https://github.com/ruediger/org-world-cup2014&#34; title=&#34;World Cup 2014&#34;&gt;World Cup 2014&lt;/a&gt;. As I couldn&#39;t find anything similar for the World Cup 2018, I decided to create it myself.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/sebastianschweer/org-world-cup-2018&#34; title=&#34;Here is the result&#34;&gt;Here is the result&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The content of the schedule is as accurate as I could manage: I read the contents of the &lt;a href=&#34;https://fixturedownload.com/download/fifa-world-cup-2018-RussianStandardTime.csv&#34; title=&#34;raw data&#34;&gt;raw data&lt;/a&gt; into the desired org format via regex (in Emacs, obviously) and manually checked the results against the entries on the &lt;a href=&#34;https://en.wikipedia.org/wiki/2018_FIFA_World_Cup&#34; title=&#34;wiki page&#34;&gt;wiki page&lt;/a&gt;. Writing the regex  was actually ... rather fun? A bit weird since it wasn&#39;t pretty, let me show you the first few symbols:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;replace-regexp &amp;lt;RET&amp;gt;
+|\s-+\([0-9]\{1,2\}\) |\([^|]+....
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Anyways, it worked, and the result is anyone&#39;s to enjoy. For the record, let me state clearly that &lt;strong&gt;I Do Not Intend To Update The Scores In The Repository&lt;/strong&gt; in any timely fashion. If I get to it, I will, but let&#39;s see.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

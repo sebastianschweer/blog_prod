@@ -1,0 +1,665 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.40.1 with theme Tranquilpeak 0.4.3-BETA">
+    <title>It&#39;s here: Org Agenda for the World Cup 2018</title>
+    <meta name="author" content="Sebastian Schweer">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="http://www.sastibe.de/favicon.png">
+    
+
+    
+    <meta name="description" content="As I recently pointed out, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn&#39;t it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?
+Just so...">
+    <meta property="og:description" content="As I recently pointed out, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn&#39;t it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?
+Just so...">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="It&#39;s here: Org Agenda for the World Cup 2018">
+    <meta property="og:url" content="/2018/06/its-here-org-agenda-for-the-world-cup-2018/">
+    <meta property="og:site_name" content="Sastibe&#39;s Data Science Blog">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sastibe&#39;s Data Science Blog">
+    <meta name="twitter:description" content="As I recently pointed out, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn&#39;t it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?
+Just so...">
+    
+      <meta name="twitter:creator" content="@bastischweer">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="http://res.cloudinary.com/dlprdrxib/image/upload/v1515794260/profile_picture_xjw3jw.jpg">
+    
+
+    
+      <meta property="og:image" content="http://res.cloudinary.com/dlprdrxib/image/upload/v1528226008/Org-Mode-WorldCup_fh4zkm.png">
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="http://www.sastibe.de/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-113132167-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="http://www.sastibe.de/">Sastibe&#39;s Data Science Blog</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="http://www.sastibe.de/#about">
+          <img class="sidebar-profile-picture" src="http://res.cloudinary.com/dlprdrxib/image/upload/v1515794260/profile_picture_xjw3jw.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Sebastian Schweer</h4>
+        
+          <h5 class="sidebar-profile-bio">Theoretiker, Ingenieur, Berater, Erzähler.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://www.sastibe.de/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://www.sastibe.de/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://www.sastibe.de/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://www.sastibe.de/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/sebastianschweer" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/9320663/sastibe" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">StackOverflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/bastischweer" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://www.sastibe.de/2018/04/blogroll/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">Blogroll</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title" itemprop="headline">
+      It&#39;s here: Org Agenda for the World Cup 2018
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-06-05T00:00:00Z">
+        
+  June 5, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="http://www.sastibe.de/categories/emacs">emacs</a>, 
+    
+      <a class="category-link" href="http://www.sastibe.de/categories/org-mode">org-mode</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>As <a href="http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/">I recently pointed out</a>, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn't it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?</p>
+
+<p><div class="figure">
+<img src="http://res.cloudinary.com/dlprdrxib/image/upload/v1528226008/Org-Mode-WorldCup_fh4zkm.png" alt="Only 90 kids will remember" />
+<p class="caption">Just so...</p>
+</div></p>
+
+<p>A short Google research lead to these two GitHub repositories for the <a href="https://github.com/djcb/org-euro2012/" title="Euro 2012">Euro 2012</a> and the <a href="https://github.com/ruediger/org-world-cup2014" title="World Cup 2014">World Cup 2014</a>. As I couldn't find anything similar for the World Cup 2018, I decided to create it myself.</p>
+
+<p><a href="https://github.com/sebastianschweer/org-world-cup-2018" title="Here is the result">Here is the result</a></p>
+
+<p>The content of the schedule is as accurate as I could manage: I read the contents of the <a href="https://fixturedownload.com/download/fifa-world-cup-2018-RussianStandardTime.csv" title="raw data">raw data</a> into the desired org format via regex (in Emacs, obviously) and manually checked the results against the entries on the <a href="https://en.wikipedia.org/wiki/2018_FIFA_World_Cup" title="wiki page">wiki page</a>. Writing the regex  was actually ... rather fun? A bit weird since it wasn't pretty, let me show you the first few symbols:</p>
+
+<pre><code>replace-regexp &lt;RET&gt;
+|\s-+\([0-9]\{1,2\}\) |\([^|]+....
+</code></pre>
+
+<p>Anyways, it worked, and the result is anyone's to enjoy. For the record, let me state clearly that <strong>I Do Not Intend To Update The Scores In The Repository</strong> in any timely fashion. If I get to it, I will, but let's see.</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="http://www.sastibe.de/tags/football/">Football</a>
+
+  <a class="tag tag--primary tag--small" href="http://www.sastibe.de/tags/world-cup/">World Cup</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/" data-tooltip="Use Emacs Org Mode and REST APIs for an up-to-date Stock Portfolio">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://www.sastibe.de/2018/06/its-here-org-agenda-for-the-world-cup-2018/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Sebastian Schweer. <a href="http://www.sastibe.de/impressum/">Impressum/Datenschutz</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/" data-tooltip="Use Emacs Org Mode and REST APIs for an up-to-date Stock Portfolio">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://www.sastibe.de/2018/06/its-here-org-agenda-for-the-world-cup-2018/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http%3A%2F%2Fwww.sastibe.de%2F2018%2F06%2Fits-here-org-agenda-for-the-world-cup-2018%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="http://res.cloudinary.com/dlprdrxib/image/upload/v1515794260/profile_picture_xjw3jw.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Sebastian Schweer</h4>
+    
+      <div id="about-card-bio">Theoretiker, Ingenieur, Berater, Erzähler.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Data Analyst
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Heidelberg, Germany
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://www.sastibe.de/2018/06/its-here-org-agenda-for-the-world-cup-2018/">
+                <h3 class="media-heading">It&#39;s here: Org Agenda for the World Cup 2018</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jun 6, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">As I recently pointed out, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn't it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?
+Just so...</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/">
+                <h3 class="media-heading">Use Emacs Org Mode and REST APIs for an up-to-date Stock Portfolio</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">A couple of weeks ago, I started to work with Emacs, and I grow fonder of it every day. During a very short time period, it has become my go-to editor for nearly everything I do on my computer, including (but not limited to)
+ planning my Todos (in org-mode, to be precise), setting up my agenda (org-mode again), taking memos during meetings writing my (longer) e-mails play around with new stuff write blog posts (this is the first of these.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://www.sastibe.de/2018/04/don-t-worry-google-location/">
+                <h3 class="media-heading">Don&#39;t Worry: Google Only Checks Your Location Every 10 Minutes</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">I have a personal Google account, complete with gmail, gdrive and everything else. I first opened it up as a sort of spam email for all kinds of logins, but started to it use more and more due to its convenience. I was always slightly worried about the magnitude of data collected by Google on me, yet I never found a way to pinpoint exactly the extent of my slight worrying.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://www.sastibe.de/2018/03/benchmarking-aws-instances/">
+                <h3 class="media-heading">Benchmarking AWS Instances with MNIST classification</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Mar 3, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">In a previous post I have shown you how to setup an AWS instance running the newest RStudio, R, Python, Julia and so forth, where the configuration of the instance can be freely chosen. However, there is quite a lot of possibilities of instance configurations out there: There are different instance classes (General Purpose, Compute Optimized, RAM Optimized, … ) and different instance sizes within these classes. For General Purpose, or t2, there are, e.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://www.sastibe.de/2018/01/my-motivations-for-starting-a-blog/">
+                <h3 class="media-heading">My Motivations for Starting a Blog</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Hello world!
+My name is Sebastian Schweer, and I am a Data Scientist. This job description is increasingly popular, but it is notoriously difficult to describe precisely, what that entails. Let me show you one of my favourite definitions:
+Source.
+ My job requires me to spend a lot of time each day writing code in varying languages, mostly R but also Python and SAS. This inevitably leads me to spend a lot of time thinking about both code as well as the process of programming itself.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="http://www.sastibe.de/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/">
+                <h3 class="media-heading">Setting up a Scalable RStudio Instance in AWS</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Assume you want to start to write R code (a very good decision, in my opinion) and you want to be able to write and test code whereever you are. Wouldn’t it be awesome if one could set up an environment that can be used for R coding independent of any device? Where all you need is a decent browser, a working internet connection and you’re good to go?
+Obviously, that is the case.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         6 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('http://res.cloudinary.com/dlprdrxib/image/upload/e_brightness:119,e_blur:800,o_100/v1515795531/heidelberg_unlmtw.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="http://www.sastibe.de/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'http:\/\/www.sastibe.de\/2018\/06\/its-here-org-agenda-for-the-world-cup-2018\/';
+          
+            this.page.identifier = '\/2018\/06\/its-here-org-agenda-for-the-world-cup-2018\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'sastibe';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+
