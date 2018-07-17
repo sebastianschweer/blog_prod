@@ -1,0 +1,83 @@
+---
+title: "Registering my Blog at the VG Wort"
+date: '2018-07-17'
+metaAlignment: center
+categories:
+  - emacs
+tags:
+  - getting-started
+
+draft: false
+---
+
+* Suddenly, Attention
+
+So, it seems like my blog is getting some attention. Recently, I was even featured on the front page of [[https://news.ycombinator.com/][Hacker News]]:
+
+<div class="figure">
+<img src="https://res.cloudinary.com/dlprdrxib/image/upload/c_crop,w_2745/v1528541746/Number17onHackerNews_qw8gsp.png" alt="Of course I made a screenshot" />
+<p class="caption">Number 17... only 16 more to go!</p>
+</div>
+
+Obviously, I am delighted and flattered by the number of people reading and discussing my blog. But since [[https://www.youtube.com/watch?v%3D6p-lDYPR2P8][we're living in a material world, and I am a material guy]], I kept on wondering "is there any way to monetize this in an ethical way?". Obviously, advertisements are out of the question, but are there other ways?
+
+** VG Wort
+The VG Wort, or [[https://de.wikipedia.org/wiki/Verwertungsgesellschaft_Wort][Verwertungsgesellschaft Wort]] is a German association tasked with collecting and distributing profits made secondary exploitation rights of original textual contents. Essentially, it tries to reimburse authors and journalists for the money they "lose" by texts that are copied or digitally reproduced and thus "free of charge". The money received by the VG Wort stems mostly from so ca
+lled /Kopierabgabegeräten/ [fn:1].
+
+* A Step-by-Step Guide for registering your Blog at VG Wort
+ In what follows, I recount the steps I needed to take to register my first blog post in VG Wort. Note that all of these steps are exclusively available to *German citizens*, which is unfortunate: An internanationally available solution like the one provided by VG Wort for "making money on the internet without resorting to ads" could have beneficial consequences for everyone. But I digress...
+
+** Registering an account
+New authors nedd to first register an account, this can be done [[https://tom.vgwort.de/portal/login][here.]] I already had my account set up for my [[https://scholar.google.de/citations?user%3DtOqnGjgAAAAJ&hl%3Dde][scientific papers]].
+
+** Registering a blog post
+The first informational page on how to register a blog post is given [[https://www.vgwort.de/verguetungen/auszahlungen/texte-im-internet.html][here]]. It states the following preliminaries have to be met:
+- The blog post has to contain at least 1800 characters (including whitespaces)
+- There my be no copy-restriction on the resulting file (DRM)
+- The text was read by a certain number of people, counted by a VG Wort tracking pixel, or "Zählmarke"
+
+Obtaining the /Zählmarken/ is straightforward: In my VG Wort Account for the "registration of texts online", or /Texte online melden/, i.e. T.O.M. in German, I was able to order 100 /Zählmarken/ as a somewhat weirdly formatted csv:
+
+<div class="figure">
+<img src="http://res.cloudinary.com/dlprdrxib/image/upload/v1531865363/zaehlmarken_dummy_xdfm87.png" alt="Ahh, LibreOfficeCalc in all its ... beauty"/>
+<p class="caption">Nevermind the encoding problems... but repeating the header for each line? C'mon!</p>
+</div>
+
+** Keeping Track of the /Zählmarken/
+Seeing the poorly formatted csv made me realize I needed to keep track of my /Marken/ in a more sensible way. So I came up with the following (dummy) org-table:
+
+| Filename Zaehlmarke | No. | Public Key                         | Private Key | Post URL                                                      | No. Characters |
+|---------------------+-----+------------------------------------+-------------+---------------------------------------------------------------+----------------|
+| vgwort_1.csv        |   1 | "http://vg09.met.vgwort.de/na/foo" | bar         | 2018-01-27-setting-up-a-scalable-rstudio-instance-in-aws.html |          12200 |
+
+** Counting the number of characters in all the blog posts using hugo
+My blog is written in [[https://gohugo.io/][hugo]], I'm using the [[https://themes.gohugo.io/hugo-tranquilpeak-theme/][Tranquilpeak]] theme to be precise. Even though I write [[http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/][most of my articles in org-mode]] nowadays, there's still quite a lot of HTML clutter in my source files. How to count the characters excluding such "meta-characters"? 
+
+My solution is a bit indirect, but it works quite well. For my RSS feed, I customized the template [[https://gohugo.io/templates/rss/#the-embedded-rss-xml][rss.xml]] in order to read
+#+BEGIN_SRC go 
+      ...
+      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Content | html }}</description>
+      ...
+#+END_SRC
+The small alteration of using *.Content* instead of the default *.Summary* is, that my feed contains "full content", i.e. the entire post. In order to count the characters in all of my posts, however, I alter the respective line to read
+#+BEGIN_SRC go 
+      ...
+      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Plain | html }}</description>
+      ...
+#+END_SRC
+*hugo* uses *.Plain* to wipe away all HTML parts of the content. Hence, I can build my blog locally, open the resulting *index.xml* in emacs (obviously) and run ~M-=~ on the post. 
+
+* How much money is in it, though?
+
+As for this question, I have no answer yet. As of the publishing of this post, I have implemented the /Zählmarken/ in all of the posts, corrected the /Datenschutzerklärung/ (again, obviously) and am now waiting for results. If I understand the process correctly, I will have news by July next year. So, let's see, eh?
+
+<img src="http://vg09.met.vgwort.de/na/827bcdab5ada45d89bae2421cad93345" width="1" height="1" alt="">
+
+* Footnotes
+
+[fn:1] I love the German language. It seems like no word can be considered official enough for law texts unless it has at least 5 syllables.

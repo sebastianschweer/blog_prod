@@ -154,3 +154,5 @@ In this example, =Gain= is first calculated by multiplying =-$4 + $8=, i.e. the 
 There is no limit to what types of functions one can use, and no limit on the sophistication of analysis. And all of this within a very light-weight, easy-to-use interface, without any unnecessary over-head. It is not only convenient, but also educational: while writing this article, I learned a lot about REST APIs and financial data. 
 
 Let me conclude this article by picking up a picture from [[https://blog.fugue.co/2015-11-11-guide-to-emacs.html][one of the blog posts that got me into Emacs in the first place]]: Emacs is like a classical steel frame road bike, reliant, robust, nothing fancy but easy to repair. It is the ideal tool to explore the wilderness of the internet. And I can only invite everybody else to come along for the ride.
+
+<img src="http://vg09.met.vgwort.de/na/d161742c2abc4c1da54c58f5b3c2e753" width="1" height="1" alt="">

@@ -17,24 +17,13 @@
       <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.sastibe.de/2018/06/its-here-org-agenda-for-the-world-cup-2018/</guid>
-      <description>&lt;p&gt;As &lt;a href=&#34;http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/&#34;&gt;I recently pointed out&lt;/a&gt;, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn&#39;t it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?&lt;/p&gt;
+      <description>As I recently pointed out, I have grown rather fond of Emacs and org-mode especially in recent months. On an entirely unrelated note, the FIFA world cup is right around the corner. Wouldn&#39;t it be nice to combine my passion for the greatest sport in the world (even including all the inevitable diving, arguing with the referees etc...) with my new-found passion for clear and concise org-agendas?
+Just so...
 
-&lt;p&gt;&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1528226008/Org-Mode-WorldCup_fh4zkm.png&#34; alt=&#34;Only 90 kids will remember&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Just so...&lt;/p&gt;
-&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;A short Google research lead to these two GitHub repositories for the &lt;a href=&#34;https://github.com/djcb/org-euro2012/&#34; title=&#34;Euro 2012&#34;&gt;Euro 2012&lt;/a&gt; and the &lt;a href=&#34;https://github.com/ruediger/org-world-cup2014&#34; title=&#34;World Cup 2014&#34;&gt;World Cup 2014&lt;/a&gt;. As I couldn&#39;t find anything similar for the World Cup 2018, I decided to create it myself.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/sebastianschweer/org-world-cup-2018&#34; title=&#34;Here is the result&#34;&gt;Here is the result&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The content of the schedule is as accurate as I could manage: I read the contents of the &lt;a href=&#34;https://fixturedownload.com/download/fifa-world-cup-2018-RussianStandardTime.csv&#34; title=&#34;raw data&#34;&gt;raw data&lt;/a&gt; into the desired org format via regex (in Emacs, obviously) and manually checked the results against the entries on the &lt;a href=&#34;https://en.wikipedia.org/wiki/2018_FIFA_World_Cup&#34; title=&#34;wiki page&#34;&gt;wiki page&lt;/a&gt;. Writing the regex  was actually ... rather fun? A bit weird since it wasn&#39;t pretty, let me show you the first few symbols:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;replace-regexp &amp;lt;RET&amp;gt;
-|\s-+\([0-9]\{1,2\}\) |\([^|]+....
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Anyways, it worked, and the result is anyone&#39;s to enjoy. For the record, let me state clearly that &lt;strong&gt;I Do Not Intend To Update The Scores In The Repository&lt;/strong&gt; in any timely fashion. If I get to it, I will, but let&#39;s see.&lt;/p&gt;
+A short Google research lead to these two GitHub repositories for the Euro 2012 and the World Cup 2014. As I couldn&#39;t find anything similar for the World Cup 2018, I decided to create it myself.
+Here is the result
+The content of the schedule is as accurate as I could manage: I read the contents of the raw data into the desired org format via regex (in Emacs, obviously) and manually checked the results against the entries on the wiki page. Writing the regex was actually ... rather fun? A bit weird since it wasn&#39;t pretty, let me show you the first few symbols:
+replace-regexp &amp;lt;RET&amp;gt; |\s-+\([0-9]\{1,2\}\) |\([^|]+....  Anyways, it worked, and the result is anyone&#39;s to enjoy. For the record, let me state clearly that I Do Not Intend To Update The Scores In The Repository in any timely fashion. If I get to it, I will, but let&#39;s see.
 </description>
     </item>
     
@@ -44,188 +33,20 @@
       <pubDate>Fri, 11 May 2018 23:13:13 +0200</pubDate>
       
       <guid>http://www.sastibe.de/2018/05/2018-05-11-emacs-org-mode-rest-apis-stocks/</guid>
-      <description>&lt;p&gt;A couple of weeks ago, I started to work with &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34; title=&#34;Emacs&#34;&gt;Emacs&lt;/a&gt;, and I grow fonder of it every day. During a very short time period, it has become my go-to editor for nearly everything I do on my computer, including (but not limited to)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;planning my Todos (in &lt;a href=&#34;https://orgmode.org/&#34; title=&#34;org-mode&#34;&gt;org-mode&lt;/a&gt;, to be precise),&lt;/li&gt;
-&lt;li&gt;setting up my agenda (org-mode again),&lt;/li&gt;
-&lt;li&gt;taking memos during meetings&lt;/li&gt;
-&lt;li&gt;writing my (longer) e-mails&lt;/li&gt;
-&lt;li&gt;play around with new stuff&lt;/li&gt;
-&lt;li&gt;write blog posts (this is the first of these...)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It is difficult to pin down exactly why Emacs is taking over so much. My main influences for starting with EMACS were blogposts, &lt;a href=&#34;https://blog.fugue.co/2015-11-11-guide-to-emacs.html&#34; title=&#34;the first&#34;&gt;the first&lt;/a&gt; describing a general EMACS setup, &lt;a href=&#34;https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html&#34; title=&#34;the second&#34;&gt;the second&lt;/a&gt; detailing how to implement GTD, i.e. &lt;a href=&#34;https://en.wikipedia.org/wiki/Getting_Things_Done&#34; title=&#34;Getting Things Done&#34;&gt;Getting Things Done&lt;/a&gt; in Emacs org-mode.&lt;/p&gt;
-
-&lt;p&gt;In this post, I will demonsrate the strengths of using Emacs in a very specific use case: Getting up-to-date financial data to use in a spread-sheet including all your financial data. Applications like these are usually provided by online banks themselves, so that I don&#39;t show you anything particularly &lt;strong&gt;new&lt;/strong&gt; or &lt;strong&gt;shiny&lt;/strong&gt;. However, the ability to customize every step of the way brings with a number of advantages.&lt;/p&gt;
-
-&lt;h2 id=&#34;finding-a-rest-api-for-stock-quotes&#34;&gt;Finding a REST API for Stock Quotes&lt;/h2&gt;
-
-&lt;p&gt;First, we need to get up-to-date financial data from a REST API. I decided to use Alpha Vantage, a site I first stumbled upon after reading &lt;a href=&#34;http://www.financial-hacker.com/bye-yahoo-and-thank-you-for-the-fish/&#34; title=&#34;this blog post.&#34;&gt;this blog post.&lt;/a&gt; The other APIs listed on that page had various issues, either being deprecated in the near future (google, yahoo, stooq) or not having a number of symbols (IEX). The API of Alphavantage is rather easy to understand, even though the naming convention is terrible. Try for instance &lt;a href=&#34;https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&amp;amp;symbol=MSFT&amp;amp;interval=1min&amp;amp;apikey=demo&#34; title=&#34;this link&#34;&gt;this link&lt;/a&gt; using the demo API key, yielding the following result for the Microsoft stock:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-    &amp;quot;Meta Data&amp;quot;: {
-        &amp;quot;1. Information&amp;quot;: &amp;quot;Intraday (1min) prices and volumes&amp;quot;,
-        &amp;quot;2. Symbol&amp;quot;: &amp;quot;MSFT&amp;quot;,
-        &amp;quot;3. Last Refreshed&amp;quot;: &amp;quot;2018-05-11 16:00:00&amp;quot;,
-        &amp;quot;4. Interval&amp;quot;: &amp;quot;1min&amp;quot;,
-        &amp;quot;5. Output Size&amp;quot;: &amp;quot;Compact&amp;quot;,
-        &amp;quot;6. Time Zone&amp;quot;: &amp;quot;US/Eastern&amp;quot;
-    },
-    &amp;quot;Time Series (1min)&amp;quot;: {
-        &amp;quot;2018-05-11 16:00:00&amp;quot;: {
-            &amp;quot;1. open&amp;quot;: &amp;quot;97.5900&amp;quot;,
-            &amp;quot;2. high&amp;quot;: &amp;quot;97.7300&amp;quot;,
-            &amp;quot;3. low&amp;quot;: &amp;quot;97.5750&amp;quot;,
-            &amp;quot;4. close&amp;quot;: &amp;quot;97.7000&amp;quot;,
-            &amp;quot;5. volume&amp;quot;: &amp;quot;3776187&amp;quot;
-        },
-        &amp;quot;2018-05-11 15:59:00&amp;quot;: {
-            &amp;quot;1. open&amp;quot;: &amp;quot;97.4800&amp;quot;,
-            &amp;quot;2. high&amp;quot;: &amp;quot;97.5900&amp;quot;,
-            &amp;quot;3. low&amp;quot;: &amp;quot;97.4700&amp;quot;,
-            &amp;quot;4. close&amp;quot;: &amp;quot;97.5900&amp;quot;,
-            &amp;quot;5. volume&amp;quot;: &amp;quot;257615&amp;quot;
-        },...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;reading-api-requests-into-emacs-variables&#34;&gt;Reading API Requests into Emacs Variables&lt;/h2&gt;
-
-&lt;p&gt;Having located the data out in the internet was a good first step, but now we need to figure out a way how to use this information. Luckily, most of the work needed for this can be found in various places on the net, for instance in &lt;a href=&#34;https://vxlabs.com/2017/06/03/querying-restful-webservices-into-emacs-orgmode-tables/&#34; title=&#34;this blog post&#34;&gt;this blog post&lt;/a&gt;. I decided to follow their general setup, using the following packages:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;org&lt;/li&gt;
-&lt;li&gt;org-babel&lt;/li&gt;
-&lt;li&gt;request&lt;/li&gt;
-&lt;li&gt;json&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The API used in their scenario gave different results with a much cleaner nomenclature. For the Alphavantage API, I had to become a little creative with the eLisp code.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(require &#39;request)
-(require &#39;json)
-(require &#39;cl)
-
-(request
- &amp;quot;https://www.alphavantage.co/query&amp;quot;
- :params `((&amp;quot;function&amp;quot; . &amp;quot;TIME_SERIES_INTRADAY&amp;quot;)
-           (&amp;quot;symbol&amp;quot; . &amp;quot;SC0J&amp;quot;)
-           (&amp;quot;interval&amp;quot; . &amp;quot;1min&amp;quot;)
-           (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;))
- :parser &#39;json-read
- :success (function*
-           (lambda (&amp;amp;key data &amp;amp;allow-other-keys)
-             (setq open_sc0j (string-to-number (cdr (elt (elt (elt data 1) 1) 1)))))))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The variable &lt;code&gt;open_sc0j&lt;/code&gt; is evaluated as follows: From the received json, take the second entry of the second element of the second element. Not very nice, but it works...&lt;/p&gt;
-
-&lt;p&gt;I encountered a second difficulty in my portfolio: I have both European stocks (in EUR) and American stocks (traded in USD). In order to keep my balances comparable, I added yet another variable &lt;code&gt;rate_usd_eur&lt;/code&gt;, which receives up-to-date exchange rates from USD to EUR from the appropriate query. All in all, my requests to Alphavantage look like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(request
- &amp;quot;https://www.alphavantage.co/query&amp;quot;
- :params `((&amp;quot;function&amp;quot; . &amp;quot;TIME_SERIES_INTRADAY&amp;quot;)
-           (&amp;quot;symbol&amp;quot; . &amp;quot;SC0J&amp;quot;)
-           (&amp;quot;interval&amp;quot; . &amp;quot;1min&amp;quot;)
-           (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;))
- :parser &#39;json-read
- :success (function*
-           (lambda (&amp;amp;key data &amp;amp;allow-other-keys)
-             (setq open_sc0j (string-to-number (cdr (elt (elt (elt data 1) 1) 1)))))))
-
-
-(request
- &amp;quot;https://www.alphavantage.co/query&amp;quot;
- :params `((&amp;quot;function&amp;quot; . &amp;quot;CURRENCY_EXCHANGE_RATE&amp;quot;)
-           (&amp;quot;from_currency&amp;quot; . &amp;quot;USD&amp;quot;)
-           (&amp;quot;to_currency&amp;quot; . &amp;quot;EUR&amp;quot;)
-           (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;))
- :parser &#39;json-read
- :success (function*
-           (lambda (&amp;amp;key data &amp;amp;allow-other-keys)
-             (setq rate_usd_eur (string-to-number (cdr (elt (elt data 0) 5)))))))
-
-(request
- &amp;quot;https://www.alphavantage.co/query&amp;quot;
- :params `((&amp;quot;function&amp;quot; . &amp;quot;TIME_SERIES_INTRADAY&amp;quot;)
-           (&amp;quot;symbol&amp;quot; . &amp;quot;PG&amp;quot;)
-           (&amp;quot;interval&amp;quot; . &amp;quot;1min&amp;quot;)
-           (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;))
- :parser &#39;json-read
- :success (function*
-           (lambda (&amp;amp;key data &amp;amp;allow-other-keys)
-             (org-table-iterate-buffer-tables)
-             (setq open_prg (* rate_usd_eur (string-to-number (cdr (elt (elt (elt data 1) 1) 1))))))))
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Putting this code inside an org-mode file, bracketing it by code blocks &lt;code&gt;#+BEGIN_SRC emacs-lisp :results none&lt;/code&gt; and &lt;code&gt;#+END_SRC&lt;/code&gt;, and hitting &#34;C-c C-c&#34; inside it leads to the evaluation of the code block and thus the filling of the variables &lt;code&gt;open_sc0j&lt;/code&gt;, &lt;code&gt;rate_usd_eur&lt;/code&gt; and &lt;code&gt;open_prg&lt;/code&gt;. Since we included the wonderful little function &lt;code&gt;org-table-iterate-buffer-tables&lt;/code&gt;, the evaluation also repeats until all the columns in the table below are calculated correctly. This neat little trick I also copied from &lt;a href=&#34;https://vxlabs.com/2017/06/03/querying-restful-webservices-into-emacs-orgmode-tables/&#34; title=&#34;here.&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;setting-up-a-custom-stock-portfolio-org-table&#34;&gt;Setting up a Custom Stock Portfolio Org Table&lt;/h2&gt;
-
-&lt;p&gt;After these steps, we now set up an org-table to give us a customizable overview of how our stocks are doing. That means setting up an org-table with columns for historic data, such as the date of the buy. Additionally, we use the &lt;code&gt;#+TBLFM&lt;/code&gt; function to calculate appropriate performance indicators. An example for such functions:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;| Stock         | Symbol | Amt. |    Buy | Date Bought     |  Fees | Dividends | Close |   Gain | Gain Perc | Gain per Day |
-|---------------+--------+------+--------+-----------------+-------+-----------+-------+--------+-----------+--------------|
-| MSCI ETF      | SC0J   |   10 |  47.11 | [2018-04-16 Mo] | 12.35 |         0 |       |        |           |              |
-| ProcterGamble | PG     |    5 | 65.014 | [2015-10-01 Do] | 10.61 |     72.03 |       |        |           |              |
-#+TBLFM: $9=(-$4 + $8)*$3 - $6 + $7;%0.3f::$10=100*$9/($4*$3)::$11=$9/(now() - $5)::@2$8=&#39;(format &amp;quot;%f&amp;quot; open_sc0j)::@3$7=17.78 + 17.70 + 17.94 + 18.61::@3$8=&#39;(format &amp;quot;%f&amp;quot; open_prg)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This code leads to the following result:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Stock&lt;/th&gt;
-&lt;th&gt;Symbol&lt;/th&gt;
-&lt;th&gt;Amt.&lt;/th&gt;
-&lt;th&gt;Buy&lt;/th&gt;
-&lt;th&gt;Date Bought&lt;/th&gt;
-&lt;th&gt;Fees&lt;/th&gt;
-&lt;th&gt;Dividends&lt;/th&gt;
-&lt;th&gt;Close&lt;/th&gt;
-&lt;th&gt;Gain&lt;/th&gt;
-&lt;th&gt;Gain Perc&lt;/th&gt;
-&lt;th&gt;Gain per Day&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;MSCI ETF&lt;/td&gt;
-&lt;td&gt;SC0J&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;47.11&lt;/td&gt;
-&lt;td&gt;[2018-04-16 Mo]&lt;/td&gt;
-&lt;td&gt;12.35&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;49.290000&lt;/td&gt;
-&lt;td&gt;9.450&lt;/td&gt;
-&lt;td&gt;2.0059435&lt;/td&gt;
-&lt;td&gt;0.35552367&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;ProcterGamble&lt;/td&gt;
-&lt;td&gt;PG&lt;/td&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;65.014&lt;/td&gt;
-&lt;td&gt;[2015-10-01 Do]&lt;/td&gt;
-&lt;td&gt;10.61&lt;/td&gt;
-&lt;td&gt;72.03&lt;/td&gt;
-&lt;td&gt;61.342605&lt;/td&gt;
-&lt;td&gt;43.063&lt;/td&gt;
-&lt;td&gt;13.247301&lt;/td&gt;
-&lt;td&gt;0.045111962&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;In this example, &lt;code&gt;Gain&lt;/code&gt; is first calculated by multiplying &lt;code&gt;-$4 + $8&lt;/code&gt;, i.e. the difference between Buy and (today&#39;s) Close by the amount of stocks bought. Additionally, any dividends are added and any fees are subtracted, yielding a &#34;net gain&#34; for the stock. In column &lt;code&gt;Gain per Day&lt;/code&gt;, this number is broken down per day since I bought the stock, highlighting my most efficient assets.&lt;/p&gt;
-
-&lt;p&gt;There is no limit to what types of functions one can use, and no limit on the sophistication of analysis. And all of this within a very light-weight, easy-to-use interface, without any unnecessary over-head. It is not only convenient, but also educational: while writing this article, I learned a lot about REST APIs and financial data.&lt;/p&gt;
-
-&lt;p&gt;Let me conclude this article by picking up a picture from &lt;a href=&#34;https://blog.fugue.co/2015-11-11-guide-to-emacs.html&#34; title=&#34;one of the blog posts that got me into Emacs in the first place&#34;&gt;one of the blog posts that got me into Emacs in the first place&lt;/a&gt;: Emacs is like a classical steel frame road bike, reliant, robust, nothing fancy but easy to repair. It is the ideal tool to explore the wilderness of the internet. And I can only invite everybody else to come along for the ride.&lt;/p&gt;
+      <description>A couple of weeks ago, I started to work with Emacs, and I grow fonder of it every day. During a very short time period, it has become my go-to editor for nearly everything I do on my computer, including (but not limited to)
+ planning my Todos (in org-mode, to be precise), setting up my agenda (org-mode again), taking memos during meetings writing my (longer) e-mails play around with new stuff write blog posts (this is the first of these...)  It is difficult to pin down exactly why Emacs is taking over so much. My main influences for starting with EMACS were blogposts, the first describing a general EMACS setup, the second detailing how to implement GTD, i.e. Getting Things Done in Emacs org-mode.
+In this post, I will demonsrate the strengths of using Emacs in a very specific use case: Getting up-to-date financial data to use in a spread-sheet including all your financial data. Applications like these are usually provided by online banks themselves, so that I don&#39;t show you anything particularly new or shiny. However, the ability to customize every step of the way brings with a number of advantages.
+Finding a REST API for Stock Quotes First, we need to get up-to-date financial data from a REST API. I decided to use Alpha Vantage, a site I first stumbled upon after reading this blog post. The other APIs listed on that page had various issues, either being deprecated in the near future (google, yahoo, stooq) or not having a number of symbols (IEX). The API of Alphavantage is rather easy to understand, even though the naming convention is terrible. Try for instance this link using the demo API key, yielding the following result for the Microsoft stock:
+{ &amp;quot;Meta Data&amp;quot;: { &amp;quot;1. Information&amp;quot;: &amp;quot;Intraday (1min) prices and volumes&amp;quot;, &amp;quot;2. Symbol&amp;quot;: &amp;quot;MSFT&amp;quot;, &amp;quot;3. Last Refreshed&amp;quot;: &amp;quot;2018-05-11 16:00:00&amp;quot;, &amp;quot;4. Interval&amp;quot;: &amp;quot;1min&amp;quot;, &amp;quot;5. Output Size&amp;quot;: &amp;quot;Compact&amp;quot;, &amp;quot;6. Time Zone&amp;quot;: &amp;quot;US/Eastern&amp;quot; }, &amp;quot;Time Series (1min)&amp;quot;: { &amp;quot;2018-05-11 16:00:00&amp;quot;: { &amp;quot;1. open&amp;quot;: &amp;quot;97.5900&amp;quot;, &amp;quot;2. high&amp;quot;: &amp;quot;97.7300&amp;quot;, &amp;quot;3. low&amp;quot;: &amp;quot;97.5750&amp;quot;, &amp;quot;4. close&amp;quot;: &amp;quot;97.7000&amp;quot;, &amp;quot;5. volume&amp;quot;: &amp;quot;3776187&amp;quot; }, &amp;quot;2018-05-11 15:59:00&amp;quot;: { &amp;quot;1. open&amp;quot;: &amp;quot;97.4800&amp;quot;, &amp;quot;2. high&amp;quot;: &amp;quot;97.5900&amp;quot;, &amp;quot;3. low&amp;quot;: &amp;quot;97.4700&amp;quot;, &amp;quot;4. close&amp;quot;: &amp;quot;97.5900&amp;quot;, &amp;quot;5. volume&amp;quot;: &amp;quot;257615&amp;quot; },...  Reading API Requests into Emacs Variables Having located the data out in the internet was a good first step, but now we need to figure out a way how to use this information. Luckily, most of the work needed for this can be found in various places on the net, for instance in this blog post. I decided to follow their general setup, using the following packages:
+ org org-babel request json  The API used in their scenario gave different results with a much cleaner nomenclature. For the Alphavantage API, I had to become a little creative with the eLisp code.
+(require &#39;request) (require &#39;json) (require &#39;cl) (request &amp;quot;https://www.alphavantage.co/query&amp;quot; :params `((&amp;quot;function&amp;quot; . &amp;quot;TIME_SERIES_INTRADAY&amp;quot;) (&amp;quot;symbol&amp;quot; . &amp;quot;SC0J&amp;quot;) (&amp;quot;interval&amp;quot; . &amp;quot;1min&amp;quot;) (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;)) :parser &#39;json-read :success (function* (lambda (&amp;amp;key data &amp;amp;allow-other-keys) (setq open_sc0j (string-to-number (cdr (elt (elt (elt data 1) 1) 1)))))))  The variable open_sc0j is evaluated as follows: From the received json, take the second entry of the second element of the second element. Not very nice, but it works...
+I encountered a second difficulty in my portfolio: I have both European stocks (in EUR) and American stocks (traded in USD). In order to keep my balances comparable, I added yet another variable rate_usd_eur, which receives up-to-date exchange rates from USD to EUR from the appropriate query. All in all, my requests to Alphavantage look like this:
+(request &amp;quot;https://www.alphavantage.co/query&amp;quot; :params `((&amp;quot;function&amp;quot; . &amp;quot;TIME_SERIES_INTRADAY&amp;quot;) (&amp;quot;symbol&amp;quot; . &amp;quot;SC0J&amp;quot;) (&amp;quot;interval&amp;quot; . &amp;quot;1min&amp;quot;) (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;)) :parser &#39;json-read :success (function* (lambda (&amp;amp;key data &amp;amp;allow-other-keys) (setq open_sc0j (string-to-number (cdr (elt (elt (elt data 1) 1) 1))))))) (request &amp;quot;https://www.alphavantage.co/query&amp;quot; :params `((&amp;quot;function&amp;quot; . &amp;quot;CURRENCY_EXCHANGE_RATE&amp;quot;) (&amp;quot;from_currency&amp;quot; . &amp;quot;USD&amp;quot;) (&amp;quot;to_currency&amp;quot; . &amp;quot;EUR&amp;quot;) (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;)) :parser &#39;json-read :success (function* (lambda (&amp;amp;key data &amp;amp;allow-other-keys) (setq rate_usd_eur (string-to-number (cdr (elt (elt data 0) 5))))))) (request &amp;quot;https://www.alphavantage.co/query&amp;quot; :params `((&amp;quot;function&amp;quot; . &amp;quot;TIME_SERIES_INTRADAY&amp;quot;) (&amp;quot;symbol&amp;quot; . &amp;quot;PG&amp;quot;) (&amp;quot;interval&amp;quot; . &amp;quot;1min&amp;quot;) (&amp;quot;apikey&amp;quot; . &amp;quot;...&amp;quot;)) :parser &#39;json-read :success (function* (lambda (&amp;amp;key data &amp;amp;allow-other-keys) (org-table-iterate-buffer-tables) (setq open_prg (* rate_usd_eur (string-to-number (cdr (elt (elt (elt data 1) 1) 1))))))))  Putting this code inside an org-mode file, bracketing it by code blocks #+BEGIN_SRC emacs-lisp :results none and #+END_SRC, and hitting &#34;C-c C-c&#34; inside it leads to the evaluation of the code block and thus the filling of the variables open_sc0j, rate_usd_eur and open_prg. Since we included the wonderful little function org-table-iterate-buffer-tables, the evaluation also repeats until all the columns in the table below are calculated correctly. This neat little trick I also copied from here.
+Setting up a Custom Stock Portfolio Org Table After these steps, we now set up an org-table to give us a customizable overview of how our stocks are doing. That means setting up an org-table with columns for historic data, such as the date of the buy. Additionally, we use the #+TBLFM function to calculate appropriate performance indicators. An example for such functions:
+| Stock | Symbol | Amt. | Buy | Date Bought | Fees | Dividends | Close | Gain | Gain Perc | Gain per Day | |---------------+--------+------+--------+-----------------+-------+-----------+-------+--------+-----------+--------------| | MSCI ETF | SC0J | 10 | 47.11 | [2018-04-16 Mo] | 12.35 | 0 | | | | | | ProcterGamble | PG | 5 | 65.014 | [2015-10-01 Do] | 10.61 | 72.03 | | | | | #+TBLFM: $9=(-$4 + $8)*$3 - $6 + $7;%0.3f::$10=100*$9/($4*$3)::$11=$9/(now() - $5)::@2$8=&#39;(format &amp;quot;%f&amp;quot; open_sc0j)::@3$7=17.78 + 17.70 + 17.94 + 18.61::@3$8=&#39;(format &amp;quot;%f&amp;quot; open_prg)  This code leads to the following result:
+   Stock Symbol Amt. Buy Date Bought Fees Dividends Close Gain Gain Perc Gain per Day     MSCI ETF SC0J 10 47.11 [2018-04-16 Mo] 12.35 0 49.290000 9.450 2.0059435 0.35552367   ProcterGamble PG 5 65.014 [2015-10-01 Do] 10.61 72.03 61.342605 43.063 13.247301 0.045111962    In this example, Gain is first calculated by multiplying -$4 + $8, i.e. the difference between Buy and (today&#39;s) Close by the amount of stocks bought. Additionally, any dividends are added and any fees are subtracted, yielding a &#34;net gain&#34; for the stock. In column Gain per Day, this number is broken down per day since I bought the stock, highlighting my most efficient assets.
+There is no limit to what types of functions one can use, and no limit on the sophistication of analysis. And all of this within a very light-weight, easy-to-use interface, without any unnecessary over-head. It is not only convenient, but also educational: while writing this article, I learned a lot about REST APIs and financial data.
+Let me conclude this article by picking up a picture from one of the blog posts that got me into Emacs in the first place: Emacs is like a classical steel frame road bike, reliant, robust, nothing fancy but easy to repair. It is the ideal tool to explore the wilderness of the internet. And I can only invite everybody else to come along for the ride.
 </description>
     </item>
     

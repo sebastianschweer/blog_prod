@@ -6,10 +6,35 @@
     <description>Recent content in Getting Started on Sastibe&#39;s Data Science Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jul 2018 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="http://www.sastibe.de/tags/getting-started/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Registering my Blog at the VG Wort</title>
+      <link>http://www.sastibe.de/2018/07/registering-my-blog-at-the-vg-wort/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.sastibe.de/2018/07/registering-my-blog-at-the-vg-wort/</guid>
+      <description>Suddenly, Attention So, it seems like my blog is getting some attention. Recently, I was even featured on the front page of Hacker News:
+Number 17... only 16 more to go!
+
+Obviously, I am delighted and flattered by the number of people reading and discussing my blog. But since we&#39;re living in a material world, and I am a material guy, I kept on wondering &#34;is there any way to monetize this in an ethical way?&#34;. Obviously, advertisements are out of the question, but are there other ways?
+VG Wort The VG Wort, or Verwertungsgesellschaft Wort is a German association tasked with collecting and distributing profits made secondary exploitation rights of original textual contents. Essentially, it tries to reimburse authors and journalists for the money they &#34;lose&#34; by texts that are copied or digitally reproduced and thus &#34;free of charge&#34;. The money received by the VG Wort stems mostly from so ca lled Kopierabgabegeräten 1.
+A Step-by-Step Guide for registering your Blog at VG Wort In what follows, I recount the steps I needed to take to register my first blog post in VG Wort. Note that all of these steps are exclusively available to German citizens, which is unfortunate: An internanationally available solution like the one provided by VG Wort for &#34;making money on the internet without resorting to ads&#34; could have beneficial consequences for everyone. But I digress...
+Registering an account New authors nedd to first register an account, this can be done here. I already had my account set up for my scientific papers.
+Registering a blog post  The first informational page on how to register a blog post is given here. It states the following preliminaries have to be met: The blog post has to contain at least 1800 characters (including whitespaces) There my be no copy-restriction on the resulting file (DRM) The text was read by a certain number of people, counted by a VG Wort tracking pixel, or &#34;Zählmarke&#34;  Obtaining the Zählmarken is straightforward: In my VG Wort Account for the &#34;registration of texts online&#34;, or Texte online melden, i.e. T.O.M. in German, I was able to order 100 Zählmarken as a somewhat weirdly formatted csv:
+Nevermind the encoding problems... but repeating the header for each line? C&#39;mon!
+
+Keeping Track of the Zählmarken Seeing the poorly formatted csv made me realize I needed to keep track of my Marken in a more sensible way. So I came up with the following (dummy) org-table:
+   Filename Zaehlmarke No. Public Key Private Key Post URL No. Characters     vgwort_1.csv 1 &#34;http://vg09.met.vgwort.de/na/foo&#34; bar 2018-01-27-setting-up-a-scalable-rstudio-instance-in-aws.html 12200    Counting the number of characters in all the blog posts using hugo My blog is written in hugo, I&#39;m using the Tranquilpeak theme to be precise. Even though I write most of my articles in org-mode nowadays, there&#39;s still quite a lot of HTML clutter in my source files. How to count the characters excluding such &#34;meta-characters&#34;?
+My solution is a bit indirect, but it works quite well. For my RSS feed, I customized the template rss.xml in order to read
+... {{ with .Site.Author.email }}&amp;lt;author&amp;gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&amp;lt;/author&amp;gt;{{end}} &amp;lt;guid&amp;gt;{{ .Permalink }}&amp;lt;/guid&amp;gt; &amp;lt;description&amp;gt;{{ .Content | html }}&amp;lt;/description&amp;gt; ...  The small alteration of using .Content instead of the default .Summary is, that my feed contains &#34;full content&#34;, i.e. the entire post. In order to count the characters in all of my posts, however, I alter the respective line to read
+... {{ with .Site.Author.email }}&amp;lt;author&amp;gt;{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}&amp;lt;/author&amp;gt;{{end}} &amp;lt;guid&amp;gt;{{ .Permalink }}&amp;lt;/guid&amp;gt; &amp;lt;description&amp;gt;{{ .Plain | html }}&amp;lt;/description&amp;gt; ...  hugo uses .Plain to wipe away all HTML parts of the content. Hence, I can build my blog locally, open the resulting index.xml in emacs (obviously) and run M-= on the post.
+How much money is in it, though? As for this question, I have no answer yet. As of the publishing of this post, I have implemented the Zählmarken in all of the posts, corrected the Datenschutzerklärung (again, obviously) and am now waiting for results. If I understand the process correctly, I will have news by July next year. So, let&#39;s see, eh?
+Footnotes  I love the German language. It seems like no word can be considered official enough for law texts unless it has at least 5 syllables. [return]   </description>
+    </item>
     
     <item>
       <title>My Motivations for Starting a Blog</title>
@@ -17,38 +42,17 @@
       <pubDate>Sun, 28 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.sastibe.de/2018/01/my-motivations-for-starting-a-blog/</guid>
-      <description>&lt;p&gt;Hello world!&lt;/p&gt;
-&lt;p&gt;My name is Sebastian Schweer, and I am a Data Scientist. This job description is increasingly popular, but it is notoriously difficult to describe precisely, what that entails. Let me show you one of my favourite definitions:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://twitter.com/hadleywickham/status/914140589565841410&#34; alt=&#34;Source.&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Source.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;My job requires me to spend a lot of time each day writing code in varying languages, mostly &lt;code&gt;R&lt;/code&gt; but also Python and SAS. This inevitably leads me to spend a lot of time thinking about both code as well as the process of programming itself. The major question is, as always, “How do you ensure, that your product is of the best quality?”. Recently, I stumbled upon&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; a incredibly concise diagram:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/a_270/v1517091390/skizzeblog_nsrt9u.jpg&#34; alt=&#34;The importance of collaboration&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;The importance of collaboration&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;I believe this is an astute observations, and I find its reflections in many daily situations including (but not limited to) producing code or data analyses. More precisely, I identified these 3 consequences of writing code with the intent of publicizing:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Tested&lt;/strong&gt;: Nobody wants to publish content that only works once or only works on a certain local machine. Thus, any project up for publication automatically gets tested and tried much more meticuously.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Modular&lt;/strong&gt;: It is much easier to explain and distribute several single clear ideas than one larger, vague idea. Hence, publication leads to more modular code, creating a more flexible and adaptive code base.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Documented&lt;/strong&gt;: It doesn’t suffice if you as the author understand what the function with non-descriptive names such as &lt;code&gt;fn_011_v3&lt;/code&gt; does, that should be apparent from the name or at least from the documentation. &lt;em&gt;The onus of understanding the code is transferred from the mind of the author to the body of the code.&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;All of these characteristics increase the maturity and quality of the code. Since I am obviously interested in producing high quality work, I started this blog in order to have a public outlet for all my private little programming projects.&lt;/p&gt;
-&lt;p&gt;The scope of these projects will vary wildly, I am sure, since the inspiration are heterogeneous. For instance, the first three posts have three different “sponsors”:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;I wrote &lt;a href=&#34;http://www.sastibe.de/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/&#34;&gt;Setting up an RStudio instance on AWS&lt;/a&gt; with the audience of my father in mind, since he showed such an interest in my explanations of the topic over the Christmas break,&lt;/li&gt;
-&lt;li&gt;I wrote (or rather ‘will write’) the post &lt;a href=&#34;&#34;&gt;A benchmark for dplyr vs. dbplyr&lt;/a&gt; for my sister-in-law, since she asked me about the topic and I didn’t know anything abaout it at the time,&lt;/li&gt;
-&lt;li&gt;and for the present article, or rather statement, I had &lt;a href=&#34;https://twitter.com/christofhorn&#34;&gt;my former employer&lt;/a&gt; in mind, a great fan of simple but concise diagrams depicting deep thoughts.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I appreciate any remarks or comments on anything that I write, and I wish you lots of entertainment perusing my site.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;I can’t find the original source anymore, I have spent a long time going through my Twitter feed. If anyone recognizes the slide and especially the author, I would be incredibly thankful for the information and would gladly update the source information here.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <description>Hello world!
+My name is Sebastian Schweer, and I am a Data Scientist. This job description is increasingly popular, but it is notoriously difficult to describe precisely, what that entails. Let me show you one of my favourite definitions:
+Source.
+ My job requires me to spend a lot of time each day writing code in varying languages, mostly R but also Python and SAS. This inevitably leads me to spend a lot of time thinking about both code as well as the process of programming itself. The major question is, as always, “How do you ensure, that your product is of the best quality?”. Recently, I stumbled upon1 a incredibly concise diagram:
+The importance of collaboration
+ I believe this is an astute observations, and I find its reflections in many daily situations including (but not limited to) producing code or data analyses. More precisely, I identified these 3 consequences of writing code with the intent of publicizing:
+ Tested: Nobody wants to publish content that only works once or only works on a certain local machine. Thus, any project up for publication automatically gets tested and tried much more meticuously. Modular: It is much easier to explain and distribute several single clear ideas than one larger, vague idea. Hence, publication leads to more modular code, creating a more flexible and adaptive code base. Documented: It doesn’t suffice if you as the author understand what the function with non-descriptive names such as fn_011_v3 does, that should be apparent from the name or at least from the documentation. The onus of understanding the code is transferred from the mind of the author to the body of the code.  All of these characteristics increase the maturity and quality of the code. Since I am obviously interested in producing high quality work, I started this blog in order to have a public outlet for all my private little programming projects.
+The scope of these projects will vary wildly, I am sure, since the inspiration are heterogeneous. For instance, the first three posts have three different “sponsors”:
+ I wrote Setting up an RStudio instance on AWS with the audience of my father in mind, since he showed such an interest in my explanations of the topic over the Christmas break, I wrote (or rather ‘will write’) the post A benchmark for dplyr vs. dbplyr for my sister-in-law, since she asked me about the topic and I didn’t know anything abaout it at the time, and for the present article, or rather statement, I had my former employer in mind, a great fan of simple but concise diagrams depicting deep thoughts.  I appreciate any remarks or comments on anything that I write, and I wish you lots of entertainment perusing my site.
+ I can’t find the original source anymore, I have spent a long time going through my Twitter feed. If anyone recognizes the slide and especially the author, I would be incredibly thankful for the information and would gladly update the source information here.↩
+   </description>
     </item>
     
     <item>
@@ -57,144 +61,48 @@
       <pubDate>Sat, 27 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.sastibe.de/2018/01/setting-up-a-scalable-rstudio-instance-in-aws/</guid>
-      <description>&lt;p&gt;Assume you want to start to write &lt;code&gt;R&lt;/code&gt; code (a very good decision, in my opinion) and you want to be able to write and test code whereever you are. Wouldn’t it be awesome if one could set up an environment that can be used for &lt;code&gt;R&lt;/code&gt; coding independent of any device? Where all you need is a decent browser, a working internet connection and you’re good to go?&lt;/p&gt;
-&lt;p&gt;Obviously, that is the case. In this post, I will show you the steps for setting up such an environment on Amazon Web Services (AWS). The main advantages of using such a set-up:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Runs on any infrastructure: All you need is a working internet connection, a decent browser and an AWS account, which is usually&lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; free.&lt;/li&gt;
-&lt;li&gt;Runs everywhere: The AWS machine will be set up to automatically clone your GitHub repository (don’t worry if this doesn’t mean anything to you, this point is optional), so that you don’t even have to have your codes on the device.&lt;/li&gt;
-&lt;li&gt;Scalable: The AWS machine running your code can be chosen to suit any of your needs, in any session. Just playing around with a new package? Use the smallest size, doesn’t cost a dime. Trying to re-create state-of-the-art machine learning performance with a fancy DNN-classifier? Go all in with 500 GB of RAM; it’ll cost ya, but it’s fun.&lt;/li&gt;
-&lt;li&gt;Up-to-Date: Since the envirionment is freshly installed each time, your &lt;code&gt;R&lt;/code&gt; version as well as the package versions in use are automatically up-to-date. In the latter case, that would also be easy to maintain on a local machine, the former, however, is a nice benefit.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Convinced? Awesome, let’s get started!&lt;/p&gt;
-&lt;div id=&#34;overview-of-main-steps&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Overview of main steps&lt;/h1&gt;
-&lt;p&gt;First a short overview of the main steps covered in this blog post:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;Get an AWS account (duh!),&lt;/li&gt;
-&lt;li&gt;Configure your RStudio AMI,
-&lt;ol style=&#34;list-style-type: lower-roman&#34;&gt;
-&lt;li&gt;Find the right RStudio AMI,&lt;/li&gt;
-&lt;li&gt;Configure Security Groups,&lt;/li&gt;
-&lt;li&gt;Automatically Change your RStudio Password,&lt;/li&gt;
-&lt;li&gt;Incorporate a clone of your GitHub repo,&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;Start your First RStudio instance (and bask in its glory),&lt;/li&gt;
-&lt;li&gt;Create a personal AMI for future convenience,&lt;/li&gt;
-&lt;li&gt;Shut down the Instance and all Resources.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Preconditions for this tutorial should be basically none, at least in terms of coding and/or understanding &lt;code&gt;R&lt;/code&gt; itself. The main task will lie in clicking the right buttons.&lt;/p&gt;
-&lt;div id=&#34;step-1-get-an-aws-account.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Step 1: Get an AWS account.&lt;/h2&gt;
-&lt;p&gt;Well, it isn’t really my place to tell you how to get an AWS account if Amazon itself did &lt;a href=&#34;https://aws.amazon.com/resources/create-account/&#34;&gt;such a great job explaining it&lt;/a&gt;. Just use the link to set up your account, and I further suggest to follow &lt;a href=&#34;https://aws.amazon.com/getting-started/tutorials/launch-a-virtual-machine/&#34;&gt;this set of instructions&lt;/a&gt;, building your very first instance. Take your time going through these instructions, I’ll wait…&lt;/p&gt;
-&lt;p&gt;Ready? Alright, sweet. Then we continue with&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;step-2-configure-your-rstudio-ami.&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Step 2: Configure your RStudio AMI.&lt;/h2&gt;
-&lt;p&gt;In this step, I collected several steps, not all of which are necessary. Steps 2a and 2b are crucial, Step 2c is recommended. Step 2d can be skipped on the first set-up. The implementation of this step can always be re-assessed whenever it becomes necessary.&lt;/p&gt;
-&lt;p&gt;Let’s begin by starting an instance in the AWS Dashboard. Just open “Instances” on the side menu of your EC2 Dashboard and click on “Launch Instance”:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1517086196/screenshot_launch_instance_ltpbba.png&#34; alt=&#34;Here we go!&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Here we go!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;step-2a-find-the-current-rstudio-ami.&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Step 2a: Find the current RStudio AMI.&lt;/h3&gt;
-&lt;p&gt;The first task is to choose an Amazon Machine Image, or AMI, which is essentially an operating system container. More to the point, in an AMI a Linux distribution can be bundled with addtional software packages tailored to any type of need: web development, accounting (I’m guessing here, but … sure) and, most importantly, using RStudio. &lt;a href=&#34;http://www.louisaslett.com/RStudio_AMI/&#34;&gt;On Louis Anslett’s homepage&lt;/a&gt; you can find a wonderful storage of RStudio AMIs. We use the newest version for the correct geographical zone, in my case Frankfurt:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1516304602/screenshot_louisaslett_eyug44.png&#34; alt=&#34;One AMI for each region. Neat&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;One AMI for each region. Neat&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;As you can see, thanks to Louis Anslett’s work, the AMI includes not only the newest version of RStudio but also of &lt;code&gt;R&lt;/code&gt; itself as well as a handful of helpful additional software packages. For instance, Git comes pre-installed, which we will use later on; also &lt;code&gt;Julia&lt;/code&gt;is installed for those looking to try out the possible future of data science languages. But I’m deviating… Let’s note the AMI-ID (in our case “ami-a80db3c7”), put this in the start-up options and let’s continue.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;step-2b-configure-the-security-groups-for-your-rstudio-instance&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Step 2b: Configure the security groups for your RStudio instance&lt;/h3&gt;
-&lt;p&gt;In AWS, &lt;a href=&#34;https://docs.aws.amazon.com/en_en/AWSEC2/latest/UserGuide/using-network-security.html&#34;&gt;security groups&lt;/a&gt; control the access to the machine over the internet (if you don‘t care about how exactly this works and only want to follow the instructions, just skip the next sentences). More precisely, they define which kind of protocols may use which ports on your machine from a given IP range. For example, you can set the access rights for a ssh protocol to be able to connect to your machine on port 22 only from your personal IP address at home.&lt;/p&gt;
-&lt;p&gt;In our case, we actually only need access via http protocol, since the RStudio instance will allow log-in via browser interface. Therefore, our security group can be kept quite simple:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1515794260/screenshot_security_group_xy0wkr.png&#34; alt=&#34;The bottom option allows the whole world to see the instance. Golly.&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;The bottom option allows the whole world to see the instance. Golly.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;The IP range can be limited to your own personal IP to ensure the safety of your instance. This precaution could be necessary since only the login page of RStudio stands between the internet and your instance (spooky, huh?). However, since the personal IP usually changes each day (roughly speaking), this becomes a personal question of “privacy vs. convenience”. In my case, as you can see, convenience won.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;step2c&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;2c. Automatically Change your RStudio Password&lt;/h3&gt;
-&lt;p&gt;In the documentation of the RStudio AMI we can find the following passage: “It is highly recommended you change the password immediately and an easy means of doing this is explained upon login in the script that is loaded there”. Alright, fine, but I’d rather to that programmatically, i.e. automatically. The weirdly named “User data” option provides just the framework: All commands placed here get executed at the beginning of the start-up. You can find this setting in the menu “Configure Instance Details” under “Advanced Details”.&lt;/p&gt;
-&lt;p&gt;In order to change the password of the user “RStudio” on start-up, we paste the following code:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#!/bin/bash
-echo &amp;quot;rstudio:guest&amp;quot; | chpasswd&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;where you should replace the password “guest” with whatever you deem appropriate. We are almost done with the set-up now, there only remains&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;step-2d-optional-automatically-clone-a-github-repo&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Step 2d (optional): Automatically Clone a GitHub repo&lt;/h3&gt;
-&lt;p&gt;I write all my private code projects on my GitHub account (here: &lt;a href=&#34;https://github.com/sebastianschweer&#34; class=&#34;uri&#34;&gt;https://github.com/sebastianschweer&lt;/a&gt;. What a shameless self-plug!) and I also would like my code to be available for me each time I start up my RStudio instance. Fortunately, this is easily configured with “User data” again, by just adding the command&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;git clone https://github.com/sebastianschweer/sastibe.git /home/rstudio/sastibe
-chmod -R 777 /home/rstudio/sastibe&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;to the “User data” of &lt;a href=&#34;#setp2c&#34;&gt;Step 2c&lt;/a&gt;. Now, when I start up the new RStudio instance, the repository &lt;code&gt;sastibe&lt;/code&gt; gets cloned into the folder &lt;code&gt;/home/rstudio/sastibe&lt;/code&gt;, which is automatically loaded in RStudio. The line with &lt;code&gt;chmod&lt;/code&gt; ensures that any user (not just root, who is executing this command at startup) has the rights to alter content in that folder. This permission allows me to change code and pushing my changes to the repository and all that, which is just super convenient.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;step-3-start-your-first-rstudio-instance-and-bask-in-its-glory&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Step 3: Start your First RStudio instance (and bask in its glory),&lt;/h2&gt;
-&lt;p&gt;The last and most exciting click is this one:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1516310280/screenshot_finish_launch_jdqvec.png&#34; alt=&#34;Hooray, all the hard work pays off!&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Hooray, all the hard work pays off!&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;We have now started the instance. This means that a virtual machine, configured according to our specifitcations is being run on one of Amazon’s bajillion&lt;a href=&#34;#fn2&#34; class=&#34;footnoteRef&#34; id=&#34;fnref2&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; cloud computing servers. In the menu “Instances” we now see an active instance running. After we are done, we will use this menu to shut it down again (so that it doesn#t cost us), but not now: we are eager to test it out! Accessing the instance is quite easy in our case: Just copy the “IPv4 Public IP” adress and paste it in your browser:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1517085751/screenshot_publicip_sjmc6c.png&#34; alt=&#34;Green lights indicate the instance runs harmoniously.&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Green lights indicate the instance runs harmoniously.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Hopefully, you haven’t forgotten your password (check &lt;a href=&#34;#step2c&#34;&gt;Step 2c&lt;/a&gt; if you did), your username is “rstudio”. After succesful login, you’ll be greeted by this screen:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1517085281/screenshot_rstudio_running_ss7eqo.png&#34; alt=&#34;The login to a world of wonder.&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;The login to a world of wonder.&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Et voilà: Your very own scalable RStudio instance, accessible world-wide and ready to use at all times. In other words: Congratulations, you now have a state-of-the-art Data Science Machine at your command. Use it wisely. If you want to see what kind of wonders you can do with this setup, check out the &lt;a href=&#34;http://127.0.0.1:4321/2018/01/benchmarking-aws-instances/&#34;&gt;upcoming blog post&lt;/a&gt;. Otherwise, let me just point you towards another &lt;a href=&#34;https://www.kaggle.com/rtatman/getting-started-in-r-first-steps&#34;&gt;wonderful introduction&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;step-4-create-a-personal-ami-for-future-convenience&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Step 4: Create a personal AMI for future convenience&lt;/h2&gt;
-&lt;p&gt;Now, Step 3 consisted of 4 different steps, and it would be ratehr inconvenient to have to repeat these steps each time you need a new RStudio instance, right? Luckily, AWS has got you covered: You can create an “image” of any AWS instance: simply put, this saves your current configuration for later use. The creation of such an image is straightforward: Just go to “Instances” in your AWS Dashboard, right-click on the machine you want to base the image on and select “Create Image”:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1517086580/screenshot_createAMI_vx0esq.png&#34; alt=&#34;Locate Create Image in the menu of Instance Settings&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Locate “Create Image” in the menu of “Instance Settings”&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;After this step, you will find the created image in the menu AMIs, ready to reuse. Before you go do crazy and wonderful Data Science in your wonderful new Environment, though, it is essential that you let me tell you about&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-last-step-after-each-aws-usage-shutting-down&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The Last Step (After Each AWS Usage): Shutting Down&lt;/h2&gt;
-&lt;p&gt;An AWS instance doesn’t shut down by itself, or go into hibernation or anything like that. It just keeps running unless otherwise specified, eventually costing lots of money (even the free tier services have their prices after some limit). So, let me show you how to shut down your brand new machine. It’s quite simple, just right-click on the running instance and set the “Instance State” to “Terminate”.&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://res.cloudinary.com/dlprdrxib/image/upload/v1516310583/screenshot_terminateinstance_el4vj8.png&#34; alt=&#34;Show no mercy, terminate!&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;Show no mercy, terminate!&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;Since our instance also automatically loaded an EBS volume (like a hard disk to save data), we need to shut that down too. Choose the entry EBS volumes in the sidepane and &lt;em&gt;Detach&lt;/em&gt; all volumes that are active. If your overview in the pane “Dashboard” looks similar to this :&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://res.cloudinary.com/dlprdrxib/image/upload/v1516310279/screenshot_clean_dashboard_cqhspn.png&#34; alt=&#34;5 volumes: make sure that they are not in-use, since storage may also cost after some initial period&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;“5 volumes”: make sure that they are not in-use, since storage may also cost after some initial period&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;There are no hidden services running racking up costs.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;summary&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Summary&lt;/h1&gt;
-&lt;p&gt;After configuring your AWS environment as decried above, your new ‚Data Science Workflow‘ can look like this:&lt;/p&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;Log in to AWS,&lt;/li&gt;
-&lt;li&gt;Choose your personal RStudio AMI,&lt;/li&gt;
-&lt;li&gt;Choose the Necessary Specifications of the Machine,&lt;/li&gt;
-&lt;li&gt;Log in to the Machine in the Browser,&lt;/li&gt;
-&lt;li&gt;Do Awesome Data Science,&lt;/li&gt;
-&lt;li&gt;Shut Down Machine and all Resources.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Have fun, and remember: Primere non nocere!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;For a given value of usually. I personally try to test out lots of resources just because I can, yet even so, my total expenses for AWS result in 0.37€ (January 2018).&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id=&#34;fn2&#34;&gt;&lt;p&gt;A rough estimate. Maybe only bajillions.&lt;a href=&#34;#fnref2&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <description>Assume you want to start to write R code (a very good decision, in my opinion) and you want to be able to write and test code whereever you are. Wouldn’t it be awesome if one could set up an environment that can be used for R coding independent of any device? Where all you need is a decent browser, a working internet connection and you’re good to go?
+Obviously, that is the case. In this post, I will show you the steps for setting up such an environment on Amazon Web Services (AWS). The main advantages of using such a set-up:
+ Runs on any infrastructure: All you need is a working internet connection, a decent browser and an AWS account, which is usually1 free. Runs everywhere: The AWS machine will be set up to automatically clone your GitHub repository (don’t worry if this doesn’t mean anything to you, this point is optional), so that you don’t even have to have your codes on the device. Scalable: The AWS machine running your code can be chosen to suit any of your needs, in any session. Just playing around with a new package? Use the smallest size, doesn’t cost a dime. Trying to re-create state-of-the-art machine learning performance with a fancy DNN-classifier? Go all in with 500 GB of RAM; it’ll cost ya, but it’s fun. Up-to-Date: Since the envirionment is freshly installed each time, your R version as well as the package versions in use are automatically up-to-date. In the latter case, that would also be easy to maintain on a local machine, the former, however, is a nice benefit.  Convinced? Awesome, let’s get started!
+Overview of main steps First a short overview of the main steps covered in this blog post:
+Get an AWS account (duh!), Configure your RStudio AMI, Find the right RStudio AMI, Configure Security Groups, Automatically Change your RStudio Password, Incorporate a clone of your GitHub repo,  Start your First RStudio instance (and bask in its glory), Create a personal AMI for future convenience, Shut down the Instance and all Resources.  Preconditions for this tutorial should be basically none, at least in terms of coding and/or understanding R itself. The main task will lie in clicking the right buttons.
+Step 1: Get an AWS account. Well, it isn’t really my place to tell you how to get an AWS account if Amazon itself did such a great job explaining it. Just use the link to set up your account, and I further suggest to follow this set of instructions, building your very first instance. Take your time going through these instructions, I’ll wait…
+Ready? Alright, sweet. Then we continue with
+ Step 2: Configure your RStudio AMI. In this step, I collected several steps, not all of which are necessary. Steps 2a and 2b are crucial, Step 2c is recommended. Step 2d can be skipped on the first set-up. The implementation of this step can always be re-assessed whenever it becomes necessary.
+Let’s begin by starting an instance in the AWS Dashboard. Just open “Instances” on the side menu of your EC2 Dashboard and click on “Launch Instance”:
+Here we go!
+ Step 2a: Find the current RStudio AMI. The first task is to choose an Amazon Machine Image, or AMI, which is essentially an operating system container. More to the point, in an AMI a Linux distribution can be bundled with addtional software packages tailored to any type of need: web development, accounting (I’m guessing here, but … sure) and, most importantly, using RStudio. On Louis Anslett’s homepage you can find a wonderful storage of RStudio AMIs. We use the newest version for the correct geographical zone, in my case Frankfurt:
+One AMI for each region. Neat
+ As you can see, thanks to Louis Anslett’s work, the AMI includes not only the newest version of RStudio but also of R itself as well as a handful of helpful additional software packages. For instance, Git comes pre-installed, which we will use later on; also Juliais installed for those looking to try out the possible future of data science languages. But I’m deviating… Let’s note the AMI-ID (in our case “ami-a80db3c7”), put this in the start-up options and let’s continue.
+ Step 2b: Configure the security groups for your RStudio instance In AWS, security groups control the access to the machine over the internet (if you don‘t care about how exactly this works and only want to follow the instructions, just skip the next sentences). More precisely, they define which kind of protocols may use which ports on your machine from a given IP range. For example, you can set the access rights for a ssh protocol to be able to connect to your machine on port 22 only from your personal IP address at home.
+In our case, we actually only need access via http protocol, since the RStudio instance will allow log-in via browser interface. Therefore, our security group can be kept quite simple:
+The bottom option allows the whole world to see the instance. Golly.
+ The IP range can be limited to your own personal IP to ensure the safety of your instance. This precaution could be necessary since only the login page of RStudio stands between the internet and your instance (spooky, huh?). However, since the personal IP usually changes each day (roughly speaking), this becomes a personal question of “privacy vs. convenience”. In my case, as you can see, convenience won.
+ 2c. Automatically Change your RStudio Password In the documentation of the RStudio AMI we can find the following passage: “It is highly recommended you change the password immediately and an easy means of doing this is explained upon login in the script that is loaded there”. Alright, fine, but I’d rather to that programmatically, i.e. automatically. The weirdly named “User data” option provides just the framework: All commands placed here get executed at the beginning of the start-up. You can find this setting in the menu “Configure Instance Details” under “Advanced Details”.
+In order to change the password of the user “RStudio” on start-up, we paste the following code:
+#!/bin/bash echo &amp;quot;rstudio:guest&amp;quot; | chpasswd where you should replace the password “guest” with whatever you deem appropriate. We are almost done with the set-up now, there only remains
+ Step 2d (optional): Automatically Clone a GitHub repo I write all my private code projects on my GitHub account (here: https://github.com/sebastianschweer. What a shameless self-plug!) and I also would like my code to be available for me each time I start up my RStudio instance. Fortunately, this is easily configured with “User data” again, by just adding the command
+git clone https://github.com/sebastianschweer/sastibe.git /home/rstudio/sastibe chmod -R 777 /home/rstudio/sastibe to the “User data” of Step 2c. Now, when I start up the new RStudio instance, the repository sastibe gets cloned into the folder /home/rstudio/sastibe, which is automatically loaded in RStudio. The line with chmod ensures that any user (not just root, who is executing this command at startup) has the rights to alter content in that folder. This permission allows me to change code and pushing my changes to the repository and all that, which is just super convenient.
+  Step 3: Start your First RStudio instance (and bask in its glory), The last and most exciting click is this one:
+Hooray, all the hard work pays off!
+ We have now started the instance. This means that a virtual machine, configured according to our specifitcations is being run on one of Amazon’s bajillion2 cloud computing servers. In the menu “Instances” we now see an active instance running. After we are done, we will use this menu to shut it down again (so that it doesn#t cost us), but not now: we are eager to test it out! Accessing the instance is quite easy in our case: Just copy the “IPv4 Public IP” adress and paste it in your browser:
+Green lights indicate the instance runs harmoniously.
+ Hopefully, you haven’t forgotten your password (check Step 2c if you did), your username is “rstudio”. After succesful login, you’ll be greeted by this screen:
+The login to a world of wonder.
+ Et voilà: Your very own scalable RStudio instance, accessible world-wide and ready to use at all times. In other words: Congratulations, you now have a state-of-the-art Data Science Machine at your command. Use it wisely. If you want to see what kind of wonders you can do with this setup, check out the upcoming blog post. Otherwise, let me just point you towards another wonderful introduction.
+ Step 4: Create a personal AMI for future convenience Now, Step 3 consisted of 4 different steps, and it would be ratehr inconvenient to have to repeat these steps each time you need a new RStudio instance, right? Luckily, AWS has got you covered: You can create an “image” of any AWS instance: simply put, this saves your current configuration for later use. The creation of such an image is straightforward: Just go to “Instances” in your AWS Dashboard, right-click on the machine you want to base the image on and select “Create Image”:
+Locate “Create Image” in the menu of “Instance Settings”
+ After this step, you will find the created image in the menu AMIs, ready to reuse. Before you go do crazy and wonderful Data Science in your wonderful new Environment, though, it is essential that you let me tell you about
+ The Last Step (After Each AWS Usage): Shutting Down An AWS instance doesn’t shut down by itself, or go into hibernation or anything like that. It just keeps running unless otherwise specified, eventually costing lots of money (even the free tier services have their prices after some limit). So, let me show you how to shut down your brand new machine. It’s quite simple, just right-click on the running instance and set the “Instance State” to “Terminate”.
+Show no mercy, terminate!
+ Since our instance also automatically loaded an EBS volume (like a hard disk to save data), we need to shut that down too. Choose the entry EBS volumes in the sidepane and Detach all volumes that are active. If your overview in the pane “Dashboard” looks similar to this :
+“5 volumes”: make sure that they are not in-use, since storage may also cost after some initial period
+ There are no hidden services running racking up costs.
+  Summary After configuring your AWS environment as decried above, your new ‚Data Science Workflow‘ can look like this:
+Log in to AWS, Choose your personal RStudio AMI, Choose the Necessary Specifications of the Machine, Log in to the Machine in the Browser, Do Awesome Data Science, Shut Down Machine and all Resources.  Have fun, and remember: Primere non nocere!
+  For a given value of usually. I personally try to test out lots of resources just because I can, yet even so, my total expenses for AWS result in 0.37€ (January 2018).↩
+ A rough estimate. Maybe only bajillions.↩
+   </description>
     </item>
     
   </channel>
